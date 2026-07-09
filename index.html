@@ -21,45 +21,39 @@
     background: var(--bg);
     color: var(--text);
     padding: 24px;
-    max-width: 1100px;
+    max-width: 1200px;
     margin-inline: auto;
   }
   h1 { font-size: 1.4rem; margin: 0 0 4px; }
-  .sub { color: var(--muted); font-size: .9rem; margin-bottom: 20px; }
-  section {
+  .sub { color: var(--muted); font-size: .9rem; margin-bottom: 16px; }
+
+  /* Indicador de pasos */
+  .steps-nav { display: flex; gap: 8px; margin-bottom: 16px; }
+  .steps-nav .step-chip {
+    flex: 1; text-align: center; padding: 8px 4px;
+    border: 1px solid var(--border); border-radius: 8px;
+    font-size: .85rem; color: var(--muted); background: var(--panel);
+  }
+  .steps-nav .step-chip.active { border-color: var(--accent); color: var(--text); font-weight: 600; }
+  .steps-nav .step-chip.done { color: var(--accent); }
+
+  section.step {
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 16px;
     margin-bottom: 16px;
   }
-  section h2 { font-size: 1rem; margin: 0 0 12px; }
-  .hidden { display: none; }
+  section.step h2 { font-size: 1rem; margin: 0 0 12px; }
+  .hidden { display: none !important; }
 
-  /* Zona de carga */
-  #dropzone {
-    border: 2px dashed var(--border);
-    border-radius: 10px;
-    padding: 36px;
-    text-align: center;
-    color: var(--muted);
-    cursor: pointer;
-    transition: border-color .15s, background .15s;
+  /* Botonera de navegación */
+  .step-footer {
+    display: flex; gap: 10px; margin-top: 16px;
+    border-top: 1px solid var(--border); padding-top: 14px;
   }
-  #dropzone.over { border-color: var(--accent); background: #1a2436; }
-  #dropzone strong { color: var(--text); }
+  .step-footer .spacer { flex: 1; }
 
-  /* Controles */
-  .controls { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
-  .controls label { font-size: .85rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
-  input[type=number] {
-    width: 64px;
-    background: var(--bg);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 6px 8px;
-  }
   button {
     background: var(--accent);
     color: #fff;
@@ -69,16 +63,41 @@
     font-size: .9rem;
     cursor: pointer;
   }
-  button:disabled { background: var(--accent-dim); cursor: not-allowed; }
+  button:disabled { background: var(--accent-dim); color: #c7cdd6; cursor: not-allowed; }
   button.secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
+  button.danger { background: transparent; border: 1px solid #7a3a3a; color: #e08a8a; }
   .status { font-size: .85rem; color: var(--muted); }
 
-  /* Grid de frames */
-  #framesGrid {
+  /* Paso 1: carga */
+  #dropzone {
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    padding: 32px;
+    text-align: center;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+  }
+  #dropzone.over { border-color: var(--accent); background: #1a2436; }
+  #dropzone strong { color: var(--text); }
+  #gifList { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+  .gif-item {
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px; width: 150px; background: var(--bg);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .gif-item canvas { width: 100%; height: auto; border-radius: 4px; background: #000; }
+  .gif-item .name { font-size: .75rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .gif-item .meta { font-size: .72rem; color: var(--muted); }
+  .gif-item button { padding: 3px 8px; font-size: .75rem; }
+
+  /* Paso 2: frames */
+  .gif-block { margin-bottom: 18px; }
+  .gif-block h3 { font-size: .9rem; margin: 0 0 8px; color: var(--muted); }
+  .frames-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     gap: 10px;
-    margin-top: 12px;
   }
   .frame-card {
     position: relative;
@@ -104,76 +123,107 @@
   }
   .frame-card.selected { border-color: var(--accent); }
   .frame-card.selected .order { display: flex; }
+  .frame-card.disabled { opacity: .35; cursor: not-allowed; pointer-events: none; }
 
-  /* Resultado */
-  .result-wrap { position: relative; display: inline-block; max-width: 100%; overflow: hidden; }
-  #barrierOverlay {
-    position: absolute; top: 0; left: 0; pointer-events: none;
-    background: transparent; border: none; border-radius: 0; max-width: none;
+  /* Paso 3: papel + preview */
+  .step3-layout { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  .step3-controls { flex: 0 0 280px; display: flex; flex-direction: column; gap: 14px; }
+  .step3-controls label { font-size: .85rem; color: var(--muted); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .step3-preview { flex: 1; min-width: 300px; }
+  .pages { display: flex; flex-wrap: wrap; gap: 16px; }
+  .page-block { text-align: center; }
+  .page-block canvas { border: 1px solid var(--border); background: #fff; display: block; }
+  .page-block .caption { font-size: .72rem; color: var(--muted); margin-top: 4px; }
+  input[type=number], select {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 8px;
   }
-  .result-canvases { display: flex; flex-wrap: wrap; gap: 24px; }
-  .result-block h3 { font-size: .9rem; margin: 0 0 8px; color: var(--muted); }
-  .result-block canvas { max-width: 100%; border: 1px solid var(--border); border-radius: 6px; background: #fff; }
-  input[type=range] { vertical-align: middle; }
+  input[type=number] { width: 72px; }
+  #customSize { display: flex; gap: 8px; align-items: center; }
+  .info-box {
+    font-size: .78rem; color: var(--muted);
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px; line-height: 1.5;
+  }
 </style>
 </head>
 <body>
 
 <h1>Generador de Kinegramas</h1>
-<p class="sub">Carga un GIF, elige los frames y genera la imagen entrelazada + la rejilla para animarla.</p>
+<p class="sub">Carga uno o varios GIFs, elige los frames y genera los kinegramas + la rejilla compartida.</p>
 
-<!-- 1. Carga -->
-<section>
-  <h2>1. Cargar GIF</h2>
+<div class="steps-nav">
+  <div class="step-chip" data-step="1">1 · Selección de GIFs</div>
+  <div class="step-chip" data-step="2">2 · Selección de frames</div>
+  <div class="step-chip" data-step="3">3 · Papel + preview</div>
+</div>
+
+<!-- ============ PASO 1: GIFs ============ -->
+<section class="step" id="step1">
+  <h2>Cargar GIFs</h2>
   <div id="dropzone">
-    <strong>Haz clic o arrastra un GIF aquí</strong><br>
-    <span id="loadStatus">Se extraerán todos los frames automáticamente.</span>
+    <strong>Haz clic o arrastra uno o varios GIFs aquí</strong><br>
+    <span id="loadStatus">Puedes agregar más en cualquier momento.</span>
   </div>
-  <input type="file" id="fileInput" accept="image/gif" class="hidden">
-</section>
-
-<!-- 2. Selección de frames -->
-<section id="selectSection" class="hidden">
-  <h2>2. Seleccionar frames</h2>
-  <div class="controls">
-    <label>Frames a usar (recomendado 4):
-      <input type="number" id="maxFrames" min="2" max="12" value="4">
-    </label>
-    <button class="secondary" id="autoSelectBtn">Auto-seleccionar distribuidos</button>
-    <span class="status" id="selStatus"></span>
-  </div>
-  <div id="framesGrid"></div>
-  <div class="controls" style="margin-top:14px">
-    <label>Ancho de franja (px):
-      <input type="number" id="stripWidth" min="1" max="20" value="3">
-    </label>
-    <button id="generateBtn">Generar kinegrama</button>
+  <input type="file" id="fileInput" accept="image/gif" multiple class="hidden">
+  <div id="gifList"></div>
+  <div class="step-footer">
+    <button class="danger" data-restart>Volver a empezar</button>
+    <div class="spacer"></div>
+    <button id="next1" disabled>Siguiente</button>
   </div>
 </section>
 
-<!-- 3. Resultado -->
-<section id="resultSection" class="hidden">
-  <h2>3. Resultado</h2>
-  <div class="controls" style="margin-bottom:12px">
-    <label><input type="checkbox" id="previewToggle" checked> Vista previa animada (rejilla en movimiento)</label>
-    <label>Velocidad: <input type="range" id="previewSpeed" min="1" max="60" value="15"></label>
-    <button id="pdfKinegram">PDF kinegrama</button>
-    <button id="pdfBarrier">PDF rejilla</button>
-    <button class="secondary" id="dlKinegram">PNG kinegrama</button>
-    <button class="secondary" id="dlBarrier">PNG rejilla</button>
+<!-- ============ PASO 2: frames ============ -->
+<section class="step hidden" id="step2">
+  <h2>Seleccionar frames</h2>
+  <p class="status" id="framesStatus"></p>
+  <div id="gifBlocks"></div>
+  <div class="step-footer">
+    <button class="danger" data-restart>Volver a empezar</button>
+    <div class="spacer"></div>
+    <button class="secondary" id="prev2">Anterior</button>
+    <button id="next2" disabled>Siguiente</button>
   </div>
-  <div class="result-canvases">
-    <div class="result-block">
-      <h3>Kinegrama (imprímelo en papel)</h3>
-      <div class="result-wrap">
-        <canvas id="outCanvas"></canvas>
-        <canvas id="barrierOverlay"></canvas>
+</section>
+
+<!-- ============ PASO 3: papel + preview ============ -->
+<section class="step hidden" id="step3">
+  <h2>Papel y vista previa</h2>
+  <div class="step3-layout">
+    <div class="step3-controls">
+      <label>Tamaño de papel:
+        <select id="paperSelect">
+          <option value="carta" selected>Carta (215.9 × 279.4 mm)</option>
+          <option value="oficio">Oficio (215.9 × 340 mm)</option>
+          <option value="a4">A4 (210 × 297 mm)</option>
+          <option value="custom">Personalizado…</option>
+        </select>
+      </label>
+      <div id="customSize" class="hidden">
+        <input type="number" id="customW" min="50" max="2000" value="216"> ×
+        <input type="number" id="customH" min="50" max="2000" value="279"> mm
       </div>
+      <label>Ancho de franja (px):
+        <input type="number" id="stripWidth" min="1" max="20" value="3">
+      </label>
+      <label><input type="checkbox" id="previewToggle"> Mostrar preview animado</label>
+      <label>Velocidad: <input type="range" id="previewSpeed" min="1" max="60" value="15"></label>
+      <div class="info-box" id="infoBox"></div>
+      <button id="pdfKinegrams">Guardar kinegramas (PDF)</button>
+      <button id="pdfBarrier">Guardar rejilla (PDF)</button>
     </div>
-    <div class="result-block">
-      <h3>Rejilla (imprímela en acetato/transparencia)</h3>
-      <canvas id="barrierCanvas"></canvas>
+    <div class="step3-preview">
+      <div class="pages" id="pagesPreview"></div>
     </div>
+  </div>
+  <div class="step-footer">
+    <button class="danger" data-restart>Volver a empezar</button>
+    <div class="spacer"></div>
+    <button class="secondary" id="prev3">Anterior</button>
   </div>
 </section>
 
@@ -186,10 +236,19 @@
 
 const $ = id => document.getElementById(id);
 
-let frames = [];        // [{canvas, imageData}]
-let gifW = 0, gifH = 0;
-let selection = [];     // índices de frames en orden de selección
+const PAPERS = {
+  carta:  { w: 215.9, h: 279.4 },
+  oficio: { w: 215.9, h: 340 },
+  a4:     { w: 210,   h: 297 },
+};
+const MARGIN_MM = 10;   // margen de las páginas de kinegramas (la rejilla no lleva)
+const DEFAULT_SELECT = 4;
+
+let gifs = [];          // [{name, frames:[canvas], w, h, selection:[]}]
+let currentStep = 1;
 let animId = null;
+let previewPages = [];  // estado de cada página del preview
+let layout = null;      // {paper, N, strip, mmpp, perGif:[{landscape, wmm, hmm}]}
 
 // ---------- Decodificación ----------
 
@@ -242,237 +301,425 @@ function decodeWithGifuct(buf) {
   return out;
 }
 
-async function loadGif(file) {
+async function addGifs(files) {
+  const gifsOnly = [...files].filter(f => f.type === 'image/gif');
+  if (!gifsOnly.length) return;
   $('loadStatus').textContent = 'Decodificando…';
-  try {
-    const buf = await file.arrayBuffer();
-    const canvases = ('ImageDecoder' in window)
-      ? await decodeWithImageDecoder(buf)
-      : decodeWithGifuct(buf);
-
-    if (canvases.length < 2) throw new Error('El GIF solo tiene 1 frame; se necesitan al menos 2.');
-
-    gifW = canvases[0].width;
-    gifH = canvases[0].height;
-    frames = canvases.map(c => ({ canvas: c }));
-
-    $('loadStatus').textContent = `${file.name} — ${frames.length} frames de ${gifW}×${gifH}px. Puedes cargar otro GIF cuando quieras.`;
-    $('selectSection').classList.remove('hidden');
-    $('resultSection').classList.add('hidden');
-    renderFramesGrid();
-    autoSelect();
-  } catch (err) {
-    $('loadStatus').textContent = 'Error: ' + err.message;
+  for (const file of gifsOnly) {
+    try {
+      const buf = await file.arrayBuffer();
+      const canvases = ('ImageDecoder' in window)
+        ? await decodeWithImageDecoder(buf)
+        : decodeWithGifuct(buf);
+      if (canvases.length < 2) throw new Error(`${file.name}: solo tiene 1 frame`);
+      gifs.push({
+        name: file.name,
+        frames: canvases,
+        w: canvases[0].width,
+        h: canvases[0].height,
+        selection: [],
+      });
+    } catch (err) {
+      $('loadStatus').textContent = 'Error: ' + err.message;
+      continue;
+    }
   }
+  $('loadStatus').textContent = `${gifs.length} GIF(s) cargado(s). Puedes agregar más.`;
+  renderGifList();
 }
 
-// ---------- Selección ----------
+// ---------- Paso 1: lista de GIFs ----------
 
-function renderFramesGrid() {
-  const grid = $('framesGrid');
-  grid.innerHTML = '';
-  frames.forEach((f, i) => {
-    const card = document.createElement('div');
-    card.className = 'frame-card';
-    card.dataset.idx = i;
+function renderGifList() {
+  const list = $('gifList');
+  list.innerHTML = '';
+  gifs.forEach((g, i) => {
+    const item = document.createElement('div');
+    item.className = 'gif-item';
 
     const thumb = document.createElement('canvas');
-    const scale = Math.min(1, 160 / f.canvas.width);
-    thumb.width = Math.round(f.canvas.width * scale);
-    thumb.height = Math.round(f.canvas.height * scale);
-    thumb.getContext('2d').drawImage(f.canvas, 0, 0, thumb.width, thumb.height);
+    const scale = Math.min(1, 140 / g.w);
+    thumb.width = Math.round(g.w * scale);
+    thumb.height = Math.round(g.h * scale);
+    thumb.getContext('2d').drawImage(g.frames[0], 0, 0, thumb.width, thumb.height);
 
-    const idx = document.createElement('span');
-    idx.className = 'idx';
-    idx.textContent = '#' + (i + 1);
+    const name = document.createElement('div');
+    name.className = 'name';
+    name.textContent = g.name;
+    name.title = g.name;
 
-    const order = document.createElement('span');
-    order.className = 'order';
+    const meta = document.createElement('div');
+    meta.className = 'meta';
+    meta.textContent = `${g.w}×${g.h}px · ${g.frames.length} frames`;
 
-    card.append(thumb, idx, order);
-    card.addEventListener('click', () => toggleFrame(i));
-    grid.appendChild(card);
+    const del = document.createElement('button');
+    del.className = 'danger';
+    del.textContent = 'Quitar';
+    del.addEventListener('click', () => {
+      gifs.splice(i, 1);
+      renderGifList();
+    });
+
+    item.append(thumb, name, meta, del);
+    list.appendChild(item);
   });
-  updateGridUI();
+  $('next1').disabled = gifs.length < 1;
 }
 
-function toggleFrame(i) {
-  const pos = selection.indexOf(i);
-  if (pos >= 0) {
-    selection.splice(pos, 1);
-  } else {
-    const max = getMaxFrames();
-    if (selection.length >= max) {
-      $('selStatus').textContent = `Ya hay ${max} frames seleccionados; deselecciona uno o sube el límite.`;
-      return;
+// ---------- Paso 2: selección de frames ----------
+
+function maxFramesAllowed() {
+  return Math.min(...gifs.map(g => g.frames.length));
+}
+
+function defaultSelections() {
+  const n = Math.min(DEFAULT_SELECT, maxFramesAllowed());
+  for (const g of gifs) {
+    if (g.selection.length) continue;   // conserva selecciones previas
+    g.selection = [];
+    for (let k = 0; k < n; k++) {
+      g.selection.push(Math.floor(k * g.frames.length / n));
     }
-    selection.push(i);
   }
-  updateGridUI();
 }
 
-function getMaxFrames() {
-  const n = parseInt($('maxFrames').value, 10);
-  return Math.min(Math.max(isNaN(n) ? 4 : n, 2), 12);
+function renderGifBlocks() {
+  const wrap = $('gifBlocks');
+  wrap.innerHTML = '';
+  gifs.forEach((g, gi) => {
+    const block = document.createElement('div');
+    block.className = 'gif-block';
+
+    const h = document.createElement('h3');
+    h.textContent = `${g.name} (${g.frames.length} frames)`;
+
+    const grid = document.createElement('div');
+    grid.className = 'frames-grid';
+    g.frames.forEach((frame, fi) => {
+      const card = document.createElement('div');
+      card.className = 'frame-card';
+      card.dataset.gif = gi;
+      card.dataset.frame = fi;
+
+      const thumb = document.createElement('canvas');
+      const scale = Math.min(1, 150 / frame.width);
+      thumb.width = Math.round(frame.width * scale);
+      thumb.height = Math.round(frame.height * scale);
+      thumb.getContext('2d').drawImage(frame, 0, 0, thumb.width, thumb.height);
+
+      const idx = document.createElement('span');
+      idx.className = 'idx';
+      idx.textContent = '#' + (fi + 1);
+
+      const order = document.createElement('span');
+      order.className = 'order';
+
+      card.append(thumb, idx, order);
+      card.addEventListener('click', () => toggleFrame(gi, fi));
+      grid.appendChild(card);
+    });
+
+    block.append(h, grid);
+    wrap.appendChild(block);
+  });
+  updateStep2UI();
 }
 
-function autoSelect() {
-  const max = Math.min(getMaxFrames(), frames.length);
-  selection = [];
-  for (let k = 0; k < max; k++) {
-    selection.push(Math.floor(k * frames.length / max));
-  }
-  updateGridUI();
+function toggleFrame(gi, fi) {
+  const sel = gifs[gi].selection;
+  const pos = sel.indexOf(fi);
+  if (pos >= 0) sel.splice(pos, 1);
+  else if (sel.length < maxFramesAllowed()) sel.push(fi);
+  updateStep2UI();
 }
 
-function updateGridUI() {
-  document.querySelectorAll('.frame-card').forEach(card => {
-    const i = parseInt(card.dataset.idx, 10);
-    const pos = selection.indexOf(i);
+function updateStep2UI() {
+  const max = maxFramesAllowed();
+  document.querySelectorAll('#gifBlocks .frame-card').forEach(card => {
+    const gi = +card.dataset.gif, fi = +card.dataset.frame;
+    const sel = gifs[gi].selection;
+    const pos = sel.indexOf(fi);
     card.classList.toggle('selected', pos >= 0);
     card.querySelector('.order').textContent = pos >= 0 ? pos + 1 : '';
+    // Al llegar al máximo, los no seleccionados quedan deshabilitados.
+    card.classList.toggle('disabled', pos < 0 && sel.length >= max);
   });
-  const max = getMaxFrames();
-  $('selStatus').textContent = `${selection.length}/${max} frames seleccionados (el número indica el orden en el entrelazado).`;
-  $('generateBtn').disabled = selection.length < 2;
+
+  const counts = gifs.map(g => g.selection.length);
+  const allEqual = counts.every(c => c === counts[0]);
+  const ok = allEqual && counts[0] >= 2;
+  $('next2').disabled = !ok;
+
+  let msg = `Máximo ${max} frames por GIF (el GIF con menos frames). ` +
+            `Haz clic para seleccionar/deseleccionar; el número indica el orden.`;
+  if (!allEqual) {
+    msg += ` ⚠ Todos los GIFs deben tener la MISMA cantidad seleccionada para compartir rejilla (ahora: ${counts.join(', ')}).`;
+  } else if (counts[0] < 2) {
+    msg += ` Selecciona al menos 2 frames en cada GIF.`;
+  } else {
+    msg += ` ✓ ${counts[0]} frames por kinegrama.`;
+  }
+  $('framesStatus').textContent = msg;
 }
 
-// ---------- Generación ----------
+// ---------- Paso 3: layout, preview y PDFs ----------
+
+function getPaper() {
+  const v = $('paperSelect').value;
+  if (v !== 'custom') return PAPERS[v];
+  const w = Math.min(Math.max(+$('customW').value || 216, 50), 2000);
+  const h = Math.min(Math.max(+$('customH').value || 279, 50), 2000);
+  return { w, h };
+}
 
 function getStripWidth() {
   const n = parseInt($('stripWidth').value, 10);
-  return Math.min(Math.max(isNaN(n) ? 2 : n, 1), 20);
+  return Math.min(Math.max(isNaN(n) ? 3 : n, 1), 20);
 }
 
-function generate() {
-  const N = selection.length;
+function computeLayout() {
+  const paper = getPaper();
+  const N = gifs[0].selection.length;
   const strip = getStripWidth();
+  const availW = paper.w - 2 * MARGIN_MM;
+  const availH = paper.h - 2 * MARGIN_MM;
 
-  // Kinegrama: la franja de columnas [x, x+strip) sale del frame (x/strip) mod N,
-  // copiada desde esa MISMA posición x del frame.
-  const out = $('outCanvas');
-  out.width = gifW; out.height = gifH;
-  const ctx = out.getContext('2d');
+  // Escala GLOBAL (mm por px): la mayor que permita que TODOS los gifs quepan
+  // en la hoja (probando ambas orientaciones). Nunca se escala individualmente,
+  // así la misma rejilla sirve para todos.
+  let mmpp = Infinity;
+  for (const g of gifs) {
+    const fitP = Math.min(availW / g.w, availH / g.h);
+    const fitL = Math.min(availH / g.w, availW / g.h);
+    mmpp = Math.min(mmpp, Math.max(fitP, fitL));
+  }
+
+  const perGif = gifs.map(g => {
+    const fitsPortrait = g.w * mmpp <= availW && g.h * mmpp <= availH;
+    return {
+      landscape: !fitsPortrait,
+      wmm: g.w * mmpp,
+      hmm: g.h * mmpp,
+    };
+  });
+
+  layout = { paper, N, strip, mmpp, perGif };
+}
+
+function interlaceGif(g) {
+  const { N, strip } = layout;
+  const c = document.createElement('canvas');
+  c.width = g.w; c.height = g.h;
+  const ctx = c.getContext('2d');
   ctx.fillStyle = '#fff';
-  ctx.fillRect(0, 0, gifW, gifH);
-  for (let x = 0; x < gifW; x += strip) {
-    const w = Math.min(strip, gifW - x);
-    const frame = frames[selection[Math.floor(x / strip) % N]].canvas;
-    ctx.drawImage(frame, x, 0, w, gifH, x, 0, w, gifH);
+  ctx.fillRect(0, 0, g.w, g.h);
+  for (let x = 0; x < g.w; x += strip) {
+    const w = Math.min(strip, g.w - x);
+    const frame = g.frames[g.selection[Math.floor(x / strip) % N]];
+    ctx.drawImage(frame, x, 0, w, g.h, x, 0, w, g.h);
   }
-
-  // Rejilla: opaca, con una ranura transparente de `strip` px cada N*strip px.
-  const barrier = $('barrierCanvas');
-  barrier.width = gifW; barrier.height = gifH;
-  const bctx = barrier.getContext('2d');
-  bctx.fillStyle = '#000';
-  for (let x = 0; x < gifW; x += strip) {
-    if (Math.floor(x / strip) % N !== 0) {
-      bctx.fillRect(x, 0, Math.min(strip, gifW - x), gifH);
-    }
-  }
-
-  $('resultSection').classList.remove('hidden');
-  setupPreview();
-  $('resultSection').scrollIntoView({ behavior: 'smooth' });
+  return c;
 }
 
-// ---------- Vista previa animada ----------
-
-function setupPreview() {
-  if (animId) cancelAnimationFrame(animId);
-  const overlay = $('barrierOverlay');
-  const N = selection.length;
-  const strip = getStripWidth();
-  const period = N * strip;
-
-  // La superposición es más ancha que la imagen para poder desplazarla.
-  overlay.width = gifW + period;
-  overlay.height = gifH;
-  const octx = overlay.getContext('2d');
-  octx.fillStyle = '#000';
-  for (let x = 0; x < overlay.width; x += strip) {
+// Rejilla a lo ancho COMPLETO de la hoja: ranura transparente cada N franjas,
+// el patrón se repite horizontalmente de borde a borde y a toda la altura.
+function barrierCanvas(pageWmm, pageHmm) {
+  const { N, strip, mmpp } = layout;
+  const c = document.createElement('canvas');
+  c.width = Math.ceil(pageWmm / mmpp);
+  c.height = Math.ceil(pageHmm / mmpp);
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, c.width, c.height);
+  ctx.fillStyle = '#000';
+  for (let x = 0; x < c.width; x += strip) {
     if (Math.floor(x / strip) % N !== 0) {
-      octx.fillRect(x, 0, strip, gifH);
+      ctx.fillRect(x, 0, Math.min(strip, c.width - x), c.height);
     }
   }
+  return c;
+}
 
-  const out = $('outCanvas');
-  let offset = 0, last = performance.now();
-  function tick(now) {
-    if ($('previewToggle').checked) {
-      const speed = parseInt($('previewSpeed').value, 10); // px por segundo (de la imagen)
-      offset = (offset + speed * (now - last) / 1000) % period;
-      // El kinegrama puede mostrarse escalado (max-width) y con borde de 1px:
-      // alinea la superposición con el área de contenido real y escala igual.
-      const scale = out.clientWidth / out.width;
-      overlay.style.left = (out.offsetLeft + out.clientLeft) + 'px';
-      overlay.style.top = (out.offsetTop + out.clientTop) + 'px';
-      overlay.style.width = (overlay.width * scale) + 'px';
-      overlay.style.height = out.clientHeight + 'px';
-      overlay.style.transform = `translateX(${-offset * scale}px)`;
-      overlay.style.display = '';
+function renderStep3() {
+  computeLayout();
+  const { paper, N, strip, mmpp, perGif } = layout;
+
+  $('infoBox').innerHTML =
+    `Hojas necesarias: <b>${gifs.length}</b> kinegrama(s) + <b>1</b> rejilla.<br>` +
+    `Escala común: ${mmpp.toFixed(3)} mm/px.<br>` +
+    `Franja: ${(strip * mmpp).toFixed(2)} mm · ciclo: ${(N * strip * mmpp).toFixed(2)} mm.<br>` +
+    `Imprimir todo al 100% (sin escalar). La misma rejilla sirve para todos.`;
+
+  // Construye las páginas del preview
+  const wrap = $('pagesPreview');
+  wrap.innerHTML = '';
+  previewPages = [];
+  const PREVIEW_H = 260; // px de alto de página en preview (vertical)
+
+  gifs.forEach((g, i) => {
+    const info = perGif[i];
+    const pw = info.landscape ? paper.h : paper.w;
+    const ph = info.landscape ? paper.w : paper.h;
+    const ppm = PREVIEW_H / Math.max(pw, ph); // px de preview por mm
+
+    const c = document.createElement('canvas');
+    c.width = Math.round(pw * ppm);
+    c.height = Math.round(ph * ppm);
+
+    const block = document.createElement('div');
+    block.className = 'page-block';
+    const cap = document.createElement('div');
+    cap.className = 'caption';
+    cap.textContent = `Hoja ${i + 1}: ${g.name}` + (info.landscape ? ' (apaisada)' : '');
+    block.append(c, cap);
+    wrap.appendChild(block);
+
+    previewPages.push({
+      canvas: c, ppm,
+      img: interlaceGif(g),
+      gif: g,
+      pw, ph,
+      dxmm: (pw - info.wmm) / 2,
+      dymm: (ph - info.hmm) / 2,
+      wmm: info.wmm, hmm: info.hmm,
+      isBarrier: false,
+    });
+  });
+
+  // Página de la rejilla
+  {
+    const ppm = 260 / Math.max(paper.w, paper.h);
+    const c = document.createElement('canvas');
+    c.width = Math.round(paper.w * ppm);
+    c.height = Math.round(paper.h * ppm);
+    const block = document.createElement('div');
+    block.className = 'page-block';
+    const cap = document.createElement('div');
+    cap.className = 'caption';
+    cap.textContent = `Hoja ${gifs.length + 1}: rejilla (acetato)`;
+    block.append(c, cap);
+    wrap.appendChild(block);
+    previewPages.push({
+      canvas: c, ppm,
+      img: barrierCanvas(paper.w, paper.h),
+      pw: paper.w, ph: paper.h,
+      dxmm: 0, dymm: 0, wmm: paper.w, hmm: paper.h,
+      isBarrier: true,
+    });
+  }
+
+  startPreviewLoop();
+}
+
+function drawPreviewFrame(offsetMm) {
+  const { N, strip, mmpp } = layout;
+  const stripMm = strip * mmpp;
+  const animate = $('previewToggle').checked;
+
+  for (const p of previewPages) {
+    const ctx = p.canvas.getContext('2d');
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, p.canvas.width, p.canvas.height);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+
+    if (animate && !p.isBarrier) {
+      // Simula lo que la rejilla revela al deslizarse: el frame visible en este
+      // instante, con crossfade al siguiente (a escala de miniatura las ranuras
+      // reales medirían <1px y se verían como una mancha oscura).
+      const u = offsetMm / stripMm;          // desplazamiento en # de franjas
+      const k = ((Math.floor(u) % N) + N) % N;
+      const t = u - Math.floor(u);
+      const sel = p.gif.selection;
+      const args = [p.dxmm * p.ppm, p.dymm * p.ppm, p.wmm * p.ppm, p.hmm * p.ppm];
+      ctx.drawImage(p.gif.frames[sel[k]], ...args);
+      ctx.globalAlpha = t;
+      ctx.drawImage(p.gif.frames[sel[(k + 1) % N]], ...args);
+      ctx.globalAlpha = 1;
     } else {
-      overlay.style.display = 'none';
+      ctx.drawImage(p.img, p.dxmm * p.ppm, p.dymm * p.ppm, p.wmm * p.ppm, p.hmm * p.ppm);
     }
+  }
+}
+
+function startPreviewLoop() {
+  if (animId) cancelAnimationFrame(animId);
+  let offsetMm = 0, last = performance.now();
+  function tick(now) {
+    const { strip, mmpp } = layout;
+    const speed = parseInt($('previewSpeed').value, 10); // px de imagen por segundo
+    if ($('previewToggle').checked) {
+      offsetMm += speed * mmpp * (now - last) / 1000;
+    }
+    drawPreviewFrame(offsetMm);
     last = now;
     animId = requestAnimationFrame(tick);
   }
   animId = requestAnimationFrame(tick);
 }
 
-// ---------- Descargas ----------
-
-function download(canvas, name) {
-  const a = document.createElement('a');
-  a.href = canvas.toDataURL('image/png');
-  a.download = name;
-  a.click();
+function stopPreviewLoop() {
+  if (animId) cancelAnimationFrame(animId);
+  animId = null;
 }
 
-// Ambos PDFs usan exactamente las mismas medidas físicas para que,
-// impresos al 100% (sin "ajustar a página"), las franjas coincidan al superponerlos.
-function downloadPdf(canvas, name, title) {
-  const doc = new jspdf.jsPDF({
-    orientation: gifW >= gifH ? 'landscape' : 'portrait',
-    unit: 'mm',
-    format: 'a4',
+// ---------- PDFs (sin textos ni instrucciones) ----------
+
+function pdfKinegrams() {
+  const { paper, perGif } = layout;
+  const fmt = [paper.w, paper.h];
+  let doc = null;
+  gifs.forEach((g, i) => {
+    const info = perGif[i];
+    const orient = info.landscape ? 'landscape' : 'portrait';
+    if (!doc) doc = new jspdf.jsPDF({ unit: 'mm', format: fmt, orientation: orient });
+    else doc.addPage(fmt, orient);
+    const pw = info.landscape ? paper.h : paper.w;
+    const ph = info.landscape ? paper.w : paper.h;
+    doc.addImage(interlaceGif(g).toDataURL('image/png'), 'PNG',
+      (pw - info.wmm) / 2, (ph - info.hmm) / 2, info.wmm, info.hmm);
   });
-  const pageW = doc.internal.pageSize.getWidth();
-  const pageH = doc.internal.pageSize.getHeight();
-  const margin = 15;
-  const maxW = pageW - margin * 2;
-  const maxH = pageH - margin * 2 - 14; // deja sitio para el encabezado
-  const scale = Math.min(maxW / gifW, maxH / gifH);
-  const imgW = gifW * scale;
-  const imgH = gifH * scale;
-  const strip = getStripWidth();
+  doc.save('kinegramas.pdf');
+}
 
-  doc.setFontSize(12);
-  doc.text(title, margin, margin);
-  doc.setFontSize(9);
-  doc.setTextColor(110);
-  doc.text(
-    `${selection.length} frames | franja: ${strip}px = ${(strip * scale).toFixed(2)}mm | imprimir al 100% (sin escalar)`,
-    margin, margin + 5
-  );
-  // Aplana sobre blanco: la rejilla tiene ranuras transparentes y el PDF no maneja bien el alfa.
-  const flat = document.createElement('canvas');
-  flat.width = canvas.width; flat.height = canvas.height;
-  const fctx = flat.getContext('2d');
-  fctx.fillStyle = '#fff';
-  fctx.fillRect(0, 0, flat.width, flat.height);
-  fctx.drawImage(canvas, 0, 0);
+function pdfBarrier() {
+  const { paper } = layout;
+  const doc = new jspdf.jsPDF({ unit: 'mm', format: [paper.w, paper.h], orientation: 'portrait' });
+  doc.addImage(barrierCanvas(paper.w, paper.h).toDataURL('image/png'), 'PNG',
+    0, 0, paper.w, paper.h);
+  doc.save('rejilla.pdf');
+}
 
-  doc.addImage(flat.toDataURL('image/png'), 'PNG', margin, margin + 10, imgW, imgH);
-  doc.save(name);
+// ---------- Navegación entre pasos ----------
+
+function goToStep(n) {
+  currentStep = n;
+  [1, 2, 3].forEach(s => $('step' + s).classList.toggle('hidden', s !== n));
+  document.querySelectorAll('.steps-nav .step-chip').forEach(chip => {
+    const s = +chip.dataset.step;
+    chip.classList.toggle('active', s === n);
+    chip.classList.toggle('done', s < n);
+  });
+  if (n === 2) { defaultSelections(); renderGifBlocks(); }
+  if (n === 3) renderStep3();
+  else stopPreviewLoop();
+}
+
+function restart() {
+  gifs = [];
+  layout = null;
+  stopPreviewLoop();
+  renderGifList();
+  $('loadStatus').textContent = 'Puedes agregar más en cualquier momento.';
+  goToStep(1);
 }
 
 // ---------- Eventos ----------
 
 $('dropzone').addEventListener('click', () => $('fileInput').click());
 $('fileInput').addEventListener('change', e => {
-  if (e.target.files[0]) loadGif(e.target.files[0]);
+  addGifs(e.target.files);
+  e.target.value = '';
 });
 $('dropzone').addEventListener('dragover', e => {
   e.preventDefault();
@@ -482,24 +729,25 @@ $('dropzone').addEventListener('dragleave', () => $('dropzone').classList.remove
 $('dropzone').addEventListener('drop', e => {
   e.preventDefault();
   $('dropzone').classList.remove('over');
-  const f = e.dataTransfer.files[0];
-  if (f && f.type === 'image/gif') loadGif(f);
+  addGifs(e.dataTransfer.files);
 });
 
-$('maxFrames').addEventListener('change', () => {
-  const max = getMaxFrames();
-  $('maxFrames').value = max;
-  if (selection.length > max) selection = selection.slice(0, max);
-  updateGridUI();
+$('next1').addEventListener('click', () => goToStep(2));
+$('prev2').addEventListener('click', () => goToStep(1));
+$('next2').addEventListener('click', () => goToStep(3));
+$('prev3').addEventListener('click', () => goToStep(2));
+document.querySelectorAll('[data-restart]').forEach(b => b.addEventListener('click', restart));
+
+$('paperSelect').addEventListener('change', () => {
+  $('customSize').classList.toggle('hidden', $('paperSelect').value !== 'custom');
+  if (currentStep === 3) renderStep3();
 });
-$('autoSelectBtn').addEventListener('click', autoSelect);
-$('generateBtn').addEventListener('click', generate);
-$('dlKinegram').addEventListener('click', () => download($('outCanvas'), 'kinegrama.png'));
-$('dlBarrier').addEventListener('click', () => download($('barrierCanvas'), 'rejilla.png'));
-$('pdfKinegram').addEventListener('click', () =>
-  downloadPdf($('outCanvas'), 'kinegrama.pdf', 'Kinegrama - imprimir en papel'));
-$('pdfBarrier').addEventListener('click', () =>
-  downloadPdf($('barrierCanvas'), 'rejilla.pdf', 'Rejilla - imprimir en acetato/transparencia'));
+$('customW').addEventListener('change', () => currentStep === 3 && renderStep3());
+$('customH').addEventListener('change', () => currentStep === 3 && renderStep3());
+$('stripWidth').addEventListener('change', () => currentStep === 3 && renderStep3());
+
+$('pdfKinegrams').addEventListener('click', pdfKinegrams);
+$('pdfBarrier').addEventListener('click', pdfBarrier);
 </script>
 </body>
 </html>

@@ -86,7 +86,7 @@
     padding: 8px; width: 150px; background: var(--bg);
     display: flex; flex-direction: column; gap: 6px;
   }
-  .gif-item canvas { width: 100%; height: auto; border-radius: 4px; background: #000; }
+  .gif-item img { width: 100%; height: auto; border-radius: 4px; background: #000; display: block; }
   .gif-item .name { font-size: .75rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .gif-item .meta { font-size: .72rem; color: var(--muted); }
   .gif-item button { padding: 3px 8px; font-size: .75rem; }
@@ -353,6 +353,7 @@ async function addGifs(files) {
         w: canvases[0].width,
         h: canvases[0].height,
         selection: [],
+        url: URL.createObjectURL(file),   // para miniatura animada nativa
       });
     } catch (err) {
       $('loadStatus').textContent = 'Error: ' + err.message;
@@ -372,11 +373,9 @@ function renderGifList() {
     const item = document.createElement('div');
     item.className = 'gif-item';
 
-    const thumb = document.createElement('canvas');
-    const scale = Math.min(1, 140 / g.w);
-    thumb.width = Math.round(g.w * scale);
-    thumb.height = Math.round(g.h * scale);
-    thumb.getContext('2d').drawImage(g.frames[0], 0, 0, thumb.width, thumb.height);
+    const thumb = document.createElement('img');
+    thumb.src = g.url;
+    thumb.alt = g.name;
 
     const name = document.createElement('div');
     name.className = 'name';
@@ -391,6 +390,7 @@ function renderGifList() {
     del.className = 'danger';
     del.textContent = 'Quitar';
     del.addEventListener('click', () => {
+      URL.revokeObjectURL(g.url);
       gifs.splice(i, 1);
       renderGifList();
     });
@@ -841,6 +841,7 @@ function goToStep(n) {
 }
 
 function restart() {
+  gifs.forEach(g => URL.revokeObjectURL(g.url));
   gifs = [];
   layout = null;
   stopPreviewLoop();

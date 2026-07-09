@@ -663,8 +663,10 @@ function renderStep3() {
 }
 
 // Dibuja una imagen en su caja sobre la hoja, rotándola 90° si aplica.
+// Posición redondeada a px enteros para que la rejilla del preview
+// quede perfectamente alineada con las columnas del entrelazado.
 function drawPlaced(ctx, img, p, ppm) {
-  const x = p.dxmm * ppm, y = p.dymm * ppm;
+  const x = Math.round(p.dxmm * ppm), y = Math.round(p.dymm * ppm);
   const w = p.wmm * ppm, h = p.hmm * ppm;
   if (p.rotated) {
     ctx.save();
@@ -696,12 +698,22 @@ function renderPage(canvas, p, ppm, offsetMm) {
     const sctx = s.getContext('2d');
     sctx.drawImage(p.native, 0, 0);
 
+    // Fase anclada al borde de la imagen (no al de la hoja): cada ranura cae
+    // exactamente sobre una columna del entrelazado. El patrón es periódico,
+    // así que el ciclo es infinito y sin salto al reiniciar; la dirección
+    // reproduce los frames en su orden original. En imágenes rotadas las
+    // franjas van horizontales y se desplazan en vertical.
     const period = N * strip;
-    const offPx = ((Math.round(offsetMm / mmpp) % period) + period) % period;
+    const offPx = Math.round(offsetMm / mmpp);
+    const vertical = !p.rotated;
+    const len = vertical ? s.width : s.height;
+    const anchorPx = Math.round((vertical ? p.dxmm : p.dymm) / mmpp);
+    const first = (((anchorPx + offPx) % period) + period) % period - period;
     sctx.fillStyle = '#000';
-    for (let x = -offPx; x < s.width; x += strip) {
-      if (Math.round((x + offPx) / strip) % N !== 0) {
-        sctx.fillRect(x, 0, strip, s.height);
+    for (let v = first, i = 0; v < len; v += strip, i++) {
+      if (i % N !== 0) {
+        if (vertical) sctx.fillRect(v, 0, strip, s.height);
+        else sctx.fillRect(0, v, s.width, strip);
       }
     }
     ctx.fillStyle = '#fff';

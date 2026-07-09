@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generador de Kinegramas</title>
+<style>
+  :root {
+    --bg: #14161a;
+    --panel: #1e2128;
+    --border: #33383f;
+    --text: #e8eaed;
+    --muted: #9aa0a6;
+    --accent: #4f8cff;
+    --accent-dim: #2b4a80;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: .9rem; margin-bottom: 20px; }
+  section {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  section h2 { font-size: 1rem; margin: 0 0 12px; }
+  .hidden { display: none; }
+
+  /* Zona de carga */
+  #dropzone {
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    padding: 36px;
+    text-align: center;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+  }
+  #dropzone.over { border-color: var(--accent); background: #1a2436; }
+  #dropzone strong { color: var(--text); }
+
+  /* Controles */
+  .controls { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .controls label { font-size: .85rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  input[type=number] {
+    width: 64px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 8px;
+  }
+  button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: .9rem;
+    cursor: pointer;
+  }
+  button:disabled { background: var(--accent-dim); cursor: not-allowed; }
+  button.secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
+  .status { font-size: .85rem; color: var(--muted); }
+
+  /* Grid de frames */
+  #framesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .frame-card {
+    position: relative;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+  }
+  .frame-card canvas { display: block; width: 100%; height: auto; }
+  .frame-card .idx {
+    position: absolute; top: 4px; left: 6px;
+    font-size: .75rem; color: #fff;
+    background: rgba(0,0,0,.6);
+    padding: 1px 6px; border-radius: 4px;
+  }
+  .frame-card .order {
+    position: absolute; top: 4px; right: 6px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    font-size: .8rem; font-weight: 700;
+    display: none; align-items: center; justify-content: center;
+  }
+  .frame-card.selected { border-color: var(--accent); }
+  .frame-card.selected .order { display: flex; }
+
+  /* Resultado */
+  .result-wrap { position: relative; display: inline-block; max-width: 100%; overflow: hidden; }
+  #barrierOverlay {
+    position: absolute; top: 0; left: 0; pointer-events: none;
+    background: transparent; border: none; border-radius: 0; max-width: none;
+  }
+  .result-canvases { display: flex; flex-wrap: wrap; gap: 24px; }
+  .result-block h3 { font-size: .9rem; margin: 0 0 8px; color: var(--muted); }
+  .result-block canvas { max-width: 100%; border: 1px solid var(--border); border-radius: 6px; background: #fff; }
+  input[type=range] { vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<h1>Generador de Kinegramas</h1>
+<p class="sub">Carga un GIF, elige los frames y genera la imagen entrelazada + la rejilla para animarla.</p>
+
+<!-- 1. Carga -->
+<section>
+  <h2>1. Cargar GIF</h2>
+  <div id="dropzone">
+    <strong>Haz clic o arrastra un GIF aquí</strong><br>
+    <span id="loadStatus">Se extraerán todos los frames automáticamente.</span>
+  </div>
+  <input type="file" id="fileInput" accept="image/gif" class="hidden">
+</section>
+
+<!-- 2. Selección de frames -->
+<section id="selectSection" class="hidden">
+  <h2>2. Seleccionar frames</h2>
+  <div class="controls">
+    <label>Frames a usar (recomendado 4):
+      <input type="number" id="maxFrames" min="2" max="12" value="4">
+    </label>
+    <button class="secondary" id="autoSelectBtn">Auto-seleccionar distribuidos</button>
+    <span class="status" id="selStatus"></span>
+  </div>
+  <div id="framesGrid"></div>
+  <div class="controls" style="margin-top:14px">
+    <label>Ancho de franja (px):
+      <input type="number" id="stripWidth" min="1" max="20" value="3">
+    </label>
+    <button id="generateBtn">Generar kinegrama</button>
+  </div>
+</section>
+
+<!-- 3. Resultado -->
+<section id="resultSection" class="hidden">
+  <h2>3. Resultado</h2>
+  <div class="controls" style="margin-bottom:12px">
+    <label><input type="checkbox" id="previewToggle" checked> Vista previa animada (rejilla en movimiento)</label>
+    <label>Velocidad: <input type="range" id="previewSpeed" min="1" max="60" value="15"></label>
+    <button id="pdfKinegram">PDF kinegrama</button>
+    <button id="pdfBarrier">PDF rejilla</button>
+    <button class="secondary" id="dlKinegram">PNG kinegrama</button>
+    <button class="secondary" id="dlBarrier">PNG rejilla</button>
+  </div>
+  <div class="result-canvases">
+    <div class="result-block">
+      <h3>Kinegrama (imprímelo en papel)</h3>
+      <div class="result-wrap">
+        <canvas id="outCanvas"></canvas>
+        <canvas id="barrierOverlay"></canvas>
+      </div>
+    </div>
+    <div class="result-block">
+      <h3>Rejilla (imprímela en acetato/transparencia)</h3>
+      <canvas id="barrierCanvas"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- Decodificador GIF de respaldo para navegadores sin ImageDecoder -->
+<script src="https://unpkg.com/gifuct-js@2.1.2/dist/gifuct-js.min.js"></script>
+<!-- Generación de PDFs para impresión -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+'use strict';
+
+const $ = id => document.getElementById(id);
+
+let frames = [];        // [{canvas, imageData}]
+let gifW = 0, gifH = 0;
+let selection = [];     // índices de frames en orden de selección
+let animId = null;
+
+// ---------- Decodificación ----------
+
+async function decodeWithImageDecoder(buf) {
+  const decoder = new ImageDecoder({ data: buf, type: 'image/gif' });
+  await decoder.tracks.ready;
+  await decoder.completed;
+  const count = decoder.tracks.selectedTrack.frameCount;
+  const out = [];
+  for (let i = 0; i < count; i++) {
+    const { image } = await decoder.decode({ frameIndex: i });
+    const c = document.createElement('canvas');
+    c.width = image.displayWidth;
+    c.height = image.displayHeight;
+    c.getContext('2d').drawImage(image, 0, 0);
+    image.close();
+    out.push(c);
+  }
+  decoder.close();
+  return out;
+}
+
+function decodeWithGifuct(buf) {
+  const gif = gifuct.parseGIF(buf);
+  const raw = gifuct.decompressFrames(gif, true);
+  const W = gif.lsd.width, H = gif.lsd.height;
+  const compo = document.createElement('canvas');
+  compo.width = W; compo.height = H;
+  const ctx = compo.getContext('2d', { willReadFrequently: true });
+  const patch = document.createElement('canvas');
+  const patchCtx = patch.getContext('2d');
+  const out = [];
+  let snapshot = null;
+
+  for (const f of raw) {
+    const { top, left, width, height } = f.dims;
+    if (f.disposalType === 3) snapshot = ctx.getImageData(0, 0, W, H);
+    patch.width = width; patch.height = height;
+    patchCtx.putImageData(new ImageData(f.patch, width, height), 0, 0);
+    ctx.drawImage(patch, left, top);
+
+    const frameCanvas = document.createElement('canvas');
+    frameCanvas.width = W; frameCanvas.height = H;
+    frameCanvas.getContext('2d').drawImage(compo, 0, 0);
+    out.push(frameCanvas);
+
+    if (f.disposalType === 2) ctx.clearRect(left, top, width, height);
+    else if (f.disposalType === 3 && snapshot) ctx.putImageData(snapshot, 0, 0);
+  }
+  return out;
+}
+
+async function loadGif(file) {
+  $('loadStatus').textContent = 'Decodificando…';
+  try {
+    const buf = await file.arrayBuffer();
+    const canvases = ('ImageDecoder' in window)
+      ? await decodeWithImageDecoder(buf)
+      : decodeWithGifuct(buf);
+
+    if (canvases.length < 2) throw new Error('El GIF solo tiene 1 frame; se necesitan al menos 2.');
+
+    gifW = canvases[0].width;
+    gifH = canvases[0].height;
+    frames = canvases.map(c => ({ canvas: c }));
+
+    $('loadStatus').textContent = `${file.name} — ${frames.length} frames de ${gifW}×${gifH}px. Puedes cargar otro GIF cuando quieras.`;
+    $('selectSection').classList.remove('hidden');
+    $('resultSection').classList.add('hidden');
+    renderFramesGrid();
+    autoSelect();
+  } catch (err) {
+    $('loadStatus').textContent = 'Error: ' + err.message;
+  }
+}
+
+// ---------- Selección ----------
+
+function renderFramesGrid() {
+  const grid = $('framesGrid');
+  grid.innerHTML = '';
+  frames.forEach((f, i) => {
+    const card = document.createElement('div');
+    card.className = 'frame-card';
+    card.dataset.idx = i;
+
+    const thumb = document.createElement('canvas');
+    const scale = Math.min(1, 160 / f.canvas.width);
+    thumb.width = Math.round(f.canvas.width * scale);
+    thumb.height = Math.round(f.canvas.height * scale);
+    thumb.getContext('2d').drawImage(f.canvas, 0, 0, thumb.width, thumb.height);
+
+    const idx = document.createElement('span');
+    idx.className = 'idx';
+    idx.textContent = '#' + (i + 1);
+
+    const order = document.createElement('span');
+    order.className = 'order';
+
+    card.append(thumb, idx, order);
+    card.addEventListener('click', () => toggleFrame(i));
+    grid.appendChild(card);
+  });
+  updateGridUI();
+}
+
+function toggleFrame(i) {
+  const pos = selection.indexOf(i);
+  if (pos >= 0) {
+    selection.splice(pos, 1);
+  } else {
+    const max = getMaxFrames();
+    if (selection.length >= max) {
+      $('selStatus').textContent = `Ya hay ${max} frames seleccionados; deselecciona uno o sube el límite.`;
+      return;
+    }
+    selection.push(i);
+  }
+  updateGridUI();
+}
+
+function getMaxFrames() {
+  const n = parseInt($('maxFrames').value, 10);
+  return Math.min(Math.max(isNaN(n) ? 4 : n, 2), 12);
+}
+
+function autoSelect() {
+  const max = Math.min(getMaxFrames(), frames.length);
+  selection = [];
+  for (let k = 0; k < max; k++) {
+    selection.push(Math.floor(k * frames.length / max));
+  }
+  updateGridUI();
+}
+
+function updateGridUI() {
+  document.querySelectorAll('.frame-card').forEach(card => {
+    const i = parseInt(card.dataset.idx, 10);
+    const pos = selection.indexOf(i);
+    card.classList.toggle('selected', pos >= 0);
+    card.querySelector('.order').textContent = pos >= 0 ? pos + 1 : '';
+  });
+  const max = getMaxFrames();
+  $('selStatus').textContent = `${selection.length}/${max} frames seleccionados (el número indica el orden en el entrelazado).`;
+  $('generateBtn').disabled = selection.length < 2;
+}
+
+// ---------- Generación ----------
+
+function getStripWidth() {
+  const n = parseInt($('stripWidth').value, 10);
+  return Math.min(Math.max(isNaN(n) ? 2 : n, 1), 20);
+}
+
+function generate() {
+  const N = selection.length;
+  const strip = getStripWidth();
+
+  // Kinegrama: la franja de columnas [x, x+strip) sale del frame (x/strip) mod N,
+  // copiada desde esa MISMA posición x del frame.
+  const out = $('outCanvas');
+  out.width = gifW; out.height = gifH;
+  const ctx = out.getContext('2d');
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, gifW, gifH);
+  for (let x = 0; x < gifW; x += strip) {
+    const w = Math.min(strip, gifW - x);
+    const frame = frames[selection[Math.floor(x / strip) % N]].canvas;
+    ctx.drawImage(frame, x, 0, w, gifH, x, 0, w, gifH);
+  }
+
+  // Rejilla: opaca, con una ranura transparente de `strip` px cada N*strip px.
+  const barrier = $('barrierCanvas');
+  barrier.width = gifW; barrier.height = gifH;
+  const bctx = barrier.getContext('2d');
+  bctx.fillStyle = '#000';
+  for (let x = 0; x < gifW; x += strip) {
+    if (Math.floor(x / strip) % N !== 0) {
+      bctx.fillRect(x, 0, Math.min(strip, gifW - x), gifH);
+    }
+  }
+
+  $('resultSection').classList.remove('hidden');
+  setupPreview();
+  $('resultSection').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ---------- Vista previa animada ----------
+
+function setupPreview() {
+  if (animId) cancelAnimationFrame(animId);
+  const overlay = $('barrierOverlay');
+  const N = selection.length;
+  const strip = getStripWidth();
+  const period = N * strip;
+
+  // La superposición es más ancha que la imagen para poder desplazarla.
+  overlay.width = gifW + period;
+  overlay.height = gifH;
+  const octx = overlay.getContext('2d');
+  octx.fillStyle = '#000';
+  for (let x = 0; x < overlay.width; x += strip) {
+    if (Math.floor(x / strip) % N !== 0) {
+      octx.fillRect(x, 0, strip, gifH);
+    }
+  }
+
+  const out = $('outCanvas');
+  let offset = 0, last = performance.now();
+  function tick(now) {
+    if ($('previewToggle').checked) {
+      const speed = parseInt($('previewSpeed').value, 10); // px por segundo (de la imagen)
+      offset = (offset + speed * (now - last) / 1000) % period;
+      // El kinegrama puede mostrarse escalado (max-width) y con borde de 1px:
+      // alinea la superposición con el área de contenido real y escala igual.
+      const scale = out.clientWidth / out.width;
+      overlay.style.left = (out.offsetLeft + out.clientLeft) + 'px';
+      overlay.style.top = (out.offsetTop + out.clientTop) + 'px';
+      overlay.style.width = (overlay.width * scale) + 'px';
+      overlay.style.height = out.clientHeight + 'px';
+      overlay.style.transform = `translateX(${-offset * scale}px)`;
+      overlay.style.display = '';
+    } else {
+      overlay.style.display = 'none';
+    }
+    last = now;
+    animId = requestAnimationFrame(tick);
+  }
+  animId = requestAnimationFrame(tick);
+}
+
+// ---------- Descargas ----------
+
+function download(canvas, name) {
+  const a = document.createElement('a');
+  a.href = canvas.toDataURL('image/png');
+  a.download = name;
+  a.click();
+}
+
+// Ambos PDFs usan exactamente las mismas medidas físicas para que,
+// impresos al 100% (sin "ajustar a página"), las franjas coincidan al superponerlos.
+function downloadPdf(canvas, name, title) {
+  const doc = new jspdf.jsPDF({
+    orientation: gifW >= gifH ? 'landscape' : 'portrait',
+    unit: 'mm',
+    format: 'a4',
+  });
+  const pageW = doc.internal.pageSize.getWidth();
+  const pageH = doc.internal.pageSize.getHeight();
+  const margin = 15;
+  const maxW = pageW - margin * 2;
+  const maxH = pageH - margin * 2 - 14; // deja sitio para el encabezado
+  const scale = Math.min(maxW / gifW, maxH / gifH);
+  const imgW = gifW * scale;
+  const imgH = gifH * scale;
+  const strip = getStripWidth();
+
+  doc.setFontSize(12);
+  doc.text(title, margin, margin);
+  doc.setFontSize(9);
+  doc.setTextColor(110);
+  doc.text(
+    `${selection.length} frames | franja: ${strip}px = ${(strip * scale).toFixed(2)}mm | imprimir al 100% (sin escalar)`,
+    margin, margin + 5
+  );
+  // Aplana sobre blanco: la rejilla tiene ranuras transparentes y el PDF no maneja bien el alfa.
+  const flat = document.createElement('canvas');
+  flat.width = canvas.width; flat.height = canvas.height;
+  const fctx = flat.getContext('2d');
+  fctx.fillStyle = '#fff';
+  fctx.fillRect(0, 0, flat.width, flat.height);
+  fctx.drawImage(canvas, 0, 0);
+
+  doc.addImage(flat.toDataURL('image/png'), 'PNG', margin, margin + 10, imgW, imgH);
+  doc.save(name);
+}
+
+// ---------- Eventos ----------
+
+$('dropzone').addEventListener('click', () => $('fileInput').click());
+$('fileInput').addEventListener('change', e => {
+  if (e.target.files[0]) loadGif(e.target.files[0]);
+});
+$('dropzone').addEventListener('dragover', e => {
+  e.preventDefault();
+  $('dropzone').classList.add('over');
+});
+$('dropzone').addEventListener('dragleave', () => $('dropzone').classList.remove('over'));
+$('dropzone').addEventListener('drop', e => {
+  e.preventDefault();
+  $('dropzone').classList.remove('over');
+  const f = e.dataTransfer.files[0];
+  if (f && f.type === 'image/gif') loadGif(f);
+});
+
+$('maxFrames').addEventListener('change', () => {
+  const max = getMaxFrames();
+  $('maxFrames').value = max;
+  if (selection.length > max) selection = selection.slice(0, max);
+  updateGridUI();
+});
+$('autoSelectBtn').addEventListener('click', autoSelect);
+$('generateBtn').addEventListener('click', generate);
+$('dlKinegram').addEventListener('click', () => download($('outCanvas'), 'kinegrama.png'));
+$('dlBarrier').addEventListener('click', () => download($('barrierCanvas'), 'rejilla.png'));
+$('pdfKinegram').addEventListener('click', () =>
+  downloadPdf($('outCanvas'), 'kinegrama.pdf', 'Kinegrama - imprimir en papel'));
+$('pdfBarrier').addEventListener('click', () =>
+  downloadPdf($('barrierCanvas'), 'rejilla.pdf', 'Rejilla - imprimir en acetato/transparencia'));
+</script>
+</body>
+</html>

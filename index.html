@@ -229,7 +229,7 @@
       <label>Ancho de franja (px):
         <input type="number" id="stripWidth" min="1" max="20" value="3">
       </label>
-      <label><input type="checkbox" id="previewToggle"> Mostrar preview animado</label>
+      <label><input type="checkbox" id="previewToggle" checked> Mostrar preview animado</label>
       <label>Velocidad: <input type="range" id="previewSpeed" min="1" max="60" value="15"></label>
       <div class="info-box" id="infoBox"></div>
       <button id="pdfKinegrams">Guardar kinegramas (PDF)</button>
@@ -614,17 +614,26 @@ function renderStep3() {
     c.height = Math.round(paper.h * ppm);
     addPageBlock(c, `Hoja ${i + 1}: ${g.name}` + (info.rotated ? ' (rotada 90°)' : ''), i);
 
-    previewPages.push({
+    const p = {
       canvas: c, ppm,
       img: interlaceGif(g),
-      gif: g,
       pw: paper.w, ph: paper.h,
       rotated: info.rotated,
       dxmm: (paper.w - info.wmm) / 2,
       dymm: (paper.h - info.hmm) / 2,
       wmm: info.wmm, hmm: info.hmm,
       isBarrier: false,
-    });
+    };
+    // Hoja a resolución nativa (1px de canvas = 1px de gif): aquí las franjas
+    // son exactas; el preview compone rejilla encima y reescala.
+    p.native = document.createElement('canvas');
+    p.native.width = Math.round(paper.w / mmpp);
+    p.native.height = Math.round(paper.h / mmpp);
+    const nctx = p.native.getContext('2d');
+    nctx.fillStyle = '#fff';
+    nctx.fillRect(0, 0, p.native.width, p.native.height);
+    drawPlaced(nctx, p.img, p, 1 / mmpp);
+    previewPages.push(p);
   });
 
   // Página de la rejilla
@@ -663,27 +672,39 @@ function drawPlaced(ctx, img, p, ppm) {
   }
 }
 
+let scratchCanvas = null;
+
 function renderPage(canvas, p, ppm, offsetMm) {
   const { N, strip, mmpp } = layout;
   const ctx = canvas.getContext('2d');
-  ctx.fillStyle = '#fff';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.imageSmoothingEnabled = true;
   ctx.imageSmoothingQuality = 'high';
 
   if ($('previewToggle').checked && !p.isBarrier) {
-    // Simula lo que la rejilla revela al deslizarse: el frame visible en este
-    // instante, con crossfade al siguiente (a escala de pantalla las ranuras
-    // reales medirían ~1px y se verían como una mancha oscura).
-    const u = offsetMm / (strip * mmpp);   // desplazamiento en # de franjas
-    const k = ((Math.floor(u) % N) + N) % N;
-    const t = u - Math.floor(u);
-    const sel = p.gif.selection;
-    drawPlaced(ctx, p.gif.frames[sel[k]], p, ppm);
-    ctx.globalAlpha = t;
-    drawPlaced(ctx, p.gif.frames[sel[(k + 1) % N]], p, ppm);
-    ctx.globalAlpha = 1;
+    // Efecto real de impresión: el kinegrama entrelazado con la rejilla
+    // (franjas negras + ranura) deslizándose encima. Se compone a resolución
+    // nativa —donde franja y ranura son píxeles exactos— y se reescala.
+    if (!scratchCanvas) scratchCanvas = document.createElement('canvas');
+    const s = scratchCanvas;
+    if (s.width !== p.native.width) s.width = p.native.width;
+    if (s.height !== p.native.height) s.height = p.native.height;
+    const sctx = s.getContext('2d');
+    sctx.drawImage(p.native, 0, 0);
+
+    const period = N * strip;
+    const offPx = ((Math.round(offsetMm / mmpp) % period) + period) % period;
+    sctx.fillStyle = '#000';
+    for (let x = -offPx; x < s.width; x += strip) {
+      if (Math.round((x + offPx) / strip) % N !== 0) {
+        sctx.fillRect(x, 0, strip, s.height);
+      }
+    }
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(s, 0, 0, canvas.width, canvas.height);
   } else {
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawPlaced(ctx, p.img, p, ppm);
   }
 }

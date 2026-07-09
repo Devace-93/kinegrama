@@ -464,7 +464,12 @@ function toggleFrame(gi, fi) {
   const sel = gifs[gi].selection;
   const pos = sel.indexOf(fi);
   if (pos >= 0) sel.splice(pos, 1);
-  else if (sel.length < maxFramesAllowed()) sel.push(fi);
+  else if (sel.length < maxFramesAllowed()) {
+    // El orden del entrelazado es el orden original del GIF,
+    // sin importar en qué orden se haga clic.
+    sel.push(fi);
+    sel.sort((a, b) => a - b);
+  }
   updateStep2UI();
 }
 

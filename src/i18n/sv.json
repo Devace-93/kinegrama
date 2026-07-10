@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Kinegramgenerator",
+    "subtitle": "Ladda en eller flera GIF:ar, välj bildrutor och generera kinegrammen + det delade gallret."
+  },
+  "steps": { "s1": "Val av GIF", "s2": "Val av bildrutor", "s3": "Papper + förhandsvisning" },
+  "common": { "restart": "Börja om", "prev": "Föregående", "next": "Nästa", "search": "Sök språk…" },
+  "restart": {
+    "title": "Börja om?",
+    "body": "Alla inlästa GIF:ar och deras inställningar tas bort och du återgår till steg 1.",
+    "cancel": "Avbryt"
+  },
+  "step1": {
+    "title": "Ladda GIF:ar",
+    "aboutTitle": "Vad är ett kinegram?",
+    "aboutBody": "Ett kinegram (barriärgaller-animation eller scanimation) är en optisk illusion: bildrutorna i en animation flätas samman som vertikala remsor i en enda utskriven bild. När ett genomskinligt galler med svarta linjer glider över den visar springorna en bildruta i taget och bilden får liv. Det här verktyget genererar båda utskriftsklara delarna: kinegrammen och deras galler.",
+    "dropTitle": "Klicka eller dra en eller flera GIF:ar hit",
+    "dropHint": "Du kan lägga till fler när som helst.",
+    "decoding": "Avkodar…",
+    "loaded": "{{n}} GIF:ar inlästa. Du kan lägga till fler.",
+    "error": "Fel: {{msg}}",
+    "singleFrame": "{{name}}: har bara 1 bildruta",
+    "meta": "{{w}}×{{h}}px · {{n}} bildrutor",
+    "remove": "Ta bort"
+  },
+  "step2": {
+    "title": "Välj bildrutor",
+    "gifTitle": "{{name}} ({{n}} bildrutor)",
+    "statusBase": "Högst {{max}} bildrutor per GIF (GIF:en med minst antal). Klicka för att välja eller ta bort; siffran visar ordningen.",
+    "statusUnequal": "⚠ Alla GIF:ar måste ha SAMMA antal valda bildrutor för att dela galler (nu: {{counts}}).",
+    "statusMin": "Välj minst 2 bildrutor i varje GIF.",
+    "statusOk": "✓ {{n}} bildrutor per kinegram."
+  },
+  "step3": {
+    "title": "Papper och förhandsvisning",
+    "paper": "Pappersstorlek:",
+    "paperCarta": "Letter (215,9 × 279,4 mm)",
+    "paperOficio": "Legal MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Anpassad…",
+    "strip": "Remsbredd (px):",
+    "animate": "Visa animerad förhandsvisning",
+    "speed": "Hastighet:",
+    "infoSheets": "Ark som behövs: {{gifs}} kinegram + 1 galler.",
+    "infoScale": "Gemensam skala: {{mmpp}} mm/px.",
+    "infoStrip": "Remsa: {{strip}} mm · cykel: {{cycle}} mm.",
+    "infoPrint": "Skriv ut allt i 100 % (utan skalning). Samma galler fungerar för alla.",
+    "pdfKinegrams": "Spara kinegram (PDF)",
+    "pdfBarrier": "Spara galler (PDF)",
+    "fullscreen": "⛶ Helskärm",
+    "clickAnySheet": "eller klicka på valfritt ark",
+    "sheetGif": "Ark {{n}}: {{name}}",
+    "rotated": " (roterad 90°)",
+    "sheetBarrier": "Ark {{n}}: galler (OH-film)",
+    "close": "✕ Stäng (Esc)"
+  }
+}

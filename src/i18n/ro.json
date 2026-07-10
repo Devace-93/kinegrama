@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Generator de kinegrame",
+    "subtitle": "Încarcă unul sau mai multe GIF-uri, alege cadrele și generează kinegramele + grila comună."
+  },
+  "steps": { "s1": "Selectare GIF-uri", "s2": "Selectare cadre", "s3": "Hârtie + previzualizare" },
+  "common": { "restart": "Începe din nou", "prev": "Înapoi", "next": "Înainte", "search": "Caută limba…" },
+  "restart": {
+    "title": "Începi din nou?",
+    "body": "Toate GIF-urile încărcate și setările lor vor fi eliminate și vei reveni la pasul 1.",
+    "cancel": "Anulează"
+  },
+  "step1": {
+    "title": "Încarcă GIF-uri",
+    "aboutTitle": "Ce este o kinegramă?",
+    "aboutBody": "O kinegramă (animație cu grilă de bariere sau scanimation) este o iluzie optică: cadrele unei animații sunt împletite în benzi verticale într-o singură imagine tipărită. Când o grilă transparentă cu linii negre alunecă deasupra, fantele dezvăluie câte un cadru pe rând și imaginea prinde viață. Acest instrument generează ambele părți gata de tipărit: kinegramele și grila lor.",
+    "dropTitle": "Dă clic sau trage aici unul sau mai multe GIF-uri",
+    "dropHint": "Poți adăuga mai multe oricând.",
+    "decoding": "Se decodează…",
+    "loaded": "{{n}} GIF-uri încărcate. Poți adăuga mai multe.",
+    "error": "Eroare: {{msg}}",
+    "singleFrame": "{{name}}: are doar 1 cadru",
+    "meta": "{{w}}×{{h}}px · {{n}} cadre",
+    "remove": "Elimină"
+  },
+  "step2": {
+    "title": "Selectează cadrele",
+    "gifTitle": "{{name}} ({{n}} cadre)",
+    "statusBase": "Maximum {{max}} cadre per GIF (GIF-ul cu cele mai puține cadre). Dă clic pentru a selecta sau elimina; numărul indică ordinea.",
+    "statusUnequal": "⚠ Toate GIF-urile trebuie să aibă ACELAȘI număr de cadre selectate pentru a împărți grila (acum: {{counts}}).",
+    "statusMin": "Selectează cel puțin 2 cadre în fiecare GIF.",
+    "statusOk": "✓ {{n}} cadre per kinegramă."
+  },
+  "step3": {
+    "title": "Hârtie și previzualizare",
+    "paper": "Dimensiunea hârtiei:",
+    "paperCarta": "Letter (215,9 × 279,4 mm)",
+    "paperOficio": "Legal MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Personalizat…",
+    "strip": "Lățimea benzii (px):",
+    "animate": "Afișează previzualizarea animată",
+    "speed": "Viteză:",
+    "infoSheets": "Foi necesare: {{gifs}} kinegramă/e + 1 grilă.",
+    "infoScale": "Scară comună: {{mmpp}} mm/px.",
+    "infoStrip": "Bandă: {{strip}} mm · ciclu: {{cycle}} mm.",
+    "infoPrint": "Tipărește totul la 100% (fără scalare). Aceeași grilă funcționează pentru toate.",
+    "pdfKinegrams": "Salvează kinegramele (PDF)",
+    "pdfBarrier": "Salvează grila (PDF)",
+    "fullscreen": "⛶ Ecran complet",
+    "clickAnySheet": "sau dă clic pe orice foaie",
+    "sheetGif": "Foaia {{n}}: {{name}}",
+    "rotated": " (rotită 90°)",
+    "sheetBarrier": "Foaia {{n}}: grilă (folie transparentă)",
+    "close": "✕ Închide (Esc)"
+  }
+}

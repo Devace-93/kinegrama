@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Generátor kinegramů",
+    "subtitle": "Nahrajte jeden nebo více GIFů, vyberte snímky a vygenerujte kinegramy + společnou mřížku."
+  },
+  "steps": { "s1": "Výběr GIFů", "s2": "Výběr snímků", "s3": "Papír + náhled" },
+  "common": { "restart": "Začít znovu", "prev": "Zpět", "next": "Další", "search": "Hledat jazyk…" },
+  "restart": {
+    "title": "Začít znovu?",
+    "body": "Všechny nahrané GIFy a jejich nastavení budou odstraněny a vrátíte se ke kroku 1.",
+    "cancel": "Zrušit"
+  },
+  "step1": {
+    "title": "Nahrát GIFy",
+    "aboutTitle": "Co je kinegram?",
+    "aboutBody": "Kinegram (mřížková animace, scanimation) je optická iluze: snímky animace se proplétají do svislých pruhů v jednom vytištěném obrázku. Když po něm klouže průhledná mřížka s černými linkami, štěrbiny odhalují vždy jeden snímek a obraz ožívá. Tento nástroj vytvoří obě části připravené k tisku: kinegramy a jejich mřížku.",
+    "dropTitle": "Klikněte nebo sem přetáhněte jeden či více GIFů",
+    "dropHint": "Kdykoli můžete přidat další.",
+    "decoding": "Dekódování…",
+    "loaded": "Nahráno GIFů: {{n}}. Můžete přidat další.",
+    "error": "Chyba: {{msg}}",
+    "singleFrame": "{{name}}: má jen 1 snímek",
+    "meta": "{{w}}×{{h}}px · {{n}} snímků",
+    "remove": "Odebrat"
+  },
+  "step2": {
+    "title": "Vybrat snímky",
+    "gifTitle": "{{name}} ({{n}} snímků)",
+    "statusBase": "Nejvýše {{max}} snímků na GIF (podle GIFu s nejméně snímky). Klikáním vybíráte nebo odebíráte; číslo udává pořadí.",
+    "statusUnequal": "⚠ Všechny GIFy musí mít STEJNÝ počet vybraných snímků, aby sdílely mřížku (nyní: {{counts}}).",
+    "statusMin": "V každém GIFu vyberte alespoň 2 snímky.",
+    "statusOk": "✓ {{n}} snímků na kinegram."
+  },
+  "step3": {
+    "title": "Papír a náhled",
+    "paper": "Velikost papíru:",
+    "paperCarta": "Letter (215,9 × 279,4 mm)",
+    "paperOficio": "Legal MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Vlastní…",
+    "strip": "Šířka pruhu (px):",
+    "animate": "Zobrazit animovaný náhled",
+    "speed": "Rychlost:",
+    "infoSheets": "Potřebné listy: {{gifs}} kinegram(y) + 1 mřížka.",
+    "infoScale": "Společné měřítko: {{mmpp}} mm/px.",
+    "infoStrip": "Pruh: {{strip}} mm · cyklus: {{cycle}} mm.",
+    "infoPrint": "Vše tiskněte na 100 % (bez změny měřítka). Stejná mřížka funguje pro všechny.",
+    "pdfKinegrams": "Uložit kinegramy (PDF)",
+    "pdfBarrier": "Uložit mřížku (PDF)",
+    "fullscreen": "⛶ Celá obrazovka",
+    "clickAnySheet": "nebo klikněte na libovolný list",
+    "sheetGif": "List {{n}}: {{name}}",
+    "rotated": " (otočeno o 90°)",
+    "sheetBarrier": "List {{n}}: mřížka (fólie)",
+    "close": "✕ Zavřít (Esc)"
+  }
+}

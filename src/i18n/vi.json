@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Trình tạo kinegram",
+    "subtitle": "Tải lên một hoặc nhiều ảnh GIF, chọn khung hình và tạo kinegram + lưới chung."
+  },
+  "steps": { "s1": "Chọn GIF", "s2": "Chọn khung hình", "s3": "Giấy + xem trước" },
+  "common": { "restart": "Bắt đầu lại", "prev": "Quay lại", "next": "Tiếp theo", "search": "Tìm ngôn ngữ…" },
+  "restart": {
+    "title": "Bắt đầu lại?",
+    "body": "Tất cả GIF đã tải và cài đặt của chúng sẽ bị xóa, và bạn sẽ quay về bước 1.",
+    "cancel": "Hủy"
+  },
+  "step1": {
+    "title": "Tải GIF",
+    "aboutTitle": "Kinegram là gì?",
+    "aboutBody": "Kinegram (hoạt hình lưới chắn, hay scanimation) là một ảo ảnh thị giác: các khung hình của một hoạt hình được đan xen thành các dải dọc trong một hình ảnh in duy nhất. Khi trượt một tấm lưới trong suốt có các đường kẻ đen lên trên, các khe hở lần lượt hiện ra từng khung hình và bức ảnh trở nên chuyển động. Công cụ này tạo ra cả hai phần sẵn sàng để in: các kinegram và tấm lưới của chúng.",
+    "dropTitle": "Nhấp hoặc kéo một hoặc nhiều GIF vào đây",
+    "dropHint": "Bạn có thể thêm bất cứ lúc nào.",
+    "decoding": "Đang giải mã…",
+    "loaded": "Đã tải {{n}} GIF. Bạn có thể thêm nữa.",
+    "error": "Lỗi: {{msg}}",
+    "singleFrame": "{{name}}: chỉ có 1 khung hình",
+    "meta": "{{w}}×{{h}}px · {{n}} khung hình",
+    "remove": "Xóa"
+  },
+  "step2": {
+    "title": "Chọn khung hình",
+    "gifTitle": "{{name}} ({{n}} khung hình)",
+    "statusBase": "Tối đa {{max}} khung hình mỗi GIF (theo GIF có ít khung hình nhất). Nhấp để chọn hoặc bỏ chọn; con số cho biết thứ tự.",
+    "statusUnequal": "⚠ Tất cả GIF phải chọn CÙNG số lượng khung hình để dùng chung lưới (hiện tại: {{counts}}).",
+    "statusMin": "Chọn ít nhất 2 khung hình trong mỗi GIF.",
+    "statusOk": "✓ {{n}} khung hình mỗi kinegram."
+  },
+  "step3": {
+    "title": "Giấy và xem trước",
+    "paper": "Khổ giấy:",
+    "paperCarta": "Letter (215,9 × 279,4 mm)",
+    "paperOficio": "Legal MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Tùy chỉnh…",
+    "strip": "Độ rộng dải (px):",
+    "animate": "Hiện xem trước động",
+    "speed": "Tốc độ:",
+    "infoSheets": "Số tờ cần in: {{gifs}} kinegram + 1 lưới.",
+    "infoScale": "Tỷ lệ chung: {{mmpp}} mm/px.",
+    "infoStrip": "Dải: {{strip}} mm · chu kỳ: {{cycle}} mm.",
+    "infoPrint": "In tất cả ở 100% (không co giãn). Cùng một tấm lưới dùng được cho tất cả.",
+    "pdfKinegrams": "Lưu kinegram (PDF)",
+    "pdfBarrier": "Lưu lưới (PDF)",
+    "fullscreen": "⛶ Toàn màn hình",
+    "clickAnySheet": "hoặc nhấp vào tờ bất kỳ",
+    "sheetGif": "Tờ {{n}}: {{name}}",
+    "rotated": " (xoay 90°)",
+    "sheetBarrier": "Tờ {{n}}: lưới (phim trong)",
+    "close": "✕ Đóng (Esc)"
+  }
+}

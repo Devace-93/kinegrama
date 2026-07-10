@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Generator kinegramów",
+    "subtitle": "Wczytaj jeden lub więcej GIF-ów, wybierz klatki i wygeneruj kinegramy + wspólną kratkę."
+  },
+  "steps": { "s1": "Wybór GIF-ów", "s2": "Wybór klatek", "s3": "Papier + podgląd" },
+  "common": { "restart": "Zacznij od nowa", "prev": "Wstecz", "next": "Dalej", "search": "Szukaj języka…" },
+  "restart": {
+    "title": "Zacząć od nowa?",
+    "body": "Wszystkie wczytane GIF-y i ich ustawienia zostaną usunięte, a Ty wrócisz do kroku 1.",
+    "cancel": "Anuluj"
+  },
+  "step1": {
+    "title": "Wczytaj GIF-y",
+    "aboutTitle": "Czym jest kinegram?",
+    "aboutBody": "Kinegram (animacja rastrowa, scanimation) to złudzenie optyczne: klatki animacji są przeplatane pionowymi paskami w jednym wydrukowanym obrazie. Gdy przesuwa się po nim przezroczysta kratka z czarnymi liniami, szczeliny odsłaniają po jednej klatce i obraz ożywa. To narzędzie generuje obie części gotowe do druku: kinegramy i ich kratkę.",
+    "dropTitle": "Kliknij lub przeciągnij tutaj jeden lub więcej GIF-ów",
+    "dropHint": "Możesz dodać więcej w dowolnym momencie.",
+    "decoding": "Dekodowanie…",
+    "loaded": "Wczytano {{n}} GIF(-y/-ów). Możesz dodać więcej.",
+    "error": "Błąd: {{msg}}",
+    "singleFrame": "{{name}}: ma tylko 1 klatkę",
+    "meta": "{{w}}×{{h}}px · {{n}} klatek",
+    "remove": "Usuń"
+  },
+  "step2": {
+    "title": "Wybierz klatki",
+    "gifTitle": "{{name}} ({{n}} klatek)",
+    "statusBase": "Maksymalnie {{max}} klatek na GIF (GIF z najmniejszą liczbą klatek). Kliknij, aby zaznaczyć lub usunąć; liczba oznacza kolejność.",
+    "statusUnequal": "⚠ Wszystkie GIF-y muszą mieć TĘ SAMĄ liczbę wybranych klatek, aby dzielić kratkę (teraz: {{counts}}).",
+    "statusMin": "Wybierz co najmniej 2 klatki w każdym GIF-ie.",
+    "statusOk": "✓ {{n}} klatek na kinegram."
+  },
+  "step3": {
+    "title": "Papier i podgląd",
+    "paper": "Rozmiar papieru:",
+    "paperCarta": "Letter (215,9 × 279,4 mm)",
+    "paperOficio": "Legal MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Niestandardowy…",
+    "strip": "Szerokość paska (px):",
+    "animate": "Pokaż animowany podgląd",
+    "speed": "Prędkość:",
+    "infoSheets": "Potrzebne arkusze: {{gifs}} kinegram(y) + 1 kratka.",
+    "infoScale": "Wspólna skala: {{mmpp}} mm/px.",
+    "infoStrip": "Pasek: {{strip}} mm · cykl: {{cycle}} mm.",
+    "infoPrint": "Drukuj wszystko w 100% (bez skalowania). Ta sama kratka pasuje do wszystkich.",
+    "pdfKinegrams": "Zapisz kinegramy (PDF)",
+    "pdfBarrier": "Zapisz kratkę (PDF)",
+    "fullscreen": "⛶ Pełny ekran",
+    "clickAnySheet": "lub kliknij dowolny arkusz",
+    "sheetGif": "Arkusz {{n}}: {{name}}",
+    "rotated": " (obrócony o 90°)",
+    "sheetBarrier": "Arkusz {{n}}: kratka (folia)",
+    "close": "✕ Zamknij (Esc)"
+  }
+}

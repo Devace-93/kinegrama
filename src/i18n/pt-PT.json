@@ -1,0 +1,31 @@
+{
+  "app": { "subtitle": "Carregue um ou mais GIFs, escolha os fotogramas e gere os kinegramas + a grelha partilhada." },
+  "steps": { "s2": "Seleção de fotogramas", "s3": "Papel + pré-visualização" },
+  "common": { "next": "Seguinte" },
+  "restart": { "body": "Todos os GIFs carregados e as suas definições serão removidos, e voltará ao passo 1." },
+  "step1": {
+    "dropHint": "Pode adicionar mais em qualquer altura.",
+    "loaded": "{{n}} GIF(s) carregado(s). Pode adicionar mais.",
+    "singleFrame": "{{name}}: tem apenas 1 fotograma",
+    "meta": "{{w}}×{{h}}px · {{n}} fotogramas"
+  },
+  "step2": {
+    "title": "Selecionar fotogramas",
+    "gifTitle": "{{name}} ({{n}} fotogramas)",
+    "statusBase": "Máximo de {{max}} fotogramas por GIF (o GIF com menos fotogramas). Clique para selecionar ou remover; o número indica a ordem.",
+    "statusUnequal": "⚠ Todos os GIFs devem ter o MESMO número de fotogramas selecionados para partilhar a grelha (agora: {{counts}}).",
+    "statusMin": "Selecione pelo menos 2 fotogramas em cada GIF.",
+    "statusOk": "✓ {{n}} fotogramas por kinegrama."
+  },
+  "step3": {
+    "title": "Papel e pré-visualização",
+    "animate": "Mostrar pré-visualização animada",
+    "infoSheets": "Folhas necessárias: {{gifs}} kinegrama(s) + 1 grelha.",
+    "infoPrint": "Imprima tudo a 100% (sem redimensionar). A mesma grelha serve para todos.",
+    "pdfKinegrams": "Guardar kinegramas (PDF)",
+    "pdfBarrier": "Guardar grelha (PDF)",
+    "fullscreen": "⛶ Ecrã inteiro",
+    "sheetBarrier": "Folha {{n}}: grelha (transparência)",
+    "close": "✕ Fechar (Esc)"
+  }
+}

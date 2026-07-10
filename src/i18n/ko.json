@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "키네그램 생성기",
+    "subtitle": "GIF를 불러와 프레임을 선택하고, 키네그램과 공용 배리어 그리드를 생성하세요."
+  },
+  "steps": { "s1": "GIF 선택", "s2": "프레임 선택", "s3": "용지 + 미리보기" },
+  "common": { "restart": "처음부터 다시", "prev": "이전", "next": "다음", "search": "언어 검색…" },
+  "restart": {
+    "title": "처음부터 다시 시작할까요?",
+    "body": "불러온 GIF와 설정이 모두 삭제되고 1단계로 돌아갑니다.",
+    "cancel": "취소"
+  },
+  "step1": {
+    "title": "GIF 불러오기",
+    "aboutTitle": "키네그램이란?",
+    "aboutBody": "키네그램(배리어 그리드 애니메이션, 스캐니메이션)은 착시 현상을 이용합니다. 애니메이션의 프레임들을 세로 줄무늬로 교차시켜 한 장의 인쇄 이미지로 만듭니다. 검은 줄이 그려진 투명 그리드를 그 위로 밀면 틈새로 한 번에 한 프레임씩 보이면서 그림이 움직입니다. 이 도구는 인쇄용 두 부분(키네그램과 그리드)을 생성합니다.",
+    "dropTitle": "클릭하거나 GIF를 여기로 드래그하세요",
+    "dropHint": "언제든지 더 추가할 수 있습니다.",
+    "decoding": "디코딩 중…",
+    "loaded": "GIF {{n}}개를 불러왔습니다. 더 추가할 수 있습니다.",
+    "error": "오류: {{msg}}",
+    "singleFrame": "{{name}}: 프레임이 1개뿐입니다",
+    "meta": "{{w}}×{{h}}px · {{n}} 프레임",
+    "remove": "제거"
+  },
+  "step2": {
+    "title": "프레임 선택",
+    "gifTitle": "{{name}} ({{n}} 프레임)",
+    "statusBase": "GIF당 최대 {{max}} 프레임(프레임이 가장 적은 GIF 기준). 클릭하여 선택/해제하세요. 숫자는 순서입니다.",
+    "statusUnequal": "⚠ 그리드를 공유하려면 모든 GIF에서 같은 수의 프레임을 선택해야 합니다 (현재: {{counts}}).",
+    "statusMin": "각 GIF에서 프레임을 2개 이상 선택하세요.",
+    "statusOk": "✓ 키네그램당 {{n}} 프레임."
+  },
+  "step3": {
+    "title": "용지와 미리보기",
+    "paper": "용지 크기:",
+    "paperCarta": "레터 (215.9 × 279.4 mm)",
+    "paperOficio": "리갈 MX (215.9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "사용자 지정…",
+    "strip": "줄무늬 너비 (px):",
+    "animate": "애니메이션 미리보기 표시",
+    "speed": "속도:",
+    "infoSheets": "필요한 용지: 키네그램 {{gifs}}장 + 그리드 1장.",
+    "infoScale": "공통 배율: {{mmpp}} mm/px.",
+    "infoStrip": "줄무늬: {{strip}} mm · 주기: {{cycle}} mm.",
+    "infoPrint": "모두 100%(크기 조정 없이)로 인쇄하세요. 같은 그리드를 모두에 사용할 수 있습니다.",
+    "pdfKinegrams": "키네그램 저장 (PDF)",
+    "pdfBarrier": "그리드 저장 (PDF)",
+    "fullscreen": "⛶ 전체 화면",
+    "clickAnySheet": "또는 아무 용지나 클릭하세요",
+    "sheetGif": "{{n}}번 용지: {{name}}",
+    "rotated": " (90° 회전)",
+    "sheetBarrier": "{{n}}번 용지: 그리드 (투명 필름)",
+    "close": "✕ 닫기 (Esc)"
+  }
+}

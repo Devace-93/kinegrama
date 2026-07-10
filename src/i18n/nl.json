@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Kinegram-generator",
+    "subtitle": "Laad een of meer GIF's, kies de frames en genereer de kinegrammen + het gedeelde raster."
+  },
+  "steps": { "s1": "GIF-selectie", "s2": "Frameselectie", "s3": "Papier + voorbeeld" },
+  "common": { "restart": "Opnieuw beginnen", "prev": "Vorige", "next": "Volgende", "search": "Taal zoeken…" },
+  "restart": {
+    "title": "Opnieuw beginnen?",
+    "body": "Alle geladen GIF's en hun instellingen worden verwijderd en je gaat terug naar stap 1.",
+    "cancel": "Annuleren"
+  },
+  "step1": {
+    "title": "GIF's laden",
+    "aboutTitle": "Wat is een kinegram?",
+    "aboutBody": "Een kinegram (barrier-grid-animatie of scanimation) is een optische illusie: de frames van een animatie worden als verticale stroken verweven in één afgedrukte afbeelding. Schuif je er een transparant raster met zwarte lijnen overheen, dan tonen de spleten telkens één frame en komt het beeld tot leven. Deze tool genereert beide printklare delen: de kinegrammen en hun raster.",
+    "dropTitle": "Klik of sleep een of meer GIF's hierheen",
+    "dropHint": "Je kunt er altijd meer toevoegen.",
+    "decoding": "Decoderen…",
+    "loaded": "{{n}} GIF('s) geladen. Je kunt er meer toevoegen.",
+    "error": "Fout: {{msg}}",
+    "singleFrame": "{{name}}: heeft maar 1 frame",
+    "meta": "{{w}}×{{h}}px · {{n}} frames",
+    "remove": "Verwijderen"
+  },
+  "step2": {
+    "title": "Frames selecteren",
+    "gifTitle": "{{name}} ({{n}} frames)",
+    "statusBase": "Maximaal {{max}} frames per GIF (de GIF met de minste frames). Klik om te selecteren of te verwijderen; het nummer geeft de volgorde aan.",
+    "statusUnequal": "⚠ Alle GIF's moeten HETZELFDE aantal geselecteerde frames hebben om het raster te delen (nu: {{counts}}).",
+    "statusMin": "Selecteer minstens 2 frames in elke GIF.",
+    "statusOk": "✓ {{n}} frames per kinegram."
+  },
+  "step3": {
+    "title": "Papier en voorbeeld",
+    "paper": "Papierformaat:",
+    "paperCarta": "Letter (215,9 × 279,4 mm)",
+    "paperOficio": "Legal MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Aangepast…",
+    "strip": "Strookbreedte (px):",
+    "animate": "Geanimeerd voorbeeld tonen",
+    "speed": "Snelheid:",
+    "infoSheets": "Benodigde vellen: {{gifs}} kinegram(men) + 1 raster.",
+    "infoScale": "Gemeenschappelijke schaal: {{mmpp}} mm/px.",
+    "infoStrip": "Strook: {{strip}} mm · cyclus: {{cycle}} mm.",
+    "infoPrint": "Druk alles af op 100% (zonder schalen). Hetzelfde raster werkt voor alles.",
+    "pdfKinegrams": "Kinegrammen opslaan (PDF)",
+    "pdfBarrier": "Raster opslaan (PDF)",
+    "fullscreen": "⛶ Volledig scherm",
+    "clickAnySheet": "of klik op een willekeurig vel",
+    "sheetGif": "Vel {{n}}: {{name}}",
+    "rotated": " (90° gedraaid)",
+    "sheetBarrier": "Vel {{n}}: raster (transparant)",
+    "close": "✕ Sluiten (Esc)"
+  }
+}

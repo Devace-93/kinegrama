@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "光栅动画生成器",
+    "subtitle": "上传一个或多个 GIF，选择帧并生成光栅动画 + 共用光栅。"
+  },
+  "steps": { "s1": "选择 GIF", "s2": "选择帧", "s3": "纸张 + 预览" },
+  "common": { "restart": "重新开始", "prev": "上一步", "next": "下一步", "search": "搜索语言…" },
+  "restart": {
+    "title": "重新开始？",
+    "body": "将移除所有已加载的 GIF 及其设置，并返回第 1 步。",
+    "cancel": "取消"
+  },
+  "step1": {
+    "title": "加载 GIF",
+    "aboutTitle": "什么是光栅动画？",
+    "aboutBody": "光栅动画（Kinegram / 条栅动画 / scanimation）是一种视觉错觉：把动画的各帧交错成竖直条纹，合成一张可打印的图片。当带黑色线条的透明光栅在图片上滑动时，缝隙每次只露出一帧，画面便动了起来。本工具生成两部分可打印内容：光栅动画图和配套光栅。",
+    "dropTitle": "点击或将一个或多个 GIF 拖到这里",
+    "dropHint": "随时可以继续添加。",
+    "decoding": "解码中…",
+    "loaded": "已加载 {{n}} 个 GIF。可以继续添加。",
+    "error": "错误：{{msg}}",
+    "singleFrame": "{{name}}：只有 1 帧",
+    "meta": "{{w}}×{{h}}px · {{n}} 帧",
+    "remove": "移除"
+  },
+  "step2": {
+    "title": "选择帧",
+    "gifTitle": "{{name}}（{{n}} 帧）",
+    "statusBase": "每个 GIF 最多 {{max}} 帧（以帧数最少的 GIF 为准）。点击选择或取消；数字表示顺序。",
+    "statusUnequal": "⚠ 所有 GIF 必须选择相同数量的帧才能共用一张光栅（当前：{{counts}}）。",
+    "statusMin": "每个 GIF 至少选择 2 帧。",
+    "statusOk": "✓ 每个光栅动画 {{n}} 帧。"
+  },
+  "step3": {
+    "title": "纸张与预览",
+    "paper": "纸张大小：",
+    "paperCarta": "Letter（215.9 × 279.4 mm）",
+    "paperOficio": "Legal MX（215.9 × 340 mm）",
+    "paperA4": "A4（210 × 297 mm）",
+    "paperCustom": "自定义…",
+    "strip": "条纹宽度（px）：",
+    "animate": "显示动画预览",
+    "speed": "速度：",
+    "infoSheets": "所需纸张：{{gifs}} 张光栅动画 + 1 张光栅。",
+    "infoScale": "统一比例：{{mmpp}} mm/px。",
+    "infoStrip": "条纹：{{strip}} mm · 周期：{{cycle}} mm。",
+    "infoPrint": "全部按 100% 打印（请勿缩放）。同一张光栅适用于所有图。",
+    "pdfKinegrams": "保存光栅动画（PDF）",
+    "pdfBarrier": "保存光栅（PDF）",
+    "fullscreen": "⛶ 全屏",
+    "clickAnySheet": "或点击任意纸张",
+    "sheetGif": "第 {{n}} 张：{{name}}",
+    "rotated": "（旋转 90°）",
+    "sheetBarrier": "第 {{n}} 张：光栅（透明胶片）",
+    "close": "✕ 关闭（Esc）"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Générateur de kinégrammes",
+    "subtitle": "Chargez un ou plusieurs GIF, choisissez les images et générez les kinégrammes + la grille partagée."
+  },
+  "steps": { "s1": "Sélection des GIF", "s2": "Sélection des images", "s3": "Papier + aperçu" },
+  "common": { "restart": "Recommencer", "prev": "Précédent", "next": "Suivant", "search": "Rechercher une langue…" },
+  "restart": {
+    "title": "Recommencer ?",
+    "body": "Tous les GIF chargés et leur configuration seront supprimés, et vous reviendrez à l'étape 1.",
+    "cancel": "Annuler"
+  },
+  "step1": {
+    "title": "Charger des GIF",
+    "aboutTitle": "Qu'est-ce qu'un kinégramme ?",
+    "aboutBody": "Un kinégramme (animation à grille, ou scanimation) est une illusion d'optique : les images d'une animation sont entrelacées en bandes verticales dans une seule image imprimée. Lorsqu'une grille transparente rayée de lignes noires glisse dessus, les fentes révèlent une image à la fois et l'image s'anime. Cet outil génère les deux éléments prêts à imprimer : les kinégrammes et leur grille.",
+    "dropTitle": "Cliquez ou glissez un ou plusieurs GIF ici",
+    "dropHint": "Vous pouvez en ajouter à tout moment.",
+    "decoding": "Décodage…",
+    "loaded": "{{n}} GIF chargé(s). Vous pouvez en ajouter d'autres.",
+    "error": "Erreur : {{msg}}",
+    "singleFrame": "{{name}} : ne contient qu'une seule image",
+    "meta": "{{w}}×{{h}}px · {{n}} images",
+    "remove": "Retirer"
+  },
+  "step2": {
+    "title": "Sélectionner les images",
+    "gifTitle": "{{name}} ({{n}} images)",
+    "statusBase": "Maximum {{max}} images par GIF (le GIF qui en a le moins). Cliquez pour sélectionner ou retirer ; le numéro indique l'ordre.",
+    "statusUnequal": "⚠ Tous les GIF doivent avoir le MÊME nombre d'images sélectionnées pour partager la grille (actuellement : {{counts}}).",
+    "statusMin": "Sélectionnez au moins 2 images dans chaque GIF.",
+    "statusOk": "✓ {{n}} images par kinégramme."
+  },
+  "step3": {
+    "title": "Papier et aperçu",
+    "paper": "Format de papier :",
+    "paperCarta": "Lettre (215,9 × 279,4 mm)",
+    "paperOficio": "Légal MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Personnalisé…",
+    "strip": "Largeur de bande (px) :",
+    "animate": "Afficher l'aperçu animé",
+    "speed": "Vitesse :",
+    "infoSheets": "Feuilles nécessaires : {{gifs}} kinégramme(s) + 1 grille.",
+    "infoScale": "Échelle commune : {{mmpp}} mm/px.",
+    "infoStrip": "Bande : {{strip}} mm · cycle : {{cycle}} mm.",
+    "infoPrint": "Imprimez tout à 100 % (sans mise à l'échelle). La même grille fonctionne pour tous.",
+    "pdfKinegrams": "Enregistrer les kinégrammes (PDF)",
+    "pdfBarrier": "Enregistrer la grille (PDF)",
+    "fullscreen": "⛶ Plein écran",
+    "clickAnySheet": "ou cliquez sur n'importe quelle feuille",
+    "sheetGif": "Feuille {{n}} : {{name}}",
+    "rotated": " (pivotée de 90°)",
+    "sheetBarrier": "Feuille {{n}} : grille (transparent)",
+    "close": "✕ Fermer (Échap)"
+  }
+}

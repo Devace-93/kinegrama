@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Gerador de Kinegramas",
+    "subtitle": "Carregue um ou mais GIFs, escolha os quadros e gere os kinegramas + a grade compartilhada."
+  },
+  "steps": { "s1": "Seleção de GIFs", "s2": "Seleção de quadros", "s3": "Papel + prévia" },
+  "common": { "restart": "Recomeçar", "prev": "Anterior", "next": "Próximo", "search": "Buscar idioma…" },
+  "restart": {
+    "title": "Recomeçar?",
+    "body": "Todos os GIFs carregados e suas configurações serão removidos, e você voltará ao passo 1.",
+    "cancel": "Cancelar"
+  },
+  "step1": {
+    "title": "Carregar GIFs",
+    "aboutTitle": "O que é um kinegrama?",
+    "aboutBody": "Um kinegrama (animação de grade, ou scanimation) é uma ilusão de ótica: os quadros de uma animação são entrelaçados em faixas verticais dentro de uma única imagem impressa. Ao deslizar por cima uma grade transparente com linhas pretas, as fendas revelam um quadro de cada vez e a imagem ganha movimento. Esta ferramenta gera as duas partes prontas para imprimir: os kinegramas e sua grade.",
+    "dropTitle": "Clique ou arraste um ou mais GIFs aqui",
+    "dropHint": "Você pode adicionar mais a qualquer momento.",
+    "decoding": "Decodificando…",
+    "loaded": "{{n}} GIF(s) carregado(s). Você pode adicionar mais.",
+    "error": "Erro: {{msg}}",
+    "singleFrame": "{{name}}: tem só 1 quadro",
+    "meta": "{{w}}×{{h}}px · {{n}} quadros",
+    "remove": "Remover"
+  },
+  "step2": {
+    "title": "Selecionar quadros",
+    "gifTitle": "{{name}} ({{n}} quadros)",
+    "statusBase": "Máximo de {{max}} quadros por GIF (o GIF com menos quadros). Clique para selecionar ou remover; o número indica a ordem.",
+    "statusUnequal": "⚠ Todos os GIFs devem ter a MESMA quantidade de quadros selecionados para compartilhar a grade (agora: {{counts}}).",
+    "statusMin": "Selecione pelo menos 2 quadros em cada GIF.",
+    "statusOk": "✓ {{n}} quadros por kinegrama."
+  },
+  "step3": {
+    "title": "Papel e prévia",
+    "paper": "Tamanho do papel:",
+    "paperCarta": "Carta (215,9 × 279,4 mm)",
+    "paperOficio": "Ofício MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Personalizado…",
+    "strip": "Largura da faixa (px):",
+    "animate": "Mostrar prévia animada",
+    "speed": "Velocidade:",
+    "infoSheets": "Folhas necessárias: {{gifs}} kinegrama(s) + 1 grade.",
+    "infoScale": "Escala comum: {{mmpp}} mm/px.",
+    "infoStrip": "Faixa: {{strip}} mm · ciclo: {{cycle}} mm.",
+    "infoPrint": "Imprima tudo em 100% (sem redimensionar). A mesma grade serve para todos.",
+    "pdfKinegrams": "Salvar kinegramas (PDF)",
+    "pdfBarrier": "Salvar grade (PDF)",
+    "fullscreen": "⛶ Tela cheia",
+    "clickAnySheet": "ou clique em qualquer folha",
+    "sheetGif": "Folha {{n}}: {{name}}",
+    "rotated": " (girada 90°)",
+    "sheetBarrier": "Folha {{n}}: grade (transparência)",
+    "close": "✕ Fechar (Esc)"
+  }
+}

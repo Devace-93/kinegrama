@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Kinegram Oluşturucu",
+    "subtitle": "Bir veya daha fazla GIF yükleyin, kareleri seçin ve kinegramları + ortak ızgarayı oluşturun."
+  },
+  "steps": { "s1": "GIF seçimi", "s2": "Kare seçimi", "s3": "Kağıt + önizleme" },
+  "common": { "restart": "Baştan başla", "prev": "Geri", "next": "İleri", "search": "Dil ara…" },
+  "restart": {
+    "title": "Baştan başlansın mı?",
+    "body": "Yüklenen tüm GIF'ler ve ayarları silinecek ve 1. adıma döneceksiniz.",
+    "cancel": "İptal"
+  },
+  "step1": {
+    "title": "GIF yükle",
+    "aboutTitle": "Kinegram nedir?",
+    "aboutBody": "Kinegram (bariyer ızgara animasyonu veya scanimation) bir optik yanılsamadır: bir animasyonun kareleri, tek bir basılı görüntünün içine dikey şeritler halinde örülür. Üzerinde siyah çizgili şeffaf bir ızgara kaydırıldığında, yarıklar her seferinde tek bir kareyi gösterir ve görüntü canlanır. Bu araç, baskıya hazır iki parçayı üretir: kinegramlar ve ızgaraları.",
+    "dropTitle": "Tıklayın veya bir ya da daha fazla GIF'i buraya sürükleyin",
+    "dropHint": "İstediğiniz zaman daha fazlasını ekleyebilirsiniz.",
+    "decoding": "Çözümleniyor…",
+    "loaded": "{{n}} GIF yüklendi. Daha fazlasını ekleyebilirsiniz.",
+    "error": "Hata: {{msg}}",
+    "singleFrame": "{{name}}: yalnızca 1 kare içeriyor",
+    "meta": "{{w}}×{{h}}px · {{n}} kare",
+    "remove": "Kaldır"
+  },
+  "step2": {
+    "title": "Kareleri seç",
+    "gifTitle": "{{name}} ({{n}} kare)",
+    "statusBase": "GIF başına en fazla {{max}} kare (en az kareye sahip GIF'e göre). Seçmek veya kaldırmak için tıklayın; sayı sırayı gösterir.",
+    "statusUnequal": "⚠ Izgarayı paylaşmak için tüm GIF'lerde AYNI sayıda kare seçilmelidir (şu an: {{counts}}).",
+    "statusMin": "Her GIF'te en az 2 kare seçin.",
+    "statusOk": "✓ Kinegram başına {{n}} kare."
+  },
+  "step3": {
+    "title": "Kağıt ve önizleme",
+    "paper": "Kağıt boyutu:",
+    "paperCarta": "Letter (215,9 × 279,4 mm)",
+    "paperOficio": "Legal MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Özel…",
+    "strip": "Şerit genişliği (px):",
+    "animate": "Animasyonlu önizlemeyi göster",
+    "speed": "Hız:",
+    "infoSheets": "Gerekli sayfalar: {{gifs}} kinegram + 1 ızgara.",
+    "infoScale": "Ortak ölçek: {{mmpp}} mm/px.",
+    "infoStrip": "Şerit: {{strip}} mm · döngü: {{cycle}} mm.",
+    "infoPrint": "Her şeyi %100'de yazdırın (ölçekleme yapmadan). Aynı ızgara hepsinde çalışır.",
+    "pdfKinegrams": "Kinegramları kaydet (PDF)",
+    "pdfBarrier": "Izgarayı kaydet (PDF)",
+    "fullscreen": "⛶ Tam ekran",
+    "clickAnySheet": "veya herhangi bir sayfaya tıklayın",
+    "sheetGif": "Sayfa {{n}}: {{name}}",
+    "rotated": " (90° döndürüldü)",
+    "sheetBarrier": "Sayfa {{n}}: ızgara (asetat)",
+    "close": "✕ Kapat (Esc)"
+  }
+}

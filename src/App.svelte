@@ -1,7 +1,8 @@
 <script>
   import { fly } from 'svelte/transition';
   import { app, restart } from './lib/state.svelte.js';
-  import { t, getLang, setLang, LOCALES } from './i18n/index.svelte.js';
+  import { t } from './i18n/index.svelte.js';
+  import LanguagePicker from './components/LanguagePicker.svelte';
   import StepsNav from './components/StepsNav.svelte';
   import Step1Gifs from './components/Step1Gifs.svelte';
   import Step2Frames from './components/Step2Frames.svelte';
@@ -24,16 +25,7 @@
       <h1 class="text-2xl font-bold">{t('app.title')}</h1>
       <p class="text-sm opacity-70">{t('app.subtitle')}</p>
     </div>
-    <select
-      class="select select-sm w-auto"
-      aria-label="Language"
-      value={getLang()}
-      onchange={e => setLang(e.target.value)}
-    >
-      {#each LOCALES as l (l.code)}
-        <option value={l.code}>{l.flag} {l.name}</option>
-      {/each}
-    </select>
+    <LanguagePicker />
     <label class="swap swap-rotate btn btn-sm btn-ghost text-lg" aria-label="Theme">
       <input
         type="checkbox"

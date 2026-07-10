@@ -11,7 +11,8 @@
   "common": {
     "restart": "Start over",
     "prev": "Back",
-    "next": "Next"
+    "next": "Next",
+    "search": "Search language…"
   },
   "restart": {
     "title": "Start over?",

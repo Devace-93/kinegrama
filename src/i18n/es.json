@@ -11,7 +11,8 @@
   "common": {
     "restart": "Volver a empezar",
     "prev": "Anterior",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "search": "Buscar idioma…"
   },
   "restart": {
     "title": "¿Volver a empezar?",

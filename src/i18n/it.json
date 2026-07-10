@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Generatore di kinegrammi",
+    "subtitle": "Carica una o più GIF, scegli i fotogrammi e genera i kinegrammi + la griglia condivisa."
+  },
+  "steps": { "s1": "Selezione GIF", "s2": "Selezione fotogrammi", "s3": "Carta + anteprima" },
+  "common": { "restart": "Ricomincia", "prev": "Indietro", "next": "Avanti", "search": "Cerca lingua…" },
+  "restart": {
+    "title": "Ricominciare?",
+    "body": "Tutte le GIF caricate e le loro impostazioni verranno rimosse e tornerai al passo 1.",
+    "cancel": "Annulla"
+  },
+  "step1": {
+    "title": "Carica GIF",
+    "aboutTitle": "Che cos'è un kinegramma?",
+    "aboutBody": "Un kinegramma (animazione a griglia, o scanimation) è un'illusione ottica: i fotogrammi di un'animazione vengono intrecciati in strisce verticali dentro un'unica immagine stampata. Facendo scorrere sopra una griglia trasparente con linee nere, le fessure rivelano un fotogramma alla volta e l'immagine prende vita. Questo strumento genera entrambe le parti pronte da stampare: i kinegrammi e la loro griglia.",
+    "dropTitle": "Clicca o trascina qui una o più GIF",
+    "dropHint": "Puoi aggiungerne altre in qualsiasi momento.",
+    "decoding": "Decodifica…",
+    "loaded": "{{n}} GIF caricate. Puoi aggiungerne altre.",
+    "error": "Errore: {{msg}}",
+    "singleFrame": "{{name}}: ha solo 1 fotogramma",
+    "meta": "{{w}}×{{h}}px · {{n}} fotogrammi",
+    "remove": "Rimuovi"
+  },
+  "step2": {
+    "title": "Seleziona i fotogrammi",
+    "gifTitle": "{{name}} ({{n}} fotogrammi)",
+    "statusBase": "Massimo {{max}} fotogrammi per GIF (la GIF con meno fotogrammi). Clicca per selezionare o rimuovere; il numero indica l'ordine.",
+    "statusUnequal": "⚠ Tutte le GIF devono avere lo STESSO numero di fotogrammi selezionati per condividere la griglia (ora: {{counts}}).",
+    "statusMin": "Seleziona almeno 2 fotogrammi in ogni GIF.",
+    "statusOk": "✓ {{n}} fotogrammi per kinegramma."
+  },
+  "step3": {
+    "title": "Carta e anteprima",
+    "paper": "Formato carta:",
+    "paperCarta": "Letter (215,9 × 279,4 mm)",
+    "paperOficio": "Legal MX (215,9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Personalizzato…",
+    "strip": "Larghezza striscia (px):",
+    "animate": "Mostra anteprima animata",
+    "speed": "Velocità:",
+    "infoSheets": "Fogli necessari: {{gifs}} kinegramma/i + 1 griglia.",
+    "infoScale": "Scala comune: {{mmpp}} mm/px.",
+    "infoStrip": "Striscia: {{strip}} mm · ciclo: {{cycle}} mm.",
+    "infoPrint": "Stampa tutto al 100% (senza ridimensionare). La stessa griglia va bene per tutti.",
+    "pdfKinegrams": "Salva kinegrammi (PDF)",
+    "pdfBarrier": "Salva griglia (PDF)",
+    "fullscreen": "⛶ Schermo intero",
+    "clickAnySheet": "oppure clicca su un foglio qualsiasi",
+    "sheetGif": "Foglio {{n}}: {{name}}",
+    "rotated": " (ruotato di 90°)",
+    "sheetBarrier": "Foglio {{n}}: griglia (lucido)",
+    "close": "✕ Chiudi (Esc)"
+  }
+}

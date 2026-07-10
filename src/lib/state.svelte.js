@@ -5,6 +5,8 @@ export const DEFAULT_SELECT = 4;
 
 export const app = $state({
   step: 1,
+  dir: 1,             // dirección de navegación (1 adelante, -1 atrás) para animar
+  confirmRestart: false,
   gifs: [],           // {name, frames:[canvas], w, h, selection:[], url}
   paperKey: 'carta',
   customW: 216,
@@ -15,6 +17,11 @@ export const app = $state({
   fsOpen: false,
   fsIndex: 0,
 });
+
+export function goStep(n) {
+  app.dir = n > app.step ? 1 : -1;
+  app.step = n;
+}
 
 export function getPaper() {
   if (app.paperKey !== 'custom') return PAPERS[app.paperKey];
@@ -70,5 +77,7 @@ export function restart() {
   app.gifs.forEach(g => URL.revokeObjectURL(g.url));
   app.gifs = [];
   app.fsOpen = false;
+  app.confirmRestart = false;
+  app.dir = -1;
   app.step = 1;
 }

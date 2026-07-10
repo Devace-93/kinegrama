@@ -1,5 +1,5 @@
 <script>
-  import { app, restart, getLayout } from '../lib/state.svelte.js';
+  import { app, goStep, getLayout } from '../lib/state.svelte.js';
   import { buildPages, renderPage } from '../lib/preview.js';
   import { pdfKinegrams, pdfBarrier } from '../lib/pdf.js';
   import { t } from '../i18n/index.svelte.js';
@@ -123,9 +123,11 @@
   </div>
 
   <div class="flex gap-2 mt-4 pt-3 border-t border-base-300">
-    <button class="btn btn-sm btn-outline btn-error" onclick={restart}>{t('common.restart')}</button>
+    <button class="btn btn-sm btn-outline btn-error" onclick={() => (app.confirmRestart = true)}>
+      {t('common.restart')}
+    </button>
     <div class="flex-1"></div>
-    <button class="btn btn-sm btn-ghost border border-base-300" onclick={() => (app.step = 2)}>
+    <button class="btn btn-sm btn-ghost border border-base-300" onclick={() => goStep(2)}>
       {t('common.prev')}
     </button>
   </div>

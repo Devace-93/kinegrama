@@ -1,38 +1,43 @@
 {
   "app": {
     "title": "Generador de Kinegramas",
-    "subtitle": "Carga uno o varios GIFs, elige los frames y genera los kinegramas + la rejilla compartida."
+    "subtitle": "Carga uno o varios GIFs, elige los fotogramas y genera los kinegramas + la rejilla compartida."
   },
   "steps": {
     "s1": "Selección de GIFs",
-    "s2": "Selección de frames",
-    "s3": "Papel + preview"
+    "s2": "Selección de fotogramas",
+    "s3": "Papel + vista previa"
   },
   "common": {
     "restart": "Volver a empezar",
     "prev": "Anterior",
     "next": "Siguiente"
   },
+  "restart": {
+    "title": "¿Volver a empezar?",
+    "body": "Se quitarán todos los GIFs cargados y su configuración, y volverás al paso 1.",
+    "cancel": "Cancelar"
+  },
   "step1": {
     "title": "Cargar GIFs",
     "aboutTitle": "¿Qué es un kinegrama?",
-    "aboutBody": "Un kinegrama (animación de barrera o scanimation) es una ilusión óptica: los frames de una animación se entrelazan en franjas verticales dentro de una sola imagen impresa. Al deslizar encima una rejilla transparente con líneas negras, las ranuras revelan un frame a la vez y la imagen cobra movimiento. Esta herramienta genera ambas partes listas para imprimir: los kinegramas y su rejilla.",
+    "aboutBody": "Un kinegrama (animación de barrera o scanimation) es una ilusión óptica: los fotogramas de una animación se entrelazan en franjas verticales dentro de una sola imagen impresa. Al deslizar encima una rejilla transparente con líneas negras, las ranuras revelan un fotograma a la vez y la imagen cobra movimiento. Esta herramienta genera ambas partes listas para imprimir: los kinegramas y su rejilla.",
     "dropTitle": "Haz clic o arrastra uno o varios GIFs aquí",
     "dropHint": "Puedes agregar más en cualquier momento.",
     "decoding": "Decodificando…",
     "loaded": "{{n}} GIF(s) cargado(s). Puedes agregar más.",
     "error": "Error: {{msg}}",
-    "singleFrame": "{{name}}: solo tiene 1 frame",
-    "meta": "{{w}}×{{h}}px · {{n}} frames",
+    "singleFrame": "{{name}}: solo tiene 1 fotograma",
+    "meta": "{{w}}×{{h}}px · {{n}} fotogramas",
     "remove": "Quitar"
   },
   "step2": {
-    "title": "Seleccionar frames",
-    "gifTitle": "{{name}} ({{n}} frames)",
-    "statusBase": "Máximo {{max}} frames por GIF (el GIF con menos frames). Haz clic para seleccionar/deseleccionar; el número indica el orden.",
+    "title": "Seleccionar fotogramas",
+    "gifTitle": "{{name}} ({{n}} fotogramas)",
+    "statusBase": "Máximo {{max}} fotogramas por GIF (el GIF con menos fotogramas). Haz clic para seleccionar o quitar; el número indica el orden.",
     "statusUnequal": "⚠ Todos los GIFs deben tener la MISMA cantidad seleccionada para compartir rejilla (ahora: {{counts}}).",
-    "statusMin": "Selecciona al menos 2 frames en cada GIF.",
-    "statusOk": "✓ {{n}} frames por kinegrama."
+    "statusMin": "Selecciona al menos 2 fotogramas en cada GIF.",
+    "statusOk": "✓ {{n}} fotogramas por kinegrama."
   },
   "step3": {
     "title": "Papel y vista previa",
@@ -42,7 +47,7 @@
     "paperA4": "A4 (210 × 297 mm)",
     "paperCustom": "Personalizado…",
     "strip": "Ancho de franja (px):",
-    "animate": "Mostrar preview animado",
+    "animate": "Mostrar vista previa animada",
     "speed": "Velocidad:",
     "infoSheets": "Hojas necesarias: {{gifs}} kinegrama(s) + 1 rejilla.",
     "infoScale": "Escala común: {{mmpp}} mm/px.",

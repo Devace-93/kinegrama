@@ -3,6 +3,20 @@
   themes: dark --default, light;
 }
 
+/* Stepper animado: transición de color en círculos/líneas y pulso al activarse */
+.steps .step::before,
+.steps .step::after {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+.steps .step-primary::after {
+  animation: step-pop 0.45s ease;
+}
+@keyframes step-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+
 /* Tarjetas de frame (paso 2) */
 .frame-card {
   position: relative;

@@ -1,5 +1,6 @@
 <script>
-  import { app } from './lib/state.svelte.js';
+  import { fly } from 'svelte/transition';
+  import { app, restart } from './lib/state.svelte.js';
   import { t, getLang, setLang } from './i18n/index.svelte.js';
   import StepsNav from './components/StepsNav.svelte';
   import Step1Gifs from './components/Step1Gifs.svelte';
@@ -13,7 +14,7 @@
   });
 </script>
 
-<div class="max-w-6xl mx-auto p-6">
+<div class="max-w-6xl mx-auto p-6 overflow-x-hidden">
   <header class="flex items-start gap-3 mb-4">
     <div class="flex-1 min-w-0">
       <h1 class="text-2xl font-bold">{t('app.title')}</h1>
@@ -41,11 +42,37 @@
 
   <StepsNav />
 
-  {#if app.step === 1}
-    <Step1Gifs />
-  {:else if app.step === 2}
-    <Step2Frames />
-  {:else}
-    <Step3Paper />
-  {/if}
+  {#key app.step}
+    <div in:fly={{ x: 56 * app.dir, duration: 280, opacity: 0 }}>
+      {#if app.step === 1}
+        <Step1Gifs />
+      {:else if app.step === 2}
+        <Step2Frames />
+      {:else}
+        <Step3Paper />
+      {/if}
+    </div>
+  {/key}
 </div>
+
+{#if app.confirmRestart}
+  <div class="modal modal-open" role="dialog">
+    <div class="modal-box">
+      <h3 class="font-bold text-lg">{t('restart.title')}</h3>
+      <p class="py-3 text-sm opacity-80">{t('restart.body')}</p>
+      <div class="modal-action">
+        <button class="btn btn-sm" onclick={() => (app.confirmRestart = false)}>
+          {t('restart.cancel')}
+        </button>
+        <button class="btn btn-sm btn-error" onclick={restart}>
+          {t('common.restart')}
+        </button>
+      </div>
+    </div>
+    <button
+      class="modal-backdrop"
+      aria-label={t('restart.cancel')}
+      onclick={() => (app.confirmRestart = false)}
+    ></button>
+  </div>
+{/if}

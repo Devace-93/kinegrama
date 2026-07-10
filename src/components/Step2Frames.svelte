@@ -1,5 +1,5 @@
 <script>
-  import { app, restart, toggleFrame, maxFramesAllowed, selectionsValid } from '../lib/state.svelte.js';
+  import { app, goStep, toggleFrame, maxFramesAllowed, selectionsValid } from '../lib/state.svelte.js';
   import { t } from '../i18n/index.svelte.js';
 
   const max = $derived(maxFramesAllowed());
@@ -55,12 +55,14 @@
   {/each}
 
   <div class="flex gap-2 mt-2 pt-3 border-t border-base-300">
-    <button class="btn btn-sm btn-outline btn-error" onclick={restart}>{t('common.restart')}</button>
+    <button class="btn btn-sm btn-outline btn-error" onclick={() => (app.confirmRestart = true)}>
+      {t('common.restart')}
+    </button>
     <div class="flex-1"></div>
-    <button class="btn btn-sm btn-ghost border border-base-300" onclick={() => (app.step = 1)}>
+    <button class="btn btn-sm btn-ghost border border-base-300" onclick={() => goStep(1)}>
       {t('common.prev')}
     </button>
-    <button class="btn btn-sm btn-primary" disabled={!ok} onclick={() => (app.step = 3)}>
+    <button class="btn btn-sm btn-primary" disabled={!ok} onclick={() => goStep(3)}>
       {t('common.next')}
     </button>
   </div>

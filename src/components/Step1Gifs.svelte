@@ -1,5 +1,5 @@
 <script>
-  import { app, restart, defaultSelections } from '../lib/state.svelte.js';
+  import { app, goStep, defaultSelections } from '../lib/state.svelte.js';
   import { decodeGifFile } from '../lib/gif.js';
   import { t } from '../i18n/index.svelte.js';
 
@@ -39,7 +39,7 @@
 
   function next() {
     defaultSelections();
-    app.step = 2;
+    goStep(2);
   }
 </script>
 
@@ -95,7 +95,11 @@
   {/if}
 
   <div class="flex gap-2 mt-4 pt-3 border-t border-base-300">
-    <button class="btn btn-sm btn-outline btn-error" onclick={restart}>{t('common.restart')}</button>
+    {#if app.gifs.length}
+      <button class="btn btn-sm btn-outline btn-error" onclick={() => (app.confirmRestart = true)}>
+        {t('common.restart')}
+      </button>
+    {/if}
     <div class="flex-1"></div>
     <button class="btn btn-sm btn-primary" disabled={app.gifs.length < 1} onclick={next}>
       {t('common.next')}

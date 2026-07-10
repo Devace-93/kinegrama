@@ -19,15 +19,16 @@
 
 <svelte:window {onkeydown} />
 
+<!-- Overlay siempre oscuro: colores fijos para conservar contraste en ambos temas -->
 <div class="fixed inset-0 z-50 bg-black/95 flex items-center justify-center gap-3.5">
-  <div class="absolute top-0 left-0 right-0 flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300">
+  <div class="absolute top-0 left-0 right-0 flex items-center gap-3 px-4 py-2.5 text-sm text-gray-200">
     <span>{app.fsIndex + 1} / {count} — {captions[app.fsIndex]}</span>
     <div class="flex-1"></div>
-    <button class="btn btn-sm btn-ghost border border-base-300" onclick={close}>
+    <button class="btn btn-sm bg-transparent text-gray-200 border-gray-500 hover:bg-white/10 hover:border-gray-300 shadow-none" onclick={close}>
       {t('step3.close')}
     </button>
   </div>
-  <button class="btn btn-lg btn-ghost border border-base-300 text-2xl" onclick={() => move(-1)}>‹</button>
+  <button class="btn btn-lg bg-transparent text-gray-200 border-gray-500 hover:bg-white/10 hover:border-gray-300 shadow-none text-2xl" onclick={() => move(-1)}>‹</button>
   <canvas bind:this={canvas} class="bg-white shadow-2xl"></canvas>
-  <button class="btn btn-lg btn-ghost border border-base-300 text-2xl" onclick={() => move(1)}>›</button>
+  <button class="btn btn-lg bg-transparent text-gray-200 border-gray-500 hover:bg-white/10 hover:border-gray-300 shadow-none text-2xl" onclick={() => move(1)}>›</button>
 </div>

@@ -13,6 +13,11 @@
     "prev": "Back",
     "next": "Next"
   },
+  "restart": {
+    "title": "Start over?",
+    "body": "All loaded GIFs and their settings will be removed, and you'll go back to step 1.",
+    "cancel": "Cancel"
+  },
   "step1": {
     "title": "Load GIFs",
     "aboutTitle": "What is a kinegram?",

@@ -94,7 +94,7 @@
     </div>
   {/if}
 
-  <div class="flex gap-2 mt-4 pt-3 border-t border-base-300">
+  <div class="flex gap-2 mt-4 pt-3 border-t border-base-300 sticky bottom-0 z-10 bg-base-200 -mx-4 px-4 -mb-4 pb-4 rounded-b-2xl">
     {#if app.gifs.length}
       <button class="btn btn-sm btn-outline btn-error" onclick={() => (app.confirmRestart = true)}>
         {t('common.restart')}

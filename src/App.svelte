@@ -14,7 +14,10 @@
   });
 </script>
 
-<div class="max-w-6xl mx-auto p-6 overflow-x-hidden">
+<!-- overflow-x-clip (not hidden): clips the step fly animation without
+     creating a scroll container, so position: sticky keeps working -->
+<div class="max-w-6xl mx-auto px-6 pb-6 overflow-x-clip">
+  <div class="sticky top-0 z-40 bg-base-100 pt-6 pb-3">
   <header class="flex items-start gap-3 mb-4">
     <div class="flex-1 min-w-0">
       <h1 class="text-2xl font-bold">{t('app.title')}</h1>
@@ -41,6 +44,7 @@
   </header>
 
   <StepsNav />
+  </div>
 
   {#key app.step}
     <div in:fly={{ x: 56 * app.dir, duration: 280, opacity: 0 }}>

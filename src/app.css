@@ -3,12 +3,8 @@
   themes: dark --default, light;
 }
 
-/* Animated stepper: color transition on circles/lines and a pop when activated */
-.steps .step::before,
-.steps .step::after {
-  transition: background-color 0.4s ease, color 0.4s ease;
-}
-.steps .step-primary::after {
+/* Animated stepper: pop when a circle becomes active */
+.step-circle.active {
   animation: step-pop 0.45s ease;
 }
 @keyframes step-pop {

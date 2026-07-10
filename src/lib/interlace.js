@@ -1,7 +1,7 @@
-// Entrelazado: la franja de columnas [x, x+strip) sale del frame (x/strip) mod N,
-// copiada desde esa MISMA posición x del frame.
+// Interlacing: the column strip [x, x+strip) comes from frame (x/strip) mod N,
+// copied from that SAME x position of the frame.
 
-/** Genera el canvas entrelazado de un gif con su selección de frames. */
+/** Builds the interlaced canvas of a gif from its frame selection. */
 export function interlaceGif(gif, strip) {
   const sel = gif.selection;
   const N = sel.length;

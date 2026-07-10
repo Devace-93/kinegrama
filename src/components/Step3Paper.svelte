@@ -6,7 +6,7 @@
   import PagesPreview from './PagesPreview.svelte';
   import FullscreenViewer from './FullscreenViewer.svelte';
 
-  const PREVIEW_H = 260; // px de alto de página en las miniaturas
+  const PREVIEW_H = 260; // page height in px for the thumbnails
 
   const layout = $derived(getLayout());
   const pages = $derived(buildPages(app.gifs, layout));
@@ -23,7 +23,7 @@
     if (app.fsIndex >= pages.length) app.fsIndex = 0;
   });
 
-  // Bucle de animación: repinta miniaturas y el visor fullscreen en cada frame.
+  // Animation loop: repaints thumbnails and the fullscreen viewer every frame.
   $effect(() => {
     const pgs = pages;
     const lay = layout;
@@ -32,7 +32,7 @@
     let last = performance.now();
     let id;
     function tick(now) {
-      const speed = parseInt(app.speed, 10) || 15; // px de imagen por segundo
+      const speed = parseInt(app.speed, 10) || 15; // image px per second
       if (app.animate) offsetMm += speed * lay.mmpp * (now - last) / 1000;
       last = now;
       for (const p of pgs) {

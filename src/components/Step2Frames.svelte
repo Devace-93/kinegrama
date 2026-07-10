@@ -7,7 +7,7 @@
   const allEqual = $derived(counts.every(c => c === counts[0]));
   const ok = $derived(selectionsValid());
 
-  // Miniatura del frame (~150px de ancho máx.)
+  // Frame thumbnail (~150px max width)
   function thumb(node, frame) {
     const scale = Math.min(1, 150 / frame.width);
     node.width = Math.round(frame.width * scale);

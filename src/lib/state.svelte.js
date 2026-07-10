@@ -1,11 +1,11 @@
-// Estado global de la app (runas de Svelte 5).
+// Global app state (Svelte 5 runes).
 import { PAPERS, computeLayout } from './layout.js';
 
 export const DEFAULT_SELECT = 4;
 
 export const app = $state({
   step: 1,
-  dir: 1,             // dirección de navegación (1 adelante, -1 atrás) para animar
+  dir: 1,             // navigation direction (1 forward, -1 back) for animations
   confirmRestart: false,
   gifs: [],           // {name, frames:[canvas], w, h, selection:[], url}
   paperKey: 'carta',
@@ -43,7 +43,7 @@ export function maxFramesAllowed() {
   return Math.min(...app.gifs.map(g => g.frames.length));
 }
 
-/** Preselección distribuida (conserva selecciones existentes). */
+/** Evenly distributed preselection (keeps existing selections). */
 export function defaultSelections() {
   const n = Math.min(DEFAULT_SELECT, maxFramesAllowed());
   for (const g of app.gifs) {
@@ -60,14 +60,14 @@ export function toggleFrame(gi, fi) {
   const pos = sel.indexOf(fi);
   if (pos >= 0) sel.splice(pos, 1);
   else if (sel.length < maxFramesAllowed()) {
-    // El orden del entrelazado es el orden original del GIF,
-    // sin importar en qué orden se haga clic.
+    // Interlacing order is the GIF's original frame order,
+    // regardless of the order frames were clicked in.
     sel.push(fi);
     sel.sort((a, b) => a - b);
   }
 }
 
-/** Todas las selecciones iguales y >= 2 (requisito para compartir rejilla). */
+/** All selections equal and >= 2 (required to share one barrier grid). */
 export function selectionsValid() {
   const counts = app.gifs.map(g => g.selection.length);
   return counts.every(c => c === counts[0]) && counts[0] >= 2;

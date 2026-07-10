@@ -1,4 +1,4 @@
-// Decodificación de GIFs a un arreglo de canvases (un frame compuesto por canvas).
+// GIF decoding into an array of canvases (one composited frame per canvas).
 import { parseGIF, decompressFrames } from 'gifuct-js';
 
 async function decodeWithImageDecoder(buf) {
@@ -50,7 +50,7 @@ function decodeWithGifuct(buf) {
   return out;
 }
 
-/** Decodifica un File GIF a sus frames. Lanza si tiene menos de 2 frames. */
+/** Decodes a GIF File into its frames. Throws if it has fewer than 2 frames. */
 export async function decodeGifFile(file) {
   const buf = await file.arrayBuffer();
   const frames = ('ImageDecoder' in window)

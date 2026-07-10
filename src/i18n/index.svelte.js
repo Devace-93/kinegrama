@@ -1,4 +1,4 @@
-// i18n con i18next: es (default) + en, detección de navegador y selector manual.
+// i18n with i18next: es (default) + en, browser detection and manual selector.
 import i18next from 'i18next';
 import es from './es.json';
 import en from './en.json';
@@ -19,9 +19,9 @@ export async function initI18n() {
   document.documentElement.lang = lng;
 }
 
-/** Traducción reactiva: se reevalúa al cambiar de idioma. */
+/** Reactive translation: re-evaluates when the language changes. */
 export function t(key, opts) {
-  void state.lang; // dependencia reactiva
+  void state.lang; // reactive dependency
   return i18next.t(key, opts);
 }
 

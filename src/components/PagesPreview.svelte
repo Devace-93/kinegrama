@@ -3,7 +3,7 @@
 
   let { pages, ppm, captions } = $props();
 
-  // Registra el canvas de la hoja: el bucle de Step3Paper lo repinta cada frame.
+  // Registers the sheet canvas: Step3Paper's loop repaints it every frame.
   function register(node, p) {
     node.width = Math.round(p.pw * ppm);
     node.height = Math.round(p.ph * ppm);

@@ -19,7 +19,7 @@
 
 <svelte:window {onkeydown} />
 
-<!-- Overlay siempre oscuro: colores fijos para conservar contraste en ambos temas -->
+<!-- Always-dark overlay: fixed colors to keep contrast in both themes -->
 <div class="fixed inset-0 z-50 bg-black/95 flex items-center justify-center gap-3.5">
   <div class="absolute top-0 left-0 right-0 flex items-center gap-3 px-4 py-2.5 text-sm text-gray-200">
     <span>{app.fsIndex + 1} / {count} — {captions[app.fsIndex]}</span>

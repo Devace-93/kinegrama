@@ -1,10 +1,10 @@
-// Render de las hojas del preview (miniaturas y visor fullscreen).
+// Preview sheet rendering (thumbnails and fullscreen viewer).
 import { interlaceGif } from './interlace.js';
 import { barrierCanvas } from './pdf.js';
 
-// Dibuja una imagen en su caja sobre la hoja, rotándola 90° si aplica.
-// Posición redondeada a px enteros para que la rejilla del preview
-// quede perfectamente alineada con las columnas del entrelazado.
+// Draws an image inside its box on the sheet, rotating it 90° if needed.
+// Position is rounded to whole px so the preview barrier grid lines up
+// exactly with the interlaced columns.
 export function drawPlaced(ctx, img, p, ppm) {
   const x = Math.round(p.dxmm * ppm), y = Math.round(p.dymm * ppm);
   const w = p.wmm * ppm, h = p.hmm * ppm;
@@ -19,7 +19,7 @@ export function drawPlaced(ctx, img, p, ppm) {
   }
 }
 
-/** Descriptores de página (una por gif + una de rejilla) para el preview. */
+/** Page descriptors (one per gif + one for the barrier grid) for the preview. */
 export function buildPages(gifs, layout) {
   const { paper, mmpp, perGif } = layout;
   const pages = gifs.map((g, i) => {
@@ -34,8 +34,8 @@ export function buildPages(gifs, layout) {
       isBarrier: false,
       gifName: g.name,
     };
-    // Hoja a resolución nativa (1px de canvas = 1px de gif): aquí las franjas
-    // son exactas; el preview compone la rejilla encima y reescala.
+    // Sheet at native resolution (1 canvas px = 1 gif px): strips are exact
+    // here; the preview composites the barrier on top and then downscales.
     p.native = document.createElement('canvas');
     p.native.width = Math.round(paper.w / mmpp);
     p.native.height = Math.round(paper.h / mmpp);
@@ -65,9 +65,9 @@ export function renderPage(canvas, p, ppm, offsetMm, animate, layout) {
   ctx.imageSmoothingQuality = 'high';
 
   if (animate && !p.isBarrier) {
-    // Efecto real de impresión: el kinegrama entrelazado con la rejilla
-    // (franjas negras + ranura) deslizándose encima. Se compone a resolución
-    // nativa —donde franja y ranura son píxeles exactos— y se reescala.
+    // Real print effect: the interlaced kinegram with the barrier grid
+    // (black strips + slit) sliding over it. Composited at native resolution
+    // —where strip and slit are exact pixels— and then downscaled.
     if (!scratchCanvas) scratchCanvas = document.createElement('canvas');
     const s = scratchCanvas;
     if (s.width !== p.native.width) s.width = p.native.width;
@@ -75,11 +75,11 @@ export function renderPage(canvas, p, ppm, offsetMm, animate, layout) {
     const sctx = s.getContext('2d');
     sctx.drawImage(p.native, 0, 0);
 
-    // Fase anclada al borde de la imagen (no al de la hoja): cada ranura cae
-    // exactamente sobre una columna del entrelazado. El patrón es periódico,
-    // así que el ciclo es infinito y sin salto al reiniciar; la dirección
-    // reproduce los frames en su orden original. En imágenes rotadas las
-    // franjas van horizontales y se desplazan en vertical.
+    // Phase anchored to the image edge (not the sheet edge): every slit falls
+    // exactly on one interlaced column. The pattern is periodic, so the cycle
+    // is seamless with no jump on wrap-around, and the direction plays the
+    // frames in their original order. On rotated images the strips run
+    // horizontally and move vertically.
     const period = N * strip;
     const offPx = Math.round(offsetMm / mmpp);
     const vertical = !p.rotated;

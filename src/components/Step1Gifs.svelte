@@ -21,7 +21,7 @@
           w: frames[0].width,
           h: frames[0].height,
           selection: [],
-          url: URL.createObjectURL(file), // miniatura animada nativa
+          url: URL.createObjectURL(file), // native animated thumbnail
         });
       } catch (err) {
         error = err.code === 'single-frame'

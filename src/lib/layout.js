@@ -4,14 +4,14 @@ export const PAPERS = {
   a4:     { w: 210,   h: 297 },
 };
 
-export const MARGIN_MM = 10; // margen de las páginas de kinegramas (la rejilla no lleva)
+export const MARGIN_MM = 10; // margin for kinegram pages (the barrier grid has none)
 
 /**
- * Layout global. Todas las hojas comparten orientación (presets: vertical;
- * custom: como la capture el usuario). Las imágenes que no quepan derechas
- * se rotan 90° DENTRO de la hoja. La escala mm/px es GLOBAL: la mayor que
- * permita que TODOS los gifs quepan (derechos o rotados) — nunca se escala
- * individualmente, así la misma rejilla sirve para todos.
+ * Global layout. Every sheet shares the same orientation (presets: portrait;
+ * custom: as entered by the user). Images that don't fit upright are rotated
+ * 90° INSIDE the sheet. The mm/px scale is GLOBAL: the largest one that lets
+ * ALL gifs fit (upright or rotated) — images are never scaled individually,
+ * so the same barrier grid works for all of them.
  */
 export function computeLayout(gifs, paper, strip) {
   const N = gifs[0].selection.length;
@@ -29,7 +29,7 @@ export function computeLayout(gifs, paper, strip) {
     const rotated = !(g.w * mmpp <= availW && g.h * mmpp <= availH);
     return {
       rotated,
-      wmm: (rotated ? g.h : g.w) * mmpp,   // caja ya rotada sobre la hoja
+      wmm: (rotated ? g.h : g.w) * mmpp,   // box already rotated on the sheet
       hmm: (rotated ? g.w : g.h) * mmpp,
     };
   });

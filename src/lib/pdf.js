@@ -1,9 +1,9 @@
-// Generación de PDFs (sin textos ni instrucciones dentro de los documentos).
-// jsPDF se carga bajo demanda para no engordar el bundle inicial.
+// PDF generation (no text or instructions inside the documents).
+// jsPDF is lazy-loaded to keep the initial bundle small.
 import { interlaceGif, rotateCanvas90 } from './interlace.js';
 
-// Rejilla a lo ancho COMPLETO de la hoja: ranura transparente cada N franjas,
-// el patrón se repite horizontalmente de borde a borde y a toda la altura.
+// Barrier grid across the FULL sheet width: a transparent slit every N strips,
+// the pattern repeats horizontally edge to edge and covers the full height.
 export function barrierCanvas(layout) {
   const { paper, N, strip, mmpp } = layout;
   const c = document.createElement('canvas');
@@ -21,8 +21,8 @@ export function barrierCanvas(layout) {
   return c;
 }
 
-// jsPDF fuerza alto>=ancho en 'portrait', así que en custom horizontal
-// hay que declarar 'landscape' para conservar las dimensiones capturadas.
+// jsPDF forces height>=width in 'portrait', so a custom landscape size
+// must be declared 'landscape' to preserve the dimensions as entered.
 function docOrientation(paper) {
   return paper.w > paper.h ? 'landscape' : 'portrait';
 }

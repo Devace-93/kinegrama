@@ -3,8 +3,17 @@
     "title": "Trình tạo kinegram",
     "subtitle": "Tải lên một hoặc nhiều ảnh GIF, chọn khung hình và tạo kinegram + lưới chung."
   },
-  "steps": { "s1": "Chọn GIF", "s2": "Chọn khung hình", "s3": "Giấy + xem trước" },
-  "common": { "restart": "Bắt đầu lại", "prev": "Quay lại", "next": "Tiếp theo", "search": "Tìm ngôn ngữ…" },
+  "steps": {
+    "s1": "Chọn GIF",
+    "s2": "Chọn khung hình",
+    "s3": "Giấy + xem trước"
+  },
+  "common": {
+    "restart": "Bắt đầu lại",
+    "prev": "Quay lại",
+    "next": "Tiếp theo",
+    "search": "Tìm ngôn ngữ…"
+  },
   "restart": {
     "title": "Bắt đầu lại?",
     "body": "Tất cả GIF đã tải và cài đặt của chúng sẽ bị xóa, và bạn sẽ quay về bước 1.",
@@ -53,5 +62,38 @@
     "rotated": " (xoay 90°)",
     "sheetBarrier": "Tờ {{n}}: lưới (phim trong)",
     "close": "✕ Đóng (Esc)"
+  },
+  "tip": {
+    "theme": "Chuyển giữa giao diện sáng và tối",
+    "language": "Đổi ngôn ngữ",
+    "steps": "Các bước",
+    "stepGo": "Đi tới: {{name}}",
+    "stepLocked": "Hãy hoàn thành các bước trước đã",
+    "restart": "Xóa tất cả và quay lại bước 1",
+    "cancel": "Đóng mà không xóa gì",
+    "about": "Hiện hoặc ẩn phần giải thích",
+    "dropzone": "Chọn tệp GIF hoặc kéo thả vào đây",
+    "removeGif": "Xóa {{name}}",
+    "frameToggle": "Chọn hoặc bỏ chọn khung hình {{n}}",
+    "frameMax": "Đã đạt giới hạn — hãy bỏ chọn một khung hình khác trước",
+    "paper": "Khổ giấy cho các tệp PDF",
+    "customSize": "Khổ giấy tùy chỉnh (mm)",
+    "strip": "Độ rộng mỗi dải (pixel ảnh)",
+    "animate": "Bật hoặc tắt bản xem trước động",
+    "speed": "Tốc độ hoạt ảnh của bản xem trước",
+    "pdfKinegrams": "Mỗi trang một kinegram",
+    "pdfBarrier": "In lên tấm phim trong suốt",
+    "fullscreen": "Xem các trang ở chế độ toàn màn hình",
+    "sheet": "Xem toàn màn hình",
+    "close": "Đóng (Esc)",
+    "prevSheet": "Trang trước (←)",
+    "nextSheet": "Trang sau (→)"
+  },
+  "files": {
+    "kinegrams": "kinegram",
+    "barrier": "luoi-chan"
+  },
+  "seo": {
+    "description": "Trình tạo kinegram (scanimation) trực tuyến miễn phí: biến GIF thành hoạt ảnh lưới chắn có thể in — các kinegram và lưới dùng chung."
   }
 }

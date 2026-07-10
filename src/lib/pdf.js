@@ -1,6 +1,7 @@
 // PDF generation (no text or instructions inside the documents).
 // jsPDF is lazy-loaded to keep the initial bundle small.
 import { interlaceGif, rotateCanvas90 } from './interlace.js';
+import { t } from '../i18n/index.svelte.js';
 
 // Barrier grid across the FULL sheet width: a transparent slit every N strips,
 // the pattern repeats horizontally edge to edge and covers the full height.
@@ -41,7 +42,7 @@ export async function pdfKinegrams(gifs, layout) {
     doc.addImage(c.toDataURL('image/png'), 'PNG',
       (paper.w - info.wmm) / 2, (paper.h - info.hmm) / 2, info.wmm, info.hmm);
   });
-  doc.save('kinegramas.pdf');
+  doc.save(`${t('files.kinegrams')}.pdf`); // filename in the active language
 }
 
 export async function pdfBarrier(layout) {
@@ -50,5 +51,5 @@ export async function pdfBarrier(layout) {
   const doc = new jsPDF({ unit: 'mm', format: [paper.w, paper.h], orientation: docOrientation(paper) });
   doc.addImage(barrierCanvas(layout).toDataURL('image/png'), 'PNG',
     0, 0, paper.w, paper.h);
-  doc.save('rejilla.pdf');
+  doc.save(`${t('files.barrier')}.pdf`);
 }

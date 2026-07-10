@@ -26,7 +26,11 @@
 <div class="relative">
   <button
     type="button"
-    class="btn btn-sm gap-1.5 font-normal"
+    class="btn btn-sm gap-1.5 font-normal tooltip tooltip-bottom"
+    data-tip={t('tip.language')}
+    aria-label={t('tip.language')}
+    aria-haspopup="listbox"
+    aria-expanded={open}
     onclick={() => { open = !open; query = ''; }}
   >
     <span>{current?.flag}</span>
@@ -38,7 +42,7 @@
     <button
       type="button"
       class="fixed inset-0 z-40 cursor-default"
-      aria-label={t('restart.cancel')}
+      aria-label={t('tip.close')}
       tabindex="-1"
       onclick={() => { open = false; query = ''; }}
     ></button>
@@ -48,17 +52,22 @@
         bind:value={query}
         type="search"
         placeholder={t('common.search')}
+        aria-label={t('common.search')}
         class="input input-sm w-full mb-2"
         onkeydown={e => {
           if (e.key === 'Escape') { open = false; query = ''; }
           else if (e.key === 'Enter' && filtered.length) pick(filtered[0].code);
         }}
       />
-      <ul class="max-h-72 overflow-y-auto">
+      <ul class="max-h-72 overflow-y-auto" role="listbox" aria-label={t('tip.language')}>
         {#each filtered as l (l.code)}
-          <li>
+          <li role="none">
+            <!-- Native title: a CSS tooltip would be clipped by the scroll container -->
             <button
               type="button"
+              role="option"
+              aria-selected={l.code === getLang()}
+              title={`${t('tip.language')}: ${l.name}`}
               class="w-full text-start px-3 py-1.5 rounded-lg text-sm flex items-center gap-2 cursor-pointer
                      {l.code === getLang() ? 'bg-primary text-primary-content' : 'hover:bg-base-200'}"
               onclick={() => pick(l.code)}

@@ -3,8 +3,17 @@
     "title": "Gerador de Kinegramas",
     "subtitle": "Carregue um ou mais GIFs, escolha os quadros e gere os kinegramas + a grade compartilhada."
   },
-  "steps": { "s1": "Seleção de GIFs", "s2": "Seleção de quadros", "s3": "Papel + prévia" },
-  "common": { "restart": "Recomeçar", "prev": "Anterior", "next": "Próximo", "search": "Buscar idioma…" },
+  "steps": {
+    "s1": "Seleção de GIFs",
+    "s2": "Seleção de quadros",
+    "s3": "Papel + prévia"
+  },
+  "common": {
+    "restart": "Recomeçar",
+    "prev": "Anterior",
+    "next": "Próximo",
+    "search": "Buscar idioma…"
+  },
   "restart": {
     "title": "Recomeçar?",
     "body": "Todos os GIFs carregados e suas configurações serão removidos, e você voltará ao passo 1.",
@@ -53,5 +62,38 @@
     "rotated": " (girada 90°)",
     "sheetBarrier": "Folha {{n}}: grade (transparência)",
     "close": "✕ Fechar (Esc)"
+  },
+  "tip": {
+    "theme": "Alternar entre tema claro e escuro",
+    "language": "Mudar de idioma",
+    "steps": "Etapas",
+    "stepGo": "Ir para: {{name}}",
+    "stepLocked": "Conclua primeiro as etapas anteriores",
+    "restart": "Apaga tudo e volta para a etapa 1",
+    "cancel": "Fecha sem apagar nada",
+    "about": "Mostra ou oculta a explicação",
+    "dropzone": "Escolha arquivos GIF ou arraste-os aqui",
+    "removeGif": "Remover {{name}}",
+    "frameToggle": "Selecionar ou desmarcar o quadro {{n}}",
+    "frameMax": "Limite atingido: desmarque outro quadro primeiro",
+    "paper": "Tamanho da folha para os PDFs",
+    "customSize": "Tamanho de folha personalizado em mm",
+    "strip": "Largura de cada faixa em pixels da imagem",
+    "animate": "Ativar ou desativar a prévia animada",
+    "speed": "Velocidade da animação da prévia",
+    "pdfKinegrams": "Um kinegrama por folha",
+    "pdfBarrier": "Imprima em uma transparência",
+    "fullscreen": "Ver as folhas em tela cheia",
+    "sheet": "Ver em tela cheia",
+    "close": "Fechar (Esc)",
+    "prevSheet": "Folha anterior (←)",
+    "nextSheet": "Próxima folha (→)"
+  },
+  "files": {
+    "kinegrams": "kinegramas",
+    "barrier": "grade"
+  },
+  "seo": {
+    "description": "Gerador gratuito de kinegramas (scanimation) online: transforme GIFs em animações de grade imprimíveis — os kinegramas e sua grade compartilhada."
   }
 }

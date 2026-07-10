@@ -62,5 +62,38 @@
     "rotated": " (rotated 90°)",
     "sheetBarrier": "Sheet {{n}}: barrier grid (transparency)",
     "close": "✕ Close (Esc)"
+  },
+  "tip": {
+    "theme": "Switch between light and dark theme",
+    "language": "Change language",
+    "steps": "Steps",
+    "stepGo": "Go to: {{name}}",
+    "stepLocked": "Complete the previous steps first",
+    "restart": "Delete everything and go back to step 1",
+    "cancel": "Close without deleting anything",
+    "about": "Show or hide the explanation",
+    "dropzone": "Choose GIF files or drop them here",
+    "removeGif": "Remove {{name}}",
+    "frameToggle": "Select or deselect frame {{n}}",
+    "frameMax": "Limit reached — deselect another frame first",
+    "paper": "Sheet size for the PDFs",
+    "customSize": "Custom sheet size in mm",
+    "strip": "Width of each strip in image pixels",
+    "animate": "Turn the animated preview on or off",
+    "speed": "Speed of the preview animation",
+    "pdfKinegrams": "One kinegram per sheet",
+    "pdfBarrier": "Print it on a transparency",
+    "fullscreen": "View the sheets in fullscreen",
+    "sheet": "View in fullscreen",
+    "close": "Close (Esc)",
+    "prevSheet": "Previous sheet (←)",
+    "nextSheet": "Next sheet (→)"
+  },
+  "files": {
+    "kinegrams": "kinegrams",
+    "barrier": "barrier-grid"
+  },
+  "seo": {
+    "description": "Free online kinegram (scanimation) generator: turn GIFs into printable barrier-grid animations — the kinegrams plus their shared grid."
   }
 }

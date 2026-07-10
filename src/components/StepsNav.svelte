@@ -21,7 +21,7 @@
   const circleDelay = $derived(app.dir > 0 ? '0.35s' : '0s');
 </script>
 
-<nav class="flex items-start w-full">
+<nav class="flex items-start w-full" aria-label={t('tip.steps')}>
   {#each [1, 2, 3] as s, i}
     {#if i > 0}
       <div class="flex-1 h-1 bg-base-300 rounded mt-[14px] mx-2 overflow-hidden">
@@ -31,10 +31,14 @@
         ></div>
       </div>
     {/if}
+    <!-- aria-disabled (not disabled) so the tooltip still shows on hover;
+         clickStep() already ignores steps that aren't ready -->
     <button
       type="button"
-      class="flex flex-col items-center gap-1 {ready[s - 1] ? 'cursor-pointer' : 'cursor-not-allowed'}"
-      disabled={!ready[s - 1]}
+      class="flex flex-col items-center gap-1 tooltip tooltip-bottom {ready[s - 1] ? 'cursor-pointer' : 'cursor-not-allowed'}"
+      data-tip={ready[s - 1] ? t('tip.stepGo', { name: t(`steps.s${s}`) }) : t('tip.stepLocked')}
+      aria-disabled={!ready[s - 1]}
+      aria-current={s === app.step ? 'step' : undefined}
       onclick={() => clickStep(s)}
     >
       <span

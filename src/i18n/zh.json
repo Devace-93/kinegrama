@@ -3,8 +3,17 @@
     "title": "光栅动画生成器",
     "subtitle": "上传一个或多个 GIF，选择帧并生成光栅动画 + 共用光栅。"
   },
-  "steps": { "s1": "选择 GIF", "s2": "选择帧", "s3": "纸张 + 预览" },
-  "common": { "restart": "重新开始", "prev": "上一步", "next": "下一步", "search": "搜索语言…" },
+  "steps": {
+    "s1": "选择 GIF",
+    "s2": "选择帧",
+    "s3": "纸张 + 预览"
+  },
+  "common": {
+    "restart": "重新开始",
+    "prev": "上一步",
+    "next": "下一步",
+    "search": "搜索语言…"
+  },
   "restart": {
     "title": "重新开始？",
     "body": "将移除所有已加载的 GIF 及其设置，并返回第 1 步。",
@@ -53,5 +62,38 @@
     "rotated": "（旋转 90°）",
     "sheetBarrier": "第 {{n}} 张：光栅（透明胶片）",
     "close": "✕ 关闭（Esc）"
+  },
+  "tip": {
+    "theme": "切换浅色/深色主题",
+    "language": "更改语言",
+    "steps": "步骤",
+    "stepGo": "前往：{{name}}",
+    "stepLocked": "请先完成前面的步骤",
+    "restart": "删除全部内容并回到第 1 步",
+    "cancel": "关闭且不删除任何内容",
+    "about": "显示或隐藏说明",
+    "dropzone": "选择 GIF 文件或拖放到此处",
+    "removeGif": "移除 {{name}}",
+    "frameToggle": "选择/取消选择第 {{n}} 帧",
+    "frameMax": "已达上限，请先取消选择其他帧",
+    "paper": "PDF 纸张大小",
+    "customSize": "自定义纸张大小（毫米）",
+    "strip": "每条条纹的宽度（图像像素）",
+    "animate": "开启/关闭动画预览",
+    "speed": "预览动画速度",
+    "pdfKinegrams": "每张纸一幅光栅动画",
+    "pdfBarrier": "请打印在透明胶片上",
+    "fullscreen": "全屏查看各页",
+    "sheet": "全屏查看",
+    "close": "关闭（Esc）",
+    "prevSheet": "上一页（←）",
+    "nextSheet": "下一页（→）"
+  },
+  "files": {
+    "kinegrams": "光栅动画",
+    "barrier": "光栅"
+  },
+  "seo": {
+    "description": "免费在线光栅动画（扫描动画）生成器：把 GIF 转换成可打印的光栅动画 — 生成交错图像及其共用光栅。"
   }
 }

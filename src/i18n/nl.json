@@ -3,8 +3,17 @@
     "title": "Kinegram-generator",
     "subtitle": "Laad een of meer GIF's, kies de frames en genereer de kinegrammen + het gedeelde raster."
   },
-  "steps": { "s1": "GIF-selectie", "s2": "Frameselectie", "s3": "Papier + voorbeeld" },
-  "common": { "restart": "Opnieuw beginnen", "prev": "Vorige", "next": "Volgende", "search": "Taal zoeken…" },
+  "steps": {
+    "s1": "GIF-selectie",
+    "s2": "Frameselectie",
+    "s3": "Papier + voorbeeld"
+  },
+  "common": {
+    "restart": "Opnieuw beginnen",
+    "prev": "Vorige",
+    "next": "Volgende",
+    "search": "Taal zoeken…"
+  },
   "restart": {
     "title": "Opnieuw beginnen?",
     "body": "Alle geladen GIF's en hun instellingen worden verwijderd en je gaat terug naar stap 1.",
@@ -53,5 +62,38 @@
     "rotated": " (90° gedraaid)",
     "sheetBarrier": "Vel {{n}}: raster (transparant)",
     "close": "✕ Sluiten (Esc)"
+  },
+  "tip": {
+    "theme": "Wissel tussen licht en donker thema",
+    "language": "Taal wijzigen",
+    "steps": "Stappen",
+    "stepGo": "Ga naar: {{name}}",
+    "stepLocked": "Voltooi eerst de vorige stappen",
+    "restart": "Verwijder alles en ga terug naar stap 1",
+    "cancel": "Sluiten zonder iets te verwijderen",
+    "about": "Toon of verberg de uitleg",
+    "dropzone": "Kies GIF-bestanden of sleep ze hierheen",
+    "removeGif": "{{name}} verwijderen",
+    "frameToggle": "Frame {{n}} selecteren of deselecteren",
+    "frameMax": "Limiet bereikt — deselecteer eerst een ander frame",
+    "paper": "Velformaat voor de PDF's",
+    "customSize": "Aangepast velformaat in mm",
+    "strip": "Breedte van elke strook in beeldpixels",
+    "animate": "Geanimeerd voorbeeld aan of uit",
+    "speed": "Snelheid van de voorbeeldanimatie",
+    "pdfKinegrams": "Eén kinegram per vel",
+    "pdfBarrier": "Druk af op een transparant vel",
+    "fullscreen": "Bekijk de vellen op volledig scherm",
+    "sheet": "Bekijk op volledig scherm",
+    "close": "Sluiten (Esc)",
+    "prevSheet": "Vorig vel (←)",
+    "nextSheet": "Volgend vel (→)"
+  },
+  "files": {
+    "kinegrams": "kinegrammen",
+    "barrier": "raster"
+  },
+  "seo": {
+    "description": "Gratis online kinegram-generator (scanimation): zet GIF's om in afdrukbare raster-animaties — de kinegrammen plus hun gedeelde raster."
   }
 }

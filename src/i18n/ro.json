@@ -3,8 +3,17 @@
     "title": "Generator de kinegrame",
     "subtitle": "Încarcă unul sau mai multe GIF-uri, alege cadrele și generează kinegramele + grila comună."
   },
-  "steps": { "s1": "Selectare GIF-uri", "s2": "Selectare cadre", "s3": "Hârtie + previzualizare" },
-  "common": { "restart": "Începe din nou", "prev": "Înapoi", "next": "Înainte", "search": "Caută limba…" },
+  "steps": {
+    "s1": "Selectare GIF-uri",
+    "s2": "Selectare cadre",
+    "s3": "Hârtie + previzualizare"
+  },
+  "common": {
+    "restart": "Începe din nou",
+    "prev": "Înapoi",
+    "next": "Înainte",
+    "search": "Caută limba…"
+  },
   "restart": {
     "title": "Începi din nou?",
     "body": "Toate GIF-urile încărcate și setările lor vor fi eliminate și vei reveni la pasul 1.",
@@ -53,5 +62,38 @@
     "rotated": " (rotită 90°)",
     "sheetBarrier": "Foaia {{n}}: grilă (folie transparentă)",
     "close": "✕ Închide (Esc)"
+  },
+  "tip": {
+    "theme": "Comută între tema deschisă și cea întunecată",
+    "language": "Schimbă limba",
+    "steps": "Pași",
+    "stepGo": "Mergi la: {{name}}",
+    "stepLocked": "Finalizează mai întâi pașii anteriori",
+    "restart": "Șterge tot și revino la pasul 1",
+    "cancel": "Închide fără să ștergi nimic",
+    "about": "Arată sau ascunde explicația",
+    "dropzone": "Alege fișiere GIF sau trage-le aici",
+    "removeGif": "Elimină {{name}}",
+    "frameToggle": "Selectează sau deselectează cadrul {{n}}",
+    "frameMax": "Limită atinsă — deselectează mai întâi alt cadru",
+    "paper": "Dimensiunea colii pentru PDF-uri",
+    "customSize": "Dimensiune personalizată a colii, în mm",
+    "strip": "Lățimea fiecărei benzi în pixeli de imagine",
+    "animate": "Pornește sau oprește previzualizarea animată",
+    "speed": "Viteza animației de previzualizare",
+    "pdfKinegrams": "O kinegramă pe coală",
+    "pdfBarrier": "Tipărește-o pe folie transparentă",
+    "fullscreen": "Vezi colile pe tot ecranul",
+    "sheet": "Vezi pe tot ecranul",
+    "close": "Închide (Esc)",
+    "prevSheet": "Coala anterioară (←)",
+    "nextSheet": "Coala următoare (→)"
+  },
+  "files": {
+    "kinegrams": "kinegrame",
+    "barrier": "grila"
+  },
+  "seo": {
+    "description": "Generator gratuit de kinegrame (scanimation) online: transformă GIF-urile în animații cu grilă de barieră, gata de tipărit — kinegramele și grila lor comună."
   }
 }

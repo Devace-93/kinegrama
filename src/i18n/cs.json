@@ -3,8 +3,17 @@
     "title": "Generátor kinegramů",
     "subtitle": "Nahrajte jeden nebo více GIFů, vyberte snímky a vygenerujte kinegramy + společnou mřížku."
   },
-  "steps": { "s1": "Výběr GIFů", "s2": "Výběr snímků", "s3": "Papír + náhled" },
-  "common": { "restart": "Začít znovu", "prev": "Zpět", "next": "Další", "search": "Hledat jazyk…" },
+  "steps": {
+    "s1": "Výběr GIFů",
+    "s2": "Výběr snímků",
+    "s3": "Papír + náhled"
+  },
+  "common": {
+    "restart": "Začít znovu",
+    "prev": "Zpět",
+    "next": "Další",
+    "search": "Hledat jazyk…"
+  },
   "restart": {
     "title": "Začít znovu?",
     "body": "Všechny nahrané GIFy a jejich nastavení budou odstraněny a vrátíte se ke kroku 1.",
@@ -53,5 +62,38 @@
     "rotated": " (otočeno o 90°)",
     "sheetBarrier": "List {{n}}: mřížka (fólie)",
     "close": "✕ Zavřít (Esc)"
+  },
+  "tip": {
+    "theme": "Přepnout světlý/tmavý motiv",
+    "language": "Změnit jazyk",
+    "steps": "Kroky",
+    "stepGo": "Přejít na: {{name}}",
+    "stepLocked": "Nejdřív dokončete předchozí kroky",
+    "restart": "Smazat vše a vrátit se na krok 1",
+    "cancel": "Zavřít bez mazání",
+    "about": "Zobrazit nebo skrýt vysvětlení",
+    "dropzone": "Vyberte soubory GIF nebo je sem přetáhněte",
+    "removeGif": "Odebrat {{name}}",
+    "frameToggle": "Vybrat nebo zrušit výběr snímku {{n}}",
+    "frameMax": "Dosažen limit — nejdřív zrušte výběr jiného snímku",
+    "paper": "Velikost listu pro PDF",
+    "customSize": "Vlastní velikost listu v mm",
+    "strip": "Šířka každého proužku v pixelech obrázku",
+    "animate": "Zapnout nebo vypnout animovaný náhled",
+    "speed": "Rychlost animace náhledu",
+    "pdfKinegrams": "Jeden kinegram na list",
+    "pdfBarrier": "Vytiskněte na průhlednou fólii",
+    "fullscreen": "Zobrazit listy na celou obrazovku",
+    "sheet": "Zobrazit na celou obrazovku",
+    "close": "Zavřít (Esc)",
+    "prevSheet": "Předchozí list (←)",
+    "nextSheet": "Další list (→)"
+  },
+  "files": {
+    "kinegrams": "kinegramy",
+    "barrier": "mrizka"
+  },
+  "seo": {
+    "description": "Bezplatný online generátor kinegramů (scanimation): proměňte GIFy v tisknutelné animace s bariérovou mřížkou — kinegramy a jejich společnou mřížku."
   }
 }

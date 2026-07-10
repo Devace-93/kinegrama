@@ -3,8 +3,17 @@
     "title": "Kinegramm-Generator",
     "subtitle": "Lade ein oder mehrere GIFs, wähle die Einzelbilder und erzeuge die Kinegramme + das gemeinsame Gitter."
   },
-  "steps": { "s1": "GIF-Auswahl", "s2": "Bildauswahl", "s3": "Papier + Vorschau" },
-  "common": { "restart": "Neu beginnen", "prev": "Zurück", "next": "Weiter", "search": "Sprache suchen…" },
+  "steps": {
+    "s1": "GIF-Auswahl",
+    "s2": "Bildauswahl",
+    "s3": "Papier + Vorschau"
+  },
+  "common": {
+    "restart": "Neu beginnen",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "search": "Sprache suchen…"
+  },
   "restart": {
     "title": "Neu beginnen?",
     "body": "Alle geladenen GIFs und ihre Einstellungen werden entfernt, und du kehrst zu Schritt 1 zurück.",
@@ -53,5 +62,38 @@
     "rotated": " (um 90° gedreht)",
     "sheetBarrier": "Blatt {{n}}: Gitter (Folie)",
     "close": "✕ Schließen (Esc)"
+  },
+  "tip": {
+    "theme": "Zwischen hellem und dunklem Design wechseln",
+    "language": "Sprache ändern",
+    "steps": "Schritte",
+    "stepGo": "Gehe zu: {{name}}",
+    "stepLocked": "Schließe zuerst die vorherigen Schritte ab",
+    "restart": "Alles löschen und zu Schritt 1 zurückkehren",
+    "cancel": "Schließen, ohne etwas zu löschen",
+    "about": "Erklärung ein- oder ausblenden",
+    "dropzone": "GIF-Dateien auswählen oder hierher ziehen",
+    "removeGif": "{{name}} entfernen",
+    "frameToggle": "Bild {{n}} aus- oder abwählen",
+    "frameMax": "Limit erreicht – wähle zuerst ein anderes Bild ab",
+    "paper": "Blattgröße für die PDFs",
+    "customSize": "Eigene Blattgröße in mm",
+    "strip": "Breite jedes Streifens in Bildpixeln",
+    "animate": "Animierte Vorschau ein- oder ausschalten",
+    "speed": "Geschwindigkeit der Vorschau-Animation",
+    "pdfKinegrams": "Ein Kinegramm pro Blatt",
+    "pdfBarrier": "Auf eine Transparentfolie drucken",
+    "fullscreen": "Blätter im Vollbild ansehen",
+    "sheet": "Im Vollbild ansehen",
+    "close": "Schließen (Esc)",
+    "prevSheet": "Vorheriges Blatt (←)",
+    "nextSheet": "Nächstes Blatt (→)"
+  },
+  "files": {
+    "kinegrams": "kinegramme",
+    "barrier": "gitter"
+  },
+  "seo": {
+    "description": "Kostenloser Online-Kinegramm-Generator (Scanimation): Verwandle GIFs in druckbare Gitter-Animationen – die Kinegramme und ihr gemeinsames Gitter."
   }
 }

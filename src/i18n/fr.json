@@ -3,8 +3,17 @@
     "title": "Générateur de kinégrammes",
     "subtitle": "Chargez un ou plusieurs GIF, choisissez les images et générez les kinégrammes + la grille partagée."
   },
-  "steps": { "s1": "Sélection des GIF", "s2": "Sélection des images", "s3": "Papier + aperçu" },
-  "common": { "restart": "Recommencer", "prev": "Précédent", "next": "Suivant", "search": "Rechercher une langue…" },
+  "steps": {
+    "s1": "Sélection des GIF",
+    "s2": "Sélection des images",
+    "s3": "Papier + aperçu"
+  },
+  "common": {
+    "restart": "Recommencer",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "search": "Rechercher une langue…"
+  },
   "restart": {
     "title": "Recommencer ?",
     "body": "Tous les GIF chargés et leur configuration seront supprimés, et vous reviendrez à l'étape 1.",
@@ -53,5 +62,38 @@
     "rotated": " (pivotée de 90°)",
     "sheetBarrier": "Feuille {{n}} : grille (transparent)",
     "close": "✕ Fermer (Échap)"
+  },
+  "tip": {
+    "theme": "Basculer entre thème clair et sombre",
+    "language": "Changer de langue",
+    "steps": "Étapes",
+    "stepGo": "Aller à : {{name}}",
+    "stepLocked": "Terminez d'abord les étapes précédentes",
+    "restart": "Tout supprimer et revenir à l'étape 1",
+    "cancel": "Fermer sans rien supprimer",
+    "about": "Afficher ou masquer l'explication",
+    "dropzone": "Choisissez des fichiers GIF ou déposez-les ici",
+    "removeGif": "Retirer {{name}}",
+    "frameToggle": "Sélectionner ou désélectionner l'image {{n}}",
+    "frameMax": "Limite atteinte : désélectionnez d'abord une autre image",
+    "paper": "Format de feuille pour les PDF",
+    "customSize": "Format de feuille personnalisé en mm",
+    "strip": "Largeur de chaque bande en pixels d'image",
+    "animate": "Activer ou désactiver l'aperçu animé",
+    "speed": "Vitesse de l'animation de l'aperçu",
+    "pdfKinegrams": "Un kinégramme par feuille",
+    "pdfBarrier": "À imprimer sur un transparent",
+    "fullscreen": "Voir les feuilles en plein écran",
+    "sheet": "Voir en plein écran",
+    "close": "Fermer (Échap)",
+    "prevSheet": "Feuille précédente (←)",
+    "nextSheet": "Feuille suivante (→)"
+  },
+  "files": {
+    "kinegrams": "kinegrammes",
+    "barrier": "grille"
+  },
+  "seo": {
+    "description": "Générateur de kinégrammes (scanimation) gratuit en ligne : transformez des GIF en animations à grille imprimables — les kinégrammes et leur grille commune."
   }
 }

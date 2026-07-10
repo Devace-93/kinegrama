@@ -91,11 +91,24 @@ function resolveInitial() {
   return (LOCALES.find(l => l.code.startsWith(base)) || LOCALES[0]).code;
 }
 
+// Keeps <head> metadata (title, description, Open Graph) in the active language.
+function setMeta(selector, content) {
+  document.querySelector(selector)?.setAttribute('content', content);
+}
+
 function apply(lng) {
   state.lang = lng;
   document.documentElement.lang = lng;
   document.documentElement.dir = RTL.includes(lng.slice(0, 2)) ? 'rtl' : 'ltr';
-  document.title = i18next.t('app.title'); // tab title follows the language
+  const title = i18next.t('app.title');
+  const desc = i18next.t('seo.description');
+  document.title = title;
+  setMeta('meta[name="description"]', desc);
+  setMeta('meta[property="og:title"]', title);
+  setMeta('meta[property="og:description"]', desc);
+  setMeta('meta[property="og:locale"]', lng.replace('-', '_'));
+  setMeta('meta[name="twitter:title"]', title);
+  setMeta('meta[name="twitter:description"]', desc);
 }
 
 export async function initI18n() {

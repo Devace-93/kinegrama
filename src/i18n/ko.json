@@ -3,8 +3,17 @@
     "title": "키네그램 생성기",
     "subtitle": "GIF를 불러와 프레임을 선택하고, 키네그램과 공용 배리어 그리드를 생성하세요."
   },
-  "steps": { "s1": "GIF 선택", "s2": "프레임 선택", "s3": "용지 + 미리보기" },
-  "common": { "restart": "처음부터 다시", "prev": "이전", "next": "다음", "search": "언어 검색…" },
+  "steps": {
+    "s1": "GIF 선택",
+    "s2": "프레임 선택",
+    "s3": "용지 + 미리보기"
+  },
+  "common": {
+    "restart": "처음부터 다시",
+    "prev": "이전",
+    "next": "다음",
+    "search": "언어 검색…"
+  },
   "restart": {
     "title": "처음부터 다시 시작할까요?",
     "body": "불러온 GIF와 설정이 모두 삭제되고 1단계로 돌아갑니다.",
@@ -53,5 +62,38 @@
     "rotated": " (90° 회전)",
     "sheetBarrier": "{{n}}번 용지: 그리드 (투명 필름)",
     "close": "✕ 닫기 (Esc)"
+  },
+  "tip": {
+    "theme": "라이트/다크 테마 전환",
+    "language": "언어 변경",
+    "steps": "단계",
+    "stepGo": "{{name}}(으)로 이동",
+    "stepLocked": "먼저 이전 단계를 완료하세요",
+    "restart": "모두 삭제하고 1단계로 돌아가기",
+    "cancel": "아무것도 삭제하지 않고 닫기",
+    "about": "설명 표시/숨기기",
+    "dropzone": "GIF 파일을 선택하거나 여기에 끌어다 놓으세요",
+    "removeGif": "{{name}} 제거",
+    "frameToggle": "프레임 {{n}} 선택/해제",
+    "frameMax": "최대에 도달했습니다. 먼저 다른 프레임을 해제하세요",
+    "paper": "PDF 용지 크기",
+    "customSize": "사용자 지정 용지 크기(mm)",
+    "strip": "스트립 너비(이미지 픽셀)",
+    "animate": "애니메이션 미리보기 켜기/끄기",
+    "speed": "미리보기 애니메이션 속도",
+    "pdfKinegrams": "한 장에 키네그램 하나",
+    "pdfBarrier": "투명 필름에 인쇄하세요",
+    "fullscreen": "전체 화면으로 시트 보기",
+    "sheet": "전체 화면으로 보기",
+    "close": "닫기 (Esc)",
+    "prevSheet": "이전 시트 (←)",
+    "nextSheet": "다음 시트 (→)"
+  },
+  "files": {
+    "kinegrams": "키네그램",
+    "barrier": "그리드"
+  },
+  "seo": {
+    "description": "무료 온라인 키네그램(스캐니메이션) 생성기: GIF를 인쇄 가능한 배리어 그리드 애니메이션으로 변환 — 키네그램과 공용 그리드를 생성합니다."
   }
 }

@@ -58,7 +58,7 @@
 
   <div class="flex flex-wrap gap-5 items-start">
     <div class="w-72 flex flex-col gap-3">
-      <label class="text-sm opacity-80 flex flex-col gap-1">
+      <label class="text-sm opacity-80 flex flex-col gap-1 tooltip" data-tip={t('tip.paper')}>
         {t('step3.paper')}
         <select class="select select-sm" bind:value={app.paperKey}>
           <option value="carta">{t('step3.paperCarta')}</option>
@@ -69,25 +69,27 @@
       </label>
 
       {#if app.paperKey === 'custom'}
-        <div class="flex items-center gap-2 text-sm">
-          <input type="number" class="input input-sm w-20" min="50" max="2000" bind:value={app.customW} />
+        <div class="flex items-center gap-2 text-sm tooltip" data-tip={t('tip.customSize')}>
+          <input type="number" class="input input-sm w-20" min="50" max="2000"
+                 aria-label={t('tip.customSize')} bind:value={app.customW} />
           ×
-          <input type="number" class="input input-sm w-20" min="50" max="2000" bind:value={app.customH} />
+          <input type="number" class="input input-sm w-20" min="50" max="2000"
+                 aria-label={t('tip.customSize')} bind:value={app.customH} />
           mm
         </div>
       {/if}
 
-      <label class="text-sm opacity-80 flex items-center gap-2">
+      <label class="text-sm opacity-80 flex items-center gap-2 tooltip" data-tip={t('tip.strip')}>
         {t('step3.strip')}
         <input type="number" class="input input-sm w-20" min="1" max="20" bind:value={app.strip} />
       </label>
 
-      <label class="text-sm opacity-80 flex items-center gap-2">
+      <label class="text-sm opacity-80 flex items-center gap-2 tooltip" data-tip={t('tip.animate')}>
         <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" bind:checked={app.animate} />
         {t('step3.animate')}
       </label>
 
-      <label class="text-sm opacity-80 flex items-center gap-2">
+      <label class="text-sm opacity-80 flex items-center gap-2 tooltip" data-tip={t('tip.speed')}>
         {t('step3.speed')}
         <input type="range" class="range range-sm range-primary" min="1" max="60" bind:value={app.speed} />
       </label>
@@ -102,17 +104,19 @@
         {t('step3.infoPrint')}
       </div>
 
-      <button class="btn btn-sm btn-primary" onclick={() => pdfKinegrams(app.gifs, layout)}>
+      <button class="btn btn-sm btn-primary tooltip" data-tip={t('tip.pdfKinegrams')}
+              onclick={() => pdfKinegrams(app.gifs, layout)}>
         {t('step3.pdfKinegrams')}
       </button>
-      <button class="btn btn-sm btn-primary" onclick={() => pdfBarrier(layout)}>
+      <button class="btn btn-sm btn-primary tooltip" data-tip={t('tip.pdfBarrier')}
+              onclick={() => pdfBarrier(layout)}>
         {t('step3.pdfBarrier')}
       </button>
     </div>
 
     <div class="flex-1 min-w-[300px]">
       <div class="flex items-center gap-2 mb-2">
-        <button class="btn btn-sm btn-ghost border border-base-300"
+        <button class="btn btn-sm btn-ghost border border-base-300 tooltip" data-tip={t('tip.fullscreen')}
                 onclick={() => { app.fsIndex = 0; app.fsOpen = true; }}>
           {t('step3.fullscreen')}
         </button>
@@ -123,11 +127,13 @@
   </div>
 
   <div class="flex gap-2 mt-4 pt-3 border-t border-base-300 sticky bottom-0 z-10 bg-base-200 -mx-4 px-4 -mb-4 pb-4 rounded-b-2xl">
-    <button class="btn btn-sm btn-outline btn-error" onclick={() => (app.confirmRestart = true)}>
+    <button class="btn btn-sm btn-outline btn-error tooltip" data-tip={t('tip.restart')}
+            onclick={() => (app.confirmRestart = true)}>
       {t('common.restart')}
     </button>
     <div class="flex-1"></div>
-    <button class="btn btn-sm btn-ghost border border-base-300" onclick={() => goStep(2)}>
+    <button class="btn btn-sm btn-ghost border border-base-300 tooltip"
+            data-tip={t('tip.stepGo', { name: t('steps.s2') })} onclick={() => goStep(2)}>
       {t('common.prev')}
     </button>
   </div>

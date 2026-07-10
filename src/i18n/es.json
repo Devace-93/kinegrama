@@ -62,5 +62,38 @@
     "rotated": " (rotada 90°)",
     "sheetBarrier": "Hoja {{n}}: rejilla (acetato)",
     "close": "✕ Cerrar (Esc)"
+  },
+  "tip": {
+    "theme": "Cambiar entre tema claro y oscuro",
+    "language": "Cambiar de idioma",
+    "steps": "Pasos",
+    "stepGo": "Ir a: {{name}}",
+    "stepLocked": "Completa primero los pasos anteriores",
+    "restart": "Borra todo y vuelve al paso 1",
+    "cancel": "Cierra sin borrar nada",
+    "about": "Muestra u oculta la explicación",
+    "dropzone": "Elige archivos GIF o arrástralos aquí",
+    "removeGif": "Quitar {{name}}",
+    "frameToggle": "Seleccionar o deseleccionar el fotograma {{n}}",
+    "frameMax": "Límite alcanzado: deselecciona otro fotograma primero",
+    "paper": "Tamaño de hoja para los PDF",
+    "customSize": "Tamaño de hoja personalizado en mm",
+    "strip": "Ancho de cada franja en píxeles de imagen",
+    "animate": "Activar o desactivar la vista previa animada",
+    "speed": "Velocidad de la animación de la vista previa",
+    "pdfKinegrams": "Un kinegrama por hoja",
+    "pdfBarrier": "Imprímela en una transparencia",
+    "fullscreen": "Ver las hojas en pantalla completa",
+    "sheet": "Ver en pantalla completa",
+    "close": "Cerrar (Esc)",
+    "prevSheet": "Hoja anterior (←)",
+    "nextSheet": "Hoja siguiente (→)"
+  },
+  "files": {
+    "kinegrams": "kinegramas",
+    "barrier": "rejilla"
+  },
+  "seo": {
+    "description": "Generador de kinegramas (scanimation) gratuito y en línea: convierte GIFs en animaciones de rejilla listas para imprimir — los kinegramas y su rejilla compartida."
   }
 }

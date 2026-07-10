@@ -3,8 +3,17 @@
     "title": "Generator Kinegram",
     "subtitle": "Muat satu atau beberapa GIF, pilih bingkai, dan buat kinegram + kisi bersama."
   },
-  "steps": { "s1": "Pilih GIF", "s2": "Pilih bingkai", "s3": "Kertas + pratinjau" },
-  "common": { "restart": "Mulai ulang", "prev": "Kembali", "next": "Lanjut", "search": "Cari bahasa…" },
+  "steps": {
+    "s1": "Pilih GIF",
+    "s2": "Pilih bingkai",
+    "s3": "Kertas + pratinjau"
+  },
+  "common": {
+    "restart": "Mulai ulang",
+    "prev": "Kembali",
+    "next": "Lanjut",
+    "search": "Cari bahasa…"
+  },
   "restart": {
     "title": "Mulai ulang?",
     "body": "Semua GIF yang dimuat beserta pengaturannya akan dihapus, dan Anda kembali ke langkah 1.",
@@ -53,5 +62,38 @@
     "rotated": " (diputar 90°)",
     "sheetBarrier": "Lembar {{n}}: kisi (transparansi)",
     "close": "✕ Tutup (Esc)"
+  },
+  "tip": {
+    "theme": "Beralih antara tema terang dan gelap",
+    "language": "Ganti bahasa",
+    "steps": "Langkah",
+    "stepGo": "Buka: {{name}}",
+    "stepLocked": "Selesaikan dulu langkah-langkah sebelumnya",
+    "restart": "Hapus semuanya dan kembali ke langkah 1",
+    "cancel": "Tutup tanpa menghapus apa pun",
+    "about": "Tampilkan atau sembunyikan penjelasan",
+    "dropzone": "Pilih berkas GIF atau seret ke sini",
+    "removeGif": "Hapus {{name}}",
+    "frameToggle": "Pilih atau batal pilih bingkai {{n}}",
+    "frameMax": "Batas tercapai — batalkan pilihan bingkai lain dulu",
+    "paper": "Ukuran kertas untuk PDF",
+    "customSize": "Ukuran kertas kustom dalam mm",
+    "strip": "Lebar setiap strip dalam piksel gambar",
+    "animate": "Nyalakan atau matikan pratinjau animasi",
+    "speed": "Kecepatan animasi pratinjau",
+    "pdfKinegrams": "Satu kinegram per lembar",
+    "pdfBarrier": "Cetak pada lembar transparan",
+    "fullscreen": "Lihat lembaran dalam layar penuh",
+    "sheet": "Lihat dalam layar penuh",
+    "close": "Tutup (Esc)",
+    "prevSheet": "Lembar sebelumnya (←)",
+    "nextSheet": "Lembar berikutnya (→)"
+  },
+  "files": {
+    "kinegrams": "kinegram",
+    "barrier": "kisi"
+  },
+  "seo": {
+    "description": "Generator kinegram (scanimation) online gratis: ubah GIF menjadi animasi kisi penghalang siap cetak — kinegram beserta kisi bersamanya."
   }
 }

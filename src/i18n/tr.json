@@ -3,8 +3,17 @@
     "title": "Kinegram Oluşturucu",
     "subtitle": "Bir veya daha fazla GIF yükleyin, kareleri seçin ve kinegramları + ortak ızgarayı oluşturun."
   },
-  "steps": { "s1": "GIF seçimi", "s2": "Kare seçimi", "s3": "Kağıt + önizleme" },
-  "common": { "restart": "Baştan başla", "prev": "Geri", "next": "İleri", "search": "Dil ara…" },
+  "steps": {
+    "s1": "GIF seçimi",
+    "s2": "Kare seçimi",
+    "s3": "Kağıt + önizleme"
+  },
+  "common": {
+    "restart": "Baştan başla",
+    "prev": "Geri",
+    "next": "İleri",
+    "search": "Dil ara…"
+  },
   "restart": {
     "title": "Baştan başlansın mı?",
     "body": "Yüklenen tüm GIF'ler ve ayarları silinecek ve 1. adıma döneceksiniz.",
@@ -53,5 +62,38 @@
     "rotated": " (90° döndürüldü)",
     "sheetBarrier": "Sayfa {{n}}: ızgara (asetat)",
     "close": "✕ Kapat (Esc)"
+  },
+  "tip": {
+    "theme": "Açık/koyu tema arasında geçiş yap",
+    "language": "Dili değiştir",
+    "steps": "Adımlar",
+    "stepGo": "Şuraya git: {{name}}",
+    "stepLocked": "Önce önceki adımları tamamlayın",
+    "restart": "Her şeyi sil ve 1. adıma dön",
+    "cancel": "Hiçbir şeyi silmeden kapat",
+    "about": "Açıklamayı göster veya gizle",
+    "dropzone": "GIF dosyalarını seçin veya buraya sürükleyin",
+    "removeGif": "{{name}} dosyasını kaldır",
+    "frameToggle": "Kare {{n}} seç veya seçimi kaldır",
+    "frameMax": "Sınıra ulaşıldı — önce başka bir karenin seçimini kaldırın",
+    "paper": "PDF'ler için kâğıt boyutu",
+    "customSize": "Özel kâğıt boyutu (mm)",
+    "strip": "Her şeridin genişliği (görüntü pikseli)",
+    "animate": "Animasyonlu önizlemeyi aç veya kapat",
+    "speed": "Önizleme animasyonunun hızı",
+    "pdfKinegrams": "Her sayfada bir kinegram",
+    "pdfBarrier": "Şeffaf sayfaya yazdırın",
+    "fullscreen": "Sayfaları tam ekranda görüntüle",
+    "sheet": "Tam ekranda görüntüle",
+    "close": "Kapat (Esc)",
+    "prevSheet": "Önceki sayfa (←)",
+    "nextSheet": "Sonraki sayfa (→)"
+  },
+  "files": {
+    "kinegrams": "kinegramlar",
+    "barrier": "izgara"
+  },
+  "seo": {
+    "description": "Ücretsiz çevrimiçi kinegram (scanimation) oluşturucu: GIF'leri yazdırılabilir bariyer ızgaralı animasyonlara dönüştürün — kinegramlar ve ortak ızgaraları."
   }
 }

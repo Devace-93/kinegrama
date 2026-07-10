@@ -36,12 +36,18 @@
       <div class="grid gap-2.5" style="grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));">
         {#each g.frames as frame, fi}
           {@const pos = g.selection.indexOf(fi)}
+          {@const blocked = pos < 0 && g.selection.length >= max}
+          <!-- Native title: overflow:hidden on the card would clip a CSS tooltip -->
           <div
             class="frame-card"
             class:selected={pos >= 0}
-            class:disabled={pos < 0 && g.selection.length >= max}
+            class:disabled={blocked}
             role="button"
             tabindex="0"
+            title={blocked ? t('tip.frameMax') : t('tip.frameToggle', { n: fi + 1 })}
+            aria-label={t('tip.frameToggle', { n: fi + 1 })}
+            aria-pressed={pos >= 0}
+            aria-disabled={blocked}
             onclick={() => toggleFrame(gi, fi)}
             onkeydown={e => (e.key === 'Enter' || e.key === ' ') && toggleFrame(gi, fi)}
           >
@@ -55,15 +61,26 @@
   {/each}
 
   <div class="flex gap-2 mt-2 pt-3 border-t border-base-300 sticky bottom-0 z-10 bg-base-200 -mx-4 px-4 -mb-4 pb-4 rounded-b-2xl">
-    <button class="btn btn-sm btn-outline btn-error" onclick={() => (app.confirmRestart = true)}>
+    <button class="btn btn-sm btn-outline btn-error tooltip" data-tip={t('tip.restart')}
+            onclick={() => (app.confirmRestart = true)}>
       {t('common.restart')}
     </button>
     <div class="flex-1"></div>
-    <button class="btn btn-sm btn-ghost border border-base-300" onclick={() => goStep(1)}>
+    <button class="btn btn-sm btn-ghost border border-base-300 tooltip"
+            data-tip={t('tip.stepGo', { name: t('steps.s1') })} onclick={() => goStep(1)}>
       {t('common.prev')}
     </button>
-    <button class="btn btn-sm btn-primary" disabled={!ok} onclick={() => goStep(3)}>
-      {t('common.next')}
-    </button>
+    <!-- Tooltip on a wrapper: disabled buttons don't get hover events.
+         When blocked it explains the current problem with the selection. -->
+    <span class="tooltip"
+          data-tip={ok
+            ? t('tip.stepGo', { name: t('steps.s3') })
+            : !allEqual
+              ? t('step2.statusUnequal', { counts: counts.join(', ') })
+              : t('step2.statusMin')}>
+      <button class="btn btn-sm btn-primary" disabled={!ok} onclick={() => goStep(3)}>
+        {t('common.next')}
+      </button>
+    </span>
   </div>
 </section>

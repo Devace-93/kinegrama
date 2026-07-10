@@ -3,8 +3,17 @@
     "title": "Kinegramgenerator",
     "subtitle": "Ladda en eller flera GIF:ar, välj bildrutor och generera kinegrammen + det delade gallret."
   },
-  "steps": { "s1": "Val av GIF", "s2": "Val av bildrutor", "s3": "Papper + förhandsvisning" },
-  "common": { "restart": "Börja om", "prev": "Föregående", "next": "Nästa", "search": "Sök språk…" },
+  "steps": {
+    "s1": "Val av GIF",
+    "s2": "Val av bildrutor",
+    "s3": "Papper + förhandsvisning"
+  },
+  "common": {
+    "restart": "Börja om",
+    "prev": "Föregående",
+    "next": "Nästa",
+    "search": "Sök språk…"
+  },
   "restart": {
     "title": "Börja om?",
     "body": "Alla inlästa GIF:ar och deras inställningar tas bort och du återgår till steg 1.",
@@ -53,5 +62,38 @@
     "rotated": " (roterad 90°)",
     "sheetBarrier": "Ark {{n}}: galler (OH-film)",
     "close": "✕ Stäng (Esc)"
+  },
+  "tip": {
+    "theme": "Växla mellan ljust och mörkt tema",
+    "language": "Byt språk",
+    "steps": "Steg",
+    "stepGo": "Gå till: {{name}}",
+    "stepLocked": "Slutför de tidigare stegen först",
+    "restart": "Ta bort allt och gå tillbaka till steg 1",
+    "cancel": "Stäng utan att ta bort något",
+    "about": "Visa eller dölj förklaringen",
+    "dropzone": "Välj GIF-filer eller släpp dem här",
+    "removeGif": "Ta bort {{name}}",
+    "frameToggle": "Markera eller avmarkera bildruta {{n}}",
+    "frameMax": "Gränsen nådd — avmarkera en annan bildruta först",
+    "paper": "Arkstorlek för PDF-filerna",
+    "customSize": "Anpassad arkstorlek i mm",
+    "strip": "Bredd på varje rand i bildpixlar",
+    "animate": "Animerad förhandsvisning på eller av",
+    "speed": "Hastighet för förhandsvisningens animation",
+    "pdfKinegrams": "Ett kinegram per ark",
+    "pdfBarrier": "Skriv ut på OH-film",
+    "fullscreen": "Visa arken i helskärm",
+    "sheet": "Visa i helskärm",
+    "close": "Stäng (Esc)",
+    "prevSheet": "Föregående ark (←)",
+    "nextSheet": "Nästa ark (→)"
+  },
+  "files": {
+    "kinegrams": "kinegram",
+    "barrier": "galler"
+  },
+  "seo": {
+    "description": "Gratis kinegramgenerator (scanimation) online: förvandla GIF:ar till utskrivbara galler-animationer — kinegrammen och deras gemensamma galler."
   }
 }

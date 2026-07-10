@@ -11,5 +11,13 @@
     "statusBase": "Máximo {{max}} fotogramas por GIF (el GIF con menos fotogramas). Hacé clic para seleccionar o quitar; el número indica el orden.",
     "statusMin": "Seleccioná al menos 2 fotogramas en cada GIF."
   },
-  "step3": { "clickAnySheet": "o hacé clic en cualquier hoja" }
+  "step3": { "clickAnySheet": "o hacé clic en cualquier hoja" },
+  "tip": {
+    "stepLocked": "Completá primero los pasos anteriores",
+    "restart": "Borrá todo y volvé al paso 1",
+    "cancel": "Cerrá sin borrar nada",
+    "dropzone": "Elegí archivos GIF o arrastralos aquí",
+    "frameToggle": "Seleccioná o deseleccioná el fotograma {{n}}",
+    "frameMax": "Límite alcanzado: deseleccioná otro fotograma primero"
+  }
 }

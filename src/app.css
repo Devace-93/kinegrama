@@ -38,4 +38,15 @@
 }
 .frame-card.selected { border-color: var(--color-primary); }
 .frame-card.selected .order { display: flex; }
-.frame-card.disabled { opacity: .35; cursor: not-allowed; pointer-events: none; }
+/* Keep pointer events so the tooltip can explain WHY it's disabled;
+   toggleFrame() already ignores clicks beyond the max. */
+.frame-card.disabled { opacity: .35; cursor: not-allowed; }
+
+/* Unlayered overrides: .tooltip's display:inline-block (daisyUI layer)
+   must not break flex/grid components it's combined with. */
+.btn.tooltip { display: inline-flex; }
+.swap.tooltip { display: inline-grid; }
+
+/* WCAG AA: the light theme's error red is 2.7:1 on white for outline
+   buttons; this darker red is ~5.6:1. */
+[data-theme="light"] .btn-outline.btn-error { --color-error: #c81e45; }

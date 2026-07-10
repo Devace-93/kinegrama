@@ -26,7 +26,11 @@
       <p class="text-sm opacity-70">{t('app.subtitle')}</p>
     </div>
     <LanguagePicker />
-    <label class="swap swap-rotate btn btn-sm btn-ghost text-lg" aria-label="Theme">
+    <label
+      class="swap swap-rotate btn btn-sm btn-ghost text-lg tooltip tooltip-left"
+      data-tip={t('tip.theme')}
+      aria-label={t('tip.theme')}
+    >
       <input
         type="checkbox"
         checked={theme === 'light'}
@@ -40,29 +44,32 @@
   <StepsNav />
   </div>
 
-  {#key app.step}
-    <div in:fly={{ x: 56 * app.dir, duration: 280, opacity: 0 }}>
-      {#if app.step === 1}
-        <Step1Gifs />
-      {:else if app.step === 2}
-        <Step2Frames />
-      {:else}
-        <Step3Paper />
-      {/if}
-    </div>
-  {/key}
+  <main>
+    {#key app.step}
+      <div in:fly={{ x: 56 * app.dir, duration: 280, opacity: 0 }}>
+        {#if app.step === 1}
+          <Step1Gifs />
+        {:else if app.step === 2}
+          <Step2Frames />
+        {:else}
+          <Step3Paper />
+        {/if}
+      </div>
+    {/key}
+  </main>
 </div>
 
 {#if app.confirmRestart}
-  <div class="modal modal-open" role="dialog">
+  <div class="modal modal-open" role="dialog" aria-modal="true" aria-labelledby="restart-title">
     <div class="modal-box">
-      <h3 class="font-bold text-lg">{t('restart.title')}</h3>
+      <h3 id="restart-title" class="font-bold text-lg">{t('restart.title')}</h3>
       <p class="py-3 text-sm opacity-80">{t('restart.body')}</p>
       <div class="modal-action">
-        <button class="btn btn-sm" onclick={() => (app.confirmRestart = false)}>
+        <button class="btn btn-sm tooltip" data-tip={t('tip.cancel')}
+                onclick={() => (app.confirmRestart = false)}>
           {t('restart.cancel')}
         </button>
-        <button class="btn btn-sm btn-error" onclick={restart}>
+        <button class="btn btn-sm btn-error tooltip" data-tip={t('tip.restart')} onclick={restart}>
           {t('common.restart')}
         </button>
       </div>

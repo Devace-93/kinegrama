@@ -3,8 +3,17 @@
     "title": "Generator kinegramów",
     "subtitle": "Wczytaj jeden lub więcej GIF-ów, wybierz klatki i wygeneruj kinegramy + wspólną kratkę."
   },
-  "steps": { "s1": "Wybór GIF-ów", "s2": "Wybór klatek", "s3": "Papier + podgląd" },
-  "common": { "restart": "Zacznij od nowa", "prev": "Wstecz", "next": "Dalej", "search": "Szukaj języka…" },
+  "steps": {
+    "s1": "Wybór GIF-ów",
+    "s2": "Wybór klatek",
+    "s3": "Papier + podgląd"
+  },
+  "common": {
+    "restart": "Zacznij od nowa",
+    "prev": "Wstecz",
+    "next": "Dalej",
+    "search": "Szukaj języka…"
+  },
   "restart": {
     "title": "Zacząć od nowa?",
     "body": "Wszystkie wczytane GIF-y i ich ustawienia zostaną usunięte, a Ty wrócisz do kroku 1.",
@@ -53,5 +62,38 @@
     "rotated": " (obrócony o 90°)",
     "sheetBarrier": "Arkusz {{n}}: kratka (folia)",
     "close": "✕ Zamknij (Esc)"
+  },
+  "tip": {
+    "theme": "Przełącz jasny/ciemny motyw",
+    "language": "Zmień język",
+    "steps": "Kroki",
+    "stepGo": "Przejdź do: {{name}}",
+    "stepLocked": "Najpierw ukończ poprzednie kroki",
+    "restart": "Usuń wszystko i wróć do kroku 1",
+    "cancel": "Zamknij bez usuwania czegokolwiek",
+    "about": "Pokaż lub ukryj wyjaśnienie",
+    "dropzone": "Wybierz pliki GIF lub przeciągnij je tutaj",
+    "removeGif": "Usuń {{name}}",
+    "frameToggle": "Zaznacz lub odznacz klatkę {{n}}",
+    "frameMax": "Osiągnięto limit — najpierw odznacz inną klatkę",
+    "paper": "Rozmiar arkusza dla PDF",
+    "customSize": "Własny rozmiar arkusza w mm",
+    "strip": "Szerokość każdego paska w pikselach obrazu",
+    "animate": "Włącz lub wyłącz animowany podgląd",
+    "speed": "Szybkość animacji podglądu",
+    "pdfKinegrams": "Jeden kinegram na arkusz",
+    "pdfBarrier": "Wydrukuj na folii przezroczystej",
+    "fullscreen": "Zobacz arkusze na pełnym ekranie",
+    "sheet": "Zobacz na pełnym ekranie",
+    "close": "Zamknij (Esc)",
+    "prevSheet": "Poprzedni arkusz (←)",
+    "nextSheet": "Następny arkusz (→)"
+  },
+  "files": {
+    "kinegrams": "kinegramy",
+    "barrier": "kratka"
+  },
+  "seo": {
+    "description": "Darmowy internetowy generator kinegramów (scanimation): zamień GIF-y w drukowalne animacje z kratką barierową — kinegramy i ich wspólną kratkę."
   }
 }

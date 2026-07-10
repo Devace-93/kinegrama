@@ -1,5 +1,6 @@
 <script>
   import { app } from '../lib/state.svelte.js';
+  import { t } from '../i18n/index.svelte.js';
 
   let { pages, ppm, captions } = $props();
 
@@ -14,8 +15,10 @@
 <div class="flex flex-wrap gap-4">
   {#each pages as p, i (p)}
     <div
-      class="text-center cursor-pointer"
+      class="text-center cursor-pointer tooltip"
+      data-tip={t('tip.sheet')}
       role="button"
+      aria-label="{captions[i]} — {t('tip.sheet')}"
       tabindex="0"
       onclick={() => { app.fsIndex = i; app.fsOpen = true; }}
       onkeydown={e => (e.key === 'Enter' || e.key === ' ') && (app.fsIndex = i, app.fsOpen = true)}

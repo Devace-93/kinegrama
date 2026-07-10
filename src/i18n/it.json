@@ -3,8 +3,17 @@
     "title": "Generatore di kinegrammi",
     "subtitle": "Carica una o più GIF, scegli i fotogrammi e genera i kinegrammi + la griglia condivisa."
   },
-  "steps": { "s1": "Selezione GIF", "s2": "Selezione fotogrammi", "s3": "Carta + anteprima" },
-  "common": { "restart": "Ricomincia", "prev": "Indietro", "next": "Avanti", "search": "Cerca lingua…" },
+  "steps": {
+    "s1": "Selezione GIF",
+    "s2": "Selezione fotogrammi",
+    "s3": "Carta + anteprima"
+  },
+  "common": {
+    "restart": "Ricomincia",
+    "prev": "Indietro",
+    "next": "Avanti",
+    "search": "Cerca lingua…"
+  },
   "restart": {
     "title": "Ricominciare?",
     "body": "Tutte le GIF caricate e le loro impostazioni verranno rimosse e tornerai al passo 1.",
@@ -53,5 +62,38 @@
     "rotated": " (ruotato di 90°)",
     "sheetBarrier": "Foglio {{n}}: griglia (lucido)",
     "close": "✕ Chiudi (Esc)"
+  },
+  "tip": {
+    "theme": "Passa dal tema chiaro a quello scuro",
+    "language": "Cambia lingua",
+    "steps": "Passaggi",
+    "stepGo": "Vai a: {{name}}",
+    "stepLocked": "Completa prima i passaggi precedenti",
+    "restart": "Elimina tutto e torna al passaggio 1",
+    "cancel": "Chiudi senza eliminare nulla",
+    "about": "Mostra o nascondi la spiegazione",
+    "dropzone": "Scegli file GIF o trascinali qui",
+    "removeGif": "Rimuovi {{name}}",
+    "frameToggle": "Seleziona o deseleziona il fotogramma {{n}}",
+    "frameMax": "Limite raggiunto: deseleziona prima un altro fotogramma",
+    "paper": "Formato del foglio per i PDF",
+    "customSize": "Formato foglio personalizzato in mm",
+    "strip": "Larghezza di ogni striscia in pixel dell'immagine",
+    "animate": "Attiva o disattiva l'anteprima animata",
+    "speed": "Velocità dell'animazione dell'anteprima",
+    "pdfKinegrams": "Un kinegramma per foglio",
+    "pdfBarrier": "Stampala su un lucido",
+    "fullscreen": "Vedi i fogli a schermo intero",
+    "sheet": "Vedi a schermo intero",
+    "close": "Chiudi (Esc)",
+    "prevSheet": "Foglio precedente (←)",
+    "nextSheet": "Foglio successivo (→)"
+  },
+  "files": {
+    "kinegrams": "kinegrammi",
+    "barrier": "griglia"
+  },
+  "seo": {
+    "description": "Generatore gratuito di kinegrammi (scanimation) online: trasforma le GIF in animazioni a griglia stampabili — i kinegrammi e la loro griglia condivisa."
   }
 }

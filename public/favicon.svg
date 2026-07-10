@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- "K" sliced into vertical strips like a kinegram: solid strips show the
+       main frame; the alternate strips show a shifted ghost frame, hinting
+       at the barrier-grid animation. -->
+  <defs>
+    <path id="k" d="M12 6 H24 V28 L42 6 H56 L36 30 L57 58 H43 L24 36 V58 H12 Z"/>
+    <mask id="a">
+      <rect width="64" height="64" fill="#000"/>
+      <g fill="#fff">
+        <rect x="0" width="3" height="64"/><rect x="6" width="3" height="64"/>
+        <rect x="12" width="3" height="64"/><rect x="18" width="3" height="64"/>
+        <rect x="24" width="3" height="64"/><rect x="30" width="3" height="64"/>
+        <rect x="36" width="3" height="64"/><rect x="42" width="3" height="64"/>
+        <rect x="48" width="3" height="64"/><rect x="54" width="3" height="64"/>
+        <rect x="60" width="3" height="64"/>
+      </g>
+    </mask>
+    <mask id="b">
+      <rect width="64" height="64" fill="#000"/>
+      <g fill="#fff">
+        <rect x="3" width="3" height="64"/><rect x="9" width="3" height="64"/>
+        <rect x="15" width="3" height="64"/><rect x="21" width="3" height="64"/>
+        <rect x="27" width="3" height="64"/><rect x="33" width="3" height="64"/>
+        <rect x="39" width="3" height="64"/><rect x="45" width="3" height="64"/>
+        <rect x="51" width="3" height="64"/><rect x="57" width="3" height="64"/>
+      </g>
+    </mask>
+  </defs>
+  <g mask="url(#b)" opacity="0.35">
+    <use href="#k" fill="#605dff" transform="translate(2.5)"/>
+  </g>
+  <g mask="url(#a)">
+    <use href="#k" fill="#605dff"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "common": { "restart": "Empezar de nuevo" },
+  "restart": {
+    "title": "¿Empezar de nuevo?",
+    "body": "Se quitarán todos los GIF cargados y su configuración, y volverás al paso 1."
+  },
+  "step1": {
+    "dropHint": "Puedes añadir más en cualquier momento.",
+    "loaded": "{{n}} GIF cargados. Puedes añadir más."
+  }
+}

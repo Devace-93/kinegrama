@@ -1,0 +1,5 @@
+{
+  "common": { "restart": "Start again" },
+  "restart": { "title": "Start again?" },
+  "step3": { "paperCustom": "Customise…" }
+}

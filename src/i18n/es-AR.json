@@ -1,0 +1,15 @@
+{
+  "app": {
+    "subtitle": "Cargá uno o varios GIFs, elegí los fotogramas y generá los kinegramas + la rejilla compartida."
+  },
+  "step1": {
+    "dropTitle": "Hacé clic o arrastrá uno o varios GIFs aquí",
+    "dropHint": "Podés agregar más en cualquier momento.",
+    "loaded": "{{n}} GIF(s) cargado(s). Podés agregar más."
+  },
+  "step2": {
+    "statusBase": "Máximo {{max}} fotogramas por GIF (el GIF con menos fotogramas). Hacé clic para seleccionar o quitar; el número indica el orden.",
+    "statusMin": "Seleccioná al menos 2 fotogramas en cada GIF."
+  },
+  "step3": { "clickAnySheet": "o hacé clic en cualquier hoja" }
+}

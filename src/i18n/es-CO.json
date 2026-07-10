@@ -1,0 +1,7 @@
+{
+  "step1": { "dropTitle": "Dale clic o arrastra uno o varios GIFs aquí" },
+  "step2": {
+    "statusBase": "Máximo {{max}} fotogramas por GIF (el GIF con menos fotogramas). Dale clic para seleccionar o quitar; el número indica el orden."
+  },
+  "step3": { "clickAnySheet": "o dale clic a cualquier hoja" }
+}

@@ -1,3 +1,10 @@
+# Dependencias y build
+node_modules/
+dist/
+
+# Artefactos de pruebas de navegador
+.playwright-mcp/
+
 # Archivos generados y fotos personales
 recon_*.png
 simulacion-*.png

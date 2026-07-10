@@ -1,0 +1,60 @@
+{
+  "app": {
+    "title": "Generador de Kinegramas",
+    "subtitle": "Carga uno o varios GIFs, elige los frames y genera los kinegramas + la rejilla compartida."
+  },
+  "steps": {
+    "s1": "Selección de GIFs",
+    "s2": "Selección de frames",
+    "s3": "Papel + preview"
+  },
+  "common": {
+    "restart": "Volver a empezar",
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "step1": {
+    "title": "Cargar GIFs",
+    "aboutTitle": "¿Qué es un kinegrama?",
+    "aboutBody": "Un kinegrama (animación de barrera o scanimation) es una ilusión óptica: los frames de una animación se entrelazan en franjas verticales dentro de una sola imagen impresa. Al deslizar encima una rejilla transparente con líneas negras, las ranuras revelan un frame a la vez y la imagen cobra movimiento. Esta herramienta genera ambas partes listas para imprimir: los kinegramas y su rejilla.",
+    "dropTitle": "Haz clic o arrastra uno o varios GIFs aquí",
+    "dropHint": "Puedes agregar más en cualquier momento.",
+    "decoding": "Decodificando…",
+    "loaded": "{{n}} GIF(s) cargado(s). Puedes agregar más.",
+    "error": "Error: {{msg}}",
+    "singleFrame": "{{name}}: solo tiene 1 frame",
+    "meta": "{{w}}×{{h}}px · {{n}} frames",
+    "remove": "Quitar"
+  },
+  "step2": {
+    "title": "Seleccionar frames",
+    "gifTitle": "{{name}} ({{n}} frames)",
+    "statusBase": "Máximo {{max}} frames por GIF (el GIF con menos frames). Haz clic para seleccionar/deseleccionar; el número indica el orden.",
+    "statusUnequal": "⚠ Todos los GIFs deben tener la MISMA cantidad seleccionada para compartir rejilla (ahora: {{counts}}).",
+    "statusMin": "Selecciona al menos 2 frames en cada GIF.",
+    "statusOk": "✓ {{n}} frames por kinegrama."
+  },
+  "step3": {
+    "title": "Papel y vista previa",
+    "paper": "Tamaño de papel:",
+    "paperCarta": "Carta (215.9 × 279.4 mm)",
+    "paperOficio": "Oficio (215.9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Personalizado…",
+    "strip": "Ancho de franja (px):",
+    "animate": "Mostrar preview animado",
+    "speed": "Velocidad:",
+    "infoSheets": "Hojas necesarias: {{gifs}} kinegrama(s) + 1 rejilla.",
+    "infoScale": "Escala común: {{mmpp}} mm/px.",
+    "infoStrip": "Franja: {{strip}} mm · ciclo: {{cycle}} mm.",
+    "infoPrint": "Imprimir todo al 100% (sin escalar). La misma rejilla sirve para todos.",
+    "pdfKinegrams": "Guardar kinegramas (PDF)",
+    "pdfBarrier": "Guardar rejilla (PDF)",
+    "fullscreen": "⛶ Pantalla completa",
+    "clickAnySheet": "o haz clic en cualquier hoja",
+    "sheetGif": "Hoja {{n}}: {{name}}",
+    "rotated": " (rotada 90°)",
+    "sheetBarrier": "Hoja {{n}}: rejilla (acetato)",
+    "close": "✕ Cerrar (Esc)"
+  }
+}

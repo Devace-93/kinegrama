@@ -1,0 +1,60 @@
+{
+  "app": {
+    "title": "Kinegram Generator",
+    "subtitle": "Load one or more GIFs, pick the frames and generate the kinegrams + the shared barrier grid."
+  },
+  "steps": {
+    "s1": "GIF selection",
+    "s2": "Frame selection",
+    "s3": "Paper + preview"
+  },
+  "common": {
+    "restart": "Start over",
+    "prev": "Back",
+    "next": "Next"
+  },
+  "step1": {
+    "title": "Load GIFs",
+    "aboutTitle": "What is a kinegram?",
+    "aboutBody": "A kinegram (barrier-grid animation or scanimation) is an optical illusion: the frames of an animation are interlaced as vertical strips inside a single printed image. When a transparent grid with black lines slides over it, the slits reveal one frame at a time and the image comes to life. This tool generates both printable parts: the kinegrams and their barrier grid.",
+    "dropTitle": "Click or drag one or more GIFs here",
+    "dropHint": "You can add more at any time.",
+    "decoding": "Decoding…",
+    "loaded": "{{n}} GIF(s) loaded. You can add more.",
+    "error": "Error: {{msg}}",
+    "singleFrame": "{{name}}: it only has 1 frame",
+    "meta": "{{w}}×{{h}}px · {{n}} frames",
+    "remove": "Remove"
+  },
+  "step2": {
+    "title": "Select frames",
+    "gifTitle": "{{name}} ({{n}} frames)",
+    "statusBase": "Maximum {{max}} frames per GIF (the GIF with the fewest frames). Click to select/deselect; the number shows the order.",
+    "statusUnequal": "⚠ All GIFs must have the SAME number of selected frames to share the barrier grid (now: {{counts}}).",
+    "statusMin": "Select at least 2 frames in each GIF.",
+    "statusOk": "✓ {{n}} frames per kinegram."
+  },
+  "step3": {
+    "title": "Paper and preview",
+    "paper": "Paper size:",
+    "paperCarta": "Letter (215.9 × 279.4 mm)",
+    "paperOficio": "Legal MX (215.9 × 340 mm)",
+    "paperA4": "A4 (210 × 297 mm)",
+    "paperCustom": "Custom…",
+    "strip": "Strip width (px):",
+    "animate": "Show animated preview",
+    "speed": "Speed:",
+    "infoSheets": "Sheets needed: {{gifs}} kinegram(s) + 1 barrier grid.",
+    "infoScale": "Common scale: {{mmpp}} mm/px.",
+    "infoStrip": "Strip: {{strip}} mm · cycle: {{cycle}} mm.",
+    "infoPrint": "Print everything at 100% (no scaling). The same grid works for all of them.",
+    "pdfKinegrams": "Save kinegrams (PDF)",
+    "pdfBarrier": "Save barrier grid (PDF)",
+    "fullscreen": "⛶ Fullscreen",
+    "clickAnySheet": "or click any sheet",
+    "sheetGif": "Sheet {{n}}: {{name}}",
+    "rotated": " (rotated 90°)",
+    "sheetBarrier": "Sheet {{n}}: barrier grid (transparency)",
+    "close": "✕ Close (Esc)"
+  }
+}

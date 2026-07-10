@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: dark --default, light;
+}
+
+/* Tarjetas de frame (paso 2) */
+.frame-card {
+  position: relative;
+  border: 2px solid var(--color-base-300);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+}
+.frame-card canvas { display: block; width: 100%; height: auto; }
+.frame-card .idx {
+  position: absolute; top: 4px; left: 6px;
+  font-size: .75rem; color: #fff;
+  background: rgba(0, 0, 0, .6);
+  padding: 1px 6px; border-radius: 4px;
+}
+.frame-card .order {
+  position: absolute; top: 4px; right: 6px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--color-primary); color: var(--color-primary-content);
+  font-size: .8rem; font-weight: 700;
+  display: none; align-items: center; justify-content: center;
+}
+.frame-card.selected { border-color: var(--color-primary); }
+.frame-card.selected .order { display: flex; }
+.frame-card.disabled { opacity: .35; cursor: not-allowed; pointer-events: none; }

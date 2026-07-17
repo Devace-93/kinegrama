@@ -2,6 +2,7 @@
 import { PAPERS, computeLayout } from './layout.js';
 
 export const DEFAULT_SELECT = 4;
+export const MAX_FRAMES = 6;
 
 // Preview sweep tempo. At SPEED_DEFAULT the barrier sheet crosses each
 // kinegram in 15 s per direction, matching the home demo; the slider spans
@@ -48,18 +49,16 @@ export function getLayout() {
 }
 
 export function maxFramesAllowed() {
-  return Math.min(...app.gifs.map(g => g.frames.length));
+  return Math.min(MAX_FRAMES, ...app.gifs.map(g => g.frames.length));
 }
 
-/** Evenly distributed preselection (keeps existing selections). */
+/** Preselects the first frames of each gif (keeps existing selections). */
 export function defaultSelections() {
   const n = Math.min(DEFAULT_SELECT, maxFramesAllowed());
   for (const g of app.gifs) {
     if (g.selection.length) continue;
     g.selection = [];
-    for (let k = 0; k < n; k++) {
-      g.selection.push(Math.floor(k * g.frames.length / n));
-    }
+    for (let k = 0; k < n; k++) g.selection.push(k);
   }
 }
 

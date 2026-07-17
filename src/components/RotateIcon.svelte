@@ -6,10 +6,12 @@
 <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor"
      stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
   {#if dir === 'cw'}
-    <path d="M 8 3 A 5 5 0 0 1 13 8" />
-    <path d="M 10.6 6.2 L 13 9.4 L 15.4 6.2" />
+    <!-- right center up to top center -->
+    <path d="M 13 8 A 5 5 0 0 0 8 3" />
+    <path d="M 9.2 0.8 L 6.2 3 L 9.2 5.2" />
   {:else}
-    <path d="M 8 3 A 5 5 0 0 0 3 8" />
-    <path d="M 0.6 6.2 L 3 9.4 L 5.4 6.2" />
+    <!-- left center up to top center -->
+    <path d="M 3 8 A 5 5 0 0 1 8 3" />
+    <path d="M 6.8 0.8 L 9.8 3 L 6.8 5.2" />
   {/if}
 </svg>

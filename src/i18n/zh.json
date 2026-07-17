@@ -94,6 +94,8 @@
     "pdfBarrier": "请打印在透明胶片上",
     "fullscreen": "全屏查看各页",
     "sheet": "全屏查看",
+    "rotateLeft": "向左旋转90°（仅预览）",
+    "rotateRight": "向右旋转90°（仅预览）",
     "close": "关闭（Esc）",
     "prevSheet": "上一页（←）",
     "nextSheet": "下一页（→）"

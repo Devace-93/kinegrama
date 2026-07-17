@@ -94,6 +94,8 @@
     "pdfBarrier": "Skriv ut på OH-film",
     "fullscreen": "Visa arken i helskärm",
     "sheet": "Visa i helskärm",
+    "rotateLeft": "Rotera 90° åt vänster (endast förhandsvisning)",
+    "rotateRight": "Rotera 90° åt höger (endast förhandsvisning)",
     "close": "Stäng (Esc)",
     "prevSheet": "Föregående ark (←)",
     "nextSheet": "Nästa ark (→)"

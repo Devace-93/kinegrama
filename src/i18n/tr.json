@@ -94,6 +94,8 @@
     "pdfBarrier": "Şeffaf sayfaya yazdırın",
     "fullscreen": "Sayfaları tam ekranda görüntüle",
     "sheet": "Tam ekranda görüntüle",
+    "rotateLeft": "90° sola döndür (yalnızca önizleme)",
+    "rotateRight": "90° sağa döndür (yalnızca önizleme)",
     "close": "Kapat (Esc)",
     "prevSheet": "Önceki sayfa (←)",
     "nextSheet": "Sonraki sayfa (→)"

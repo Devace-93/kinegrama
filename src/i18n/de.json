@@ -94,6 +94,8 @@
     "pdfBarrier": "Auf eine Transparentfolie drucken",
     "fullscreen": "Blätter im Vollbild ansehen",
     "sheet": "Im Vollbild ansehen",
+    "rotateLeft": "90° nach links drehen (nur Vorschau)",
+    "rotateRight": "90° nach rechts drehen (nur Vorschau)",
     "close": "Schließen (Esc)",
     "prevSheet": "Vorheriges Blatt (←)",
     "nextSheet": "Nächstes Blatt (→)"

@@ -94,6 +94,8 @@
     "pdfBarrier": "Stampala su un lucido",
     "fullscreen": "Vedi i fogli a schermo intero",
     "sheet": "Vedi a schermo intero",
+    "rotateLeft": "Ruota di 90° a sinistra (solo anteprima)",
+    "rotateRight": "Ruota di 90° a destra (solo anteprima)",
     "close": "Chiudi (Esc)",
     "prevSheet": "Foglio precedente (←)",
     "nextSheet": "Foglio successivo (→)"

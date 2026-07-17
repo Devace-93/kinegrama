@@ -94,6 +94,8 @@
     "pdfBarrier": "透明シートに印刷してください",
     "fullscreen": "シートを全画面で表示",
     "sheet": "全画面で表示",
+    "rotateLeft": "左に90°回転（プレビューのみ）",
+    "rotateRight": "右に90°回転（プレビューのみ）",
     "close": "閉じる（Esc）",
     "prevSheet": "前のシート（←）",
     "nextSheet": "次のシート（→）"

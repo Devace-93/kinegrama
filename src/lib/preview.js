@@ -58,15 +58,36 @@ export function buildPages(gifs, layout) {
 
 let scratchCanvas = null;
 
-export function renderPage(canvas, p, ppm, offsetMm, animate, layout) {
+/** Travel of the sweeping sheet along its axis (mm): image span + margins. */
+export function travelMm(p) {
+  return 1.15 * (p.rotated ? p.hmm : p.wmm);
+}
+
+/**
+ * Paints one sheet. `phase` is the sweep progress: like the home demo, a
+ * barrier sheet 1.5× the kinegram's span rests just past its right/bottom
+ * edge at 0, crosses it, and stops just past its left/top edge at 1.
+ * `rot` (0/90/180/270) rotates the whole page in the preview only.
+ */
+export function renderPage(canvas, p, ppm, phase, animate, layout, rot = 0) {
   const { N, strip, mmpp } = layout;
   const ctx = canvas.getContext('2d');
   ctx.imageSmoothingEnabled = true;
   ctx.imageSmoothingQuality = 'high';
+  const pw = Math.round(p.pw * ppm), ph = Math.round(p.ph * ppm);
+
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.save();
+  if (rot) {
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate((rot * Math.PI) / 180);
+    ctx.translate(-pw / 2, -ph / 2);
+  }
 
   if (animate && !p.isBarrier) {
-    // Real print effect: the interlaced kinegram with the barrier grid
-    // (black strips + slit) sliding over it. Composited at native resolution
+    // Real print effect: the barrier sheet (black strips + one slit per
+    // cycle) over the interlaced kinegram. Composited at native resolution
     // —where strip and slit are exact pixels— and then downscaled.
     if (!scratchCanvas) scratchCanvas = document.createElement('canvas');
     const s = scratchCanvas;
@@ -75,30 +96,28 @@ export function renderPage(canvas, p, ppm, offsetMm, animate, layout) {
     const sctx = s.getContext('2d');
     sctx.drawImage(p.native, 0, 0);
 
-    // Phase anchored to the image edge (not the sheet edge): every slit falls
-    // exactly on one interlaced column. The pattern is periodic, so the cycle
-    // is seamless with no jump on wrap-around, and the direction plays the
-    // frames in their original order. On rotated images the strips run
-    // horizontally and move vertically.
-    const period = N * strip;
-    const offPx = Math.round(offsetMm / mmpp);
+    // On rotated placements the strips run horizontally, so the sheet is a
+    // bit wider than the image and sweeps vertically instead.
     const vertical = !p.rotated;
-    const len = vertical ? s.width : s.height;
-    const anchorPx = Math.round((vertical ? p.dxmm : p.dymm) / mmpp);
-    const first = (((anchorPx + offPx) % period) + period) % period - period;
+    const axisLen = (vertical ? p.wmm : p.hmm) / mmpp;
+    const axisStart = (vertical ? p.dxmm : p.dymm) / mmpp;
+    const perpLen = (vertical ? p.hmm : p.wmm) / mmpp;
+    const perpStart = (vertical ? p.dymm : p.dxmm) / mmpp - 0.065 * perpLen;
+    const perpSpan = 1.13 * perpLen;
+    const sheetSpan = 1.5 * axisLen;
+    const margin = 0.075 * axisLen;
+    const sheetPos = Math.round(axisStart + axisLen + margin - phase * travelMm(p) / mmpp);
+
     sctx.fillStyle = '#000';
-    for (let v = first, i = 0; v < len; v += strip, i++) {
-      if (i % N !== 0) {
-        if (vertical) sctx.fillRect(v, 0, strip, s.height);
-        else sctx.fillRect(0, v, s.width, strip);
-      }
+    for (let k = 0; (k + 1) * strip <= sheetSpan; k++) {
+      if (k % N === 0) continue; // the slit that reveals one column per cycle
+      const v = sheetPos + k * strip;
+      if (vertical) sctx.fillRect(v, perpStart, strip, perpSpan);
+      else sctx.fillRect(perpStart, v, perpSpan, strip);
     }
-    ctx.fillStyle = '#fff';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(s, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(s, 0, 0, pw, ph);
   } else {
-    ctx.fillStyle = '#fff';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawPlaced(ctx, p.img, p, ppm);
   }
+  ctx.restore();
 }

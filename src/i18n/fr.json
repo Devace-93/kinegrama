@@ -94,6 +94,8 @@
     "pdfBarrier": "À imprimer sur un transparent",
     "fullscreen": "Voir les feuilles en plein écran",
     "sheet": "Voir en plein écran",
+    "rotateLeft": "Pivoter de 90° à gauche (aperçu uniquement)",
+    "rotateRight": "Pivoter de 90° à droite (aperçu uniquement)",
     "close": "Fermer (Échap)",
     "prevSheet": "Feuille précédente (←)",
     "nextSheet": "Feuille suivante (→)"

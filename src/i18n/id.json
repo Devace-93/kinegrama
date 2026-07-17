@@ -94,6 +94,8 @@
     "pdfBarrier": "Cetak pada lembar transparan",
     "fullscreen": "Lihat lembaran dalam layar penuh",
     "sheet": "Lihat dalam layar penuh",
+    "rotateLeft": "Putar 90° ke kiri (hanya pratinjau)",
+    "rotateRight": "Putar 90° ke kanan (hanya pratinjau)",
     "close": "Tutup (Esc)",
     "prevSheet": "Lembar sebelumnya (←)",
     "nextSheet": "Lembar berikutnya (→)"

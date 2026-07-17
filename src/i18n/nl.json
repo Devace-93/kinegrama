@@ -94,6 +94,8 @@
     "pdfBarrier": "Druk af op een transparant vel",
     "fullscreen": "Bekijk de vellen op volledig scherm",
     "sheet": "Bekijk op volledig scherm",
+    "rotateLeft": "90° naar links draaien (alleen voorbeeld)",
+    "rotateRight": "90° naar rechts draaien (alleen voorbeeld)",
     "close": "Sluiten (Esc)",
     "prevSheet": "Vorig vel (←)",
     "nextSheet": "Volgend vel (→)"

@@ -94,6 +94,8 @@
     "pdfBarrier": "Wydrukuj na folii przezroczystej",
     "fullscreen": "Zobacz arkusze na pełnym ekranie",
     "sheet": "Zobacz na pełnym ekranie",
+    "rotateLeft": "Obróć o 90° w lewo (tylko podgląd)",
+    "rotateRight": "Obróć o 90° w prawo (tylko podgląd)",
     "close": "Zamknij (Esc)",
     "prevSheet": "Poprzedni arkusz (←)",
     "nextSheet": "Następny arkusz (→)"

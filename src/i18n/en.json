@@ -94,6 +94,8 @@
     "pdfBarrier": "Print it on a transparency",
     "fullscreen": "View the sheets in fullscreen",
     "sheet": "View in fullscreen",
+    "rotateLeft": "Rotate 90° left (preview only)",
+    "rotateRight": "Rotate 90° right (preview only)",
     "close": "Close (Esc)",
     "prevSheet": "Previous sheet (←)",
     "nextSheet": "Next sheet (→)"

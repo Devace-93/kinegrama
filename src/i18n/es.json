@@ -94,6 +94,8 @@
     "pdfBarrier": "Imprímela en una transparencia",
     "fullscreen": "Ver las hojas en pantalla completa",
     "sheet": "Ver en pantalla completa",
+    "rotateLeft": "Girar 90° a la izquierda (solo vista previa)",
+    "rotateRight": "Girar 90° a la derecha (solo vista previa)",
     "close": "Cerrar (Esc)",
     "prevSheet": "Hoja anterior (←)",
     "nextSheet": "Hoja siguiente (→)"

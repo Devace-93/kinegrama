@@ -94,6 +94,8 @@
     "pdfBarrier": "In lên tấm phim trong suốt",
     "fullscreen": "Xem các trang ở chế độ toàn màn hình",
     "sheet": "Xem toàn màn hình",
+    "rotateLeft": "Xoay 90° sang trái (chỉ bản xem trước)",
+    "rotateRight": "Xoay 90° sang phải (chỉ bản xem trước)",
     "close": "Đóng (Esc)",
     "prevSheet": "Trang trước (←)",
     "nextSheet": "Trang sau (→)"

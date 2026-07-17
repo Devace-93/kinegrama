@@ -94,6 +94,8 @@
     "pdfBarrier": "Tipărește-o pe folie transparentă",
     "fullscreen": "Vezi colile pe tot ecranul",
     "sheet": "Vezi pe tot ecranul",
+    "rotateLeft": "Rotire 90° la stânga (doar previzualizarea)",
+    "rotateRight": "Rotire 90° la dreapta (doar previzualizarea)",
     "close": "Închide (Esc)",
     "prevSheet": "Coala anterioară (←)",
     "nextSheet": "Coala următoare (→)"

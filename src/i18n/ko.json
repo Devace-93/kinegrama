@@ -94,6 +94,8 @@
     "pdfBarrier": "투명 필름에 인쇄하세요",
     "fullscreen": "전체 화면으로 시트 보기",
     "sheet": "전체 화면으로 보기",
+    "rotateLeft": "왼쪽으로 90° 회전 (미리보기만)",
+    "rotateRight": "오른쪽으로 90° 회전 (미리보기만)",
     "close": "닫기 (Esc)",
     "prevSheet": "이전 시트 (←)",
     "nextSheet": "다음 시트 (→)"

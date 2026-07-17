@@ -94,6 +94,8 @@
     "pdfBarrier": "Vytiskněte na průhlednou fólii",
     "fullscreen": "Zobrazit listy na celou obrazovku",
     "sheet": "Zobrazit na celou obrazovku",
+    "rotateLeft": "Otočit o 90° doleva (pouze náhled)",
+    "rotateRight": "Otočit o 90° doprava (pouze náhled)",
     "close": "Zavřít (Esc)",
     "prevSheet": "Předchozí list (←)",
     "nextSheet": "Další list (→)"

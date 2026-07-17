@@ -3,6 +3,13 @@ import { PAPERS, computeLayout } from './layout.js';
 
 export const DEFAULT_SELECT = 4;
 
+// Preview sweep tempo. At SPEED_DEFAULT the barrier sheet crosses each
+// kinegram in 15 s per direction, matching the home demo; the slider spans
+// 0.5×–1.5× of that (30 s down to 10 s per direction).
+export const SPEED_DEFAULT = 12;
+export const SPEED_MIN = 6;
+export const SPEED_MAX = 18;
+
 export const app = $state({
   step: 1,
   dir: 1,             // navigation direction (1 forward, -1 back) for animations
@@ -11,11 +18,12 @@ export const app = $state({
   paperKey: 'carta',
   customW: 216,
   customH: 279,
-  strip: 3,
+  strip: 2,
   animate: true,
-  speed: 15,
+  speed: SPEED_DEFAULT,
   fsOpen: false,
   fsIndex: 0,
+  previewRot: {},     // per-sheet preview rotation (deg); never touches the PDF
 });
 
 export function goStep(n) {
@@ -32,7 +40,7 @@ export function getPaper() {
 
 export function getStrip() {
   const n = parseInt(app.strip, 10);
-  return Math.min(Math.max(isNaN(n) ? 3 : n, 1), 20);
+  return Math.min(Math.max(isNaN(n) ? 2 : n, 1), 4);
 }
 
 export function getLayout() {
@@ -77,6 +85,7 @@ export function restart() {
   app.gifs.forEach(g => URL.revokeObjectURL(g.url));
   app.gifs = [];
   app.fsOpen = false;
+  app.previewRot = {};
   app.confirmRestart = false;
   app.dir = -1;
   app.step = 1;

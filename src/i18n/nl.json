@@ -3,6 +3,9 @@
     "title": "Kinegram-generator",
     "subtitle": "Laad een of meer GIF's, kies de frames en genereer de kinegrammen + het gedeelde raster."
   },
+  "home": {
+    "start": "Beginnen"
+  },
   "steps": {
     "s1": "GIF-selectie",
     "s2": "Frameselectie",
@@ -23,6 +26,12 @@
     "title": "GIF's laden",
     "aboutTitle": "Wat is een kinegram?",
     "aboutBody": "Een kinegram (barrier-grid-animatie of scanimation) is een optische illusie: de frames van een animatie worden als verticale stroken verweven in één afgedrukte afbeelding. Schuif je er een transparant raster met zwarte lijnen overheen, dan tonen de spleten telkens één frame en komt het beeld tot leven. Deze tool genereert beide printklare delen: de kinegrammen en hun raster.",
+    "demoCaption": "Zo werkt het: terwijl het raster schuift, onthullen de spleten één frame per keer.",
+    "demoKinegram": "Kinegram",
+    "demoGrid": "Raster",
+    "demoMagic": "De magie begint met de beweging!",
+    "demoDragTip": "Houd ingedrukt en versleep het raster",
+    "demoAlt": "Kinegram-demo: het raster schuift over de afbeelding en brengt die tot leven",
     "dropTitle": "Klik of sleep een of meer GIF's hierheen",
     "dropHint": "Je kunt er altijd meer toevoegen.",
     "decoding": "Decoderen…",

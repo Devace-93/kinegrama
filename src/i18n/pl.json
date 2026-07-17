@@ -3,6 +3,9 @@
     "title": "Generator kinegramów",
     "subtitle": "Wczytaj jeden lub więcej GIF-ów, wybierz klatki i wygeneruj kinegramy + wspólną kratkę."
   },
+  "home": {
+    "start": "Rozpocznij"
+  },
   "steps": {
     "s1": "Wybór GIF-ów",
     "s2": "Wybór klatek",
@@ -23,6 +26,12 @@
     "title": "Wczytaj GIF-y",
     "aboutTitle": "Czym jest kinegram?",
     "aboutBody": "Kinegram (animacja rastrowa, scanimation) to złudzenie optyczne: klatki animacji są przeplatane pionowymi paskami w jednym wydrukowanym obrazie. Gdy przesuwa się po nim przezroczysta kratka z czarnymi liniami, szczeliny odsłaniają po jednej klatce i obraz ożywa. To narzędzie generuje obie części gotowe do druku: kinegramy i ich kratkę.",
+    "demoCaption": "Jak to działa: gdy siatka się przesuwa, szczeliny odsłaniają po jednej klatce.",
+    "demoKinegram": "Kinegram",
+    "demoGrid": "Kratka",
+    "demoMagic": "Magia zaczyna się wraz z ruchem!",
+    "demoDragTip": "Przytrzymaj i przeciągnij kratkę",
+    "demoAlt": "Demonstracja kinegramu: kratka przesuwa się po obrazie i go ożywia",
     "dropTitle": "Kliknij lub przeciągnij tutaj jeden lub więcej GIF-ów",
     "dropHint": "Możesz dodać więcej w dowolnym momencie.",
     "decoding": "Dekodowanie…",

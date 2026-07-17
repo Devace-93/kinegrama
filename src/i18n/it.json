@@ -3,6 +3,9 @@
     "title": "Generatore di kinegrammi",
     "subtitle": "Carica una o più GIF, scegli i fotogrammi e genera i kinegrammi + la griglia condivisa."
   },
+  "home": {
+    "start": "Inizia"
+  },
   "steps": {
     "s1": "Selezione GIF",
     "s2": "Selezione fotogrammi",
@@ -23,6 +26,12 @@
     "title": "Carica GIF",
     "aboutTitle": "Che cos'è un kinegramma?",
     "aboutBody": "Un kinegramma (animazione a griglia, o scanimation) è un'illusione ottica: i fotogrammi di un'animazione vengono intrecciati in strisce verticali dentro un'unica immagine stampata. Facendo scorrere sopra una griglia trasparente con linee nere, le fessure rivelano un fotogramma alla volta e l'immagine prende vita. Questo strumento genera entrambe le parti pronte da stampare: i kinegrammi e la loro griglia.",
+    "demoCaption": "Come funziona: mentre la griglia scorre, le fessure rivelano un fotogramma alla volta.",
+    "demoKinegram": "Kinegramma",
+    "demoGrid": "Griglia",
+    "demoMagic": "La magia appare con il movimento!",
+    "demoDragTip": "Tieni premuto e trascina la griglia",
+    "demoAlt": "Demo del kinegramma: la griglia scorre sull'immagine intrecciata e la anima",
     "dropTitle": "Clicca o trascina qui una o più GIF",
     "dropHint": "Puoi aggiungerne altre in qualsiasi momento.",
     "decoding": "Decodifica…",

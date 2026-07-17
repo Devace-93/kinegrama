@@ -3,6 +3,9 @@
     "title": "Generator Kinegram",
     "subtitle": "Muat satu atau beberapa GIF, pilih bingkai, dan buat kinegram + kisi bersama."
   },
+  "home": {
+    "start": "Mulai"
+  },
   "steps": {
     "s1": "Pilih GIF",
     "s2": "Pilih bingkai",
@@ -23,6 +26,12 @@
     "title": "Muat GIF",
     "aboutTitle": "Apa itu kinegram?",
     "aboutBody": "Kinegram (animasi kisi penghalang atau scanimation) adalah ilusi optik: bingkai-bingkai animasi dijalin menjadi garis-garis vertikal dalam satu gambar cetak. Saat kisi transparan bergaris hitam digeser di atasnya, celah-celahnya menampilkan satu bingkai setiap kali dan gambar pun bergerak. Alat ini menghasilkan kedua bagian siap cetak: kinegram dan kisinya.",
+    "demoCaption": "Cara kerjanya: saat kisi digeser, celahnya menampilkan satu frame setiap kali.",
+    "demoKinegram": "Kinegram",
+    "demoGrid": "Kisi",
+    "demoMagic": "Keajaiban muncul saat bergerak!",
+    "demoDragTip": "Tekan dan tahan untuk menggeser kisi",
+    "demoAlt": "Demo kinegram: kisi bergeser di atas gambar dan menghidupkannya",
     "dropTitle": "Klik atau seret satu atau beberapa GIF ke sini",
     "dropHint": "Anda dapat menambahkan lagi kapan saja.",
     "decoding": "Mendekode…",

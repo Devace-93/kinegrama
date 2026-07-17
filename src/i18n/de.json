@@ -3,6 +3,9 @@
     "title": "Kinegramm-Generator",
     "subtitle": "Lade ein oder mehrere GIFs, wähle die Einzelbilder und erzeuge die Kinegramme + das gemeinsame Gitter."
   },
+  "home": {
+    "start": "Loslegen"
+  },
   "steps": {
     "s1": "GIF-Auswahl",
     "s2": "Bildauswahl",
@@ -23,6 +26,12 @@
     "title": "GIFs laden",
     "aboutTitle": "Was ist ein Kinegramm?",
     "aboutBody": "Ein Kinegramm (Streifengitter-Animation, auch Scanimation) ist eine optische Täuschung: Die Einzelbilder einer Animation werden als senkrechte Streifen in ein einziges druckbares Bild verschachtelt. Gleitet ein transparentes Gitter mit schwarzen Linien darüber, geben die Schlitze jeweils ein Bild frei und das Bild erwacht zum Leben. Dieses Tool erzeugt beide druckfertigen Teile: die Kinegramme und ihr Gitter.",
+    "demoCaption": "So funktioniert es: Beim Gleiten des Gitters geben die Schlitze jeweils ein Einzelbild frei.",
+    "demoKinegram": "Kinegramm",
+    "demoGrid": "Gitter",
+    "demoMagic": "Die Magie entsteht mit der Bewegung!",
+    "demoDragTip": "Gedrückt halten und das Gitter ziehen",
+    "demoAlt": "Kinegramm-Demo: Das Gitter gleitet über das verschachtelte Bild und animiert es",
     "dropTitle": "Klicke hier oder ziehe ein oder mehrere GIFs hierher",
     "dropHint": "Du kannst jederzeit weitere hinzufügen.",
     "decoding": "Dekodieren…",

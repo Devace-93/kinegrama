@@ -3,6 +3,9 @@
     "title": "Gerador de Kinegramas",
     "subtitle": "Carregue um ou mais GIFs, escolha os quadros e gere os kinegramas + a grade compartilhada."
   },
+  "home": {
+    "start": "Começar"
+  },
   "steps": {
     "s1": "Seleção de GIFs",
     "s2": "Seleção de quadros",
@@ -23,6 +26,12 @@
     "title": "Carregar GIFs",
     "aboutTitle": "O que é um kinegrama?",
     "aboutBody": "Um kinegrama (animação de grade, ou scanimation) é uma ilusão de ótica: os quadros de uma animação são entrelaçados em faixas verticais dentro de uma única imagem impressa. Ao deslizar por cima uma grade transparente com linhas pretas, as fendas revelam um quadro de cada vez e a imagem ganha movimento. Esta ferramenta gera as duas partes prontas para imprimir: os kinegramas e sua grade.",
+    "demoCaption": "Como funciona: ao deslizar a grade, as fendas revelam um quadro de cada vez.",
+    "demoKinegram": "Kinegrama",
+    "demoGrid": "Grade",
+    "demoMagic": "A mágica surge com o movimento!",
+    "demoDragTip": "Pressione e segure para arrastar a grade",
+    "demoAlt": "Demonstração de kinegrama: a grade desliza sobre a imagem entrelaçada e a anima",
     "dropTitle": "Clique ou arraste um ou mais GIFs aqui",
     "dropHint": "Você pode adicionar mais a qualquer momento.",
     "decoding": "Decodificando…",

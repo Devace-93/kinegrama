@@ -46,15 +46,6 @@
 <section class="card bg-base-200 border border-base-300 p-4">
   <h2 class="font-semibold mb-3">{t('step1.title')}</h2>
 
-  <div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-3 tooltip grid"
-       data-tip={t('tip.about')}>
-    <input type="checkbox" aria-label={t('step1.aboutTitle')} />
-    <div class="collapse-title font-medium text-sm">{t('step1.aboutTitle')}</div>
-    <div class="collapse-content text-sm opacity-80">
-      <p>{t('step1.aboutBody')}</p>
-    </div>
-  </div>
-
   <div
     class="border-2 border-dashed rounded-xl p-8 text-center cursor-pointer transition-colors tooltip block w-full
            {over ? 'border-primary bg-base-100' : 'border-base-300'}"

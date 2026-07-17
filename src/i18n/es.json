@@ -3,6 +3,9 @@
     "title": "Generador de Kinegramas",
     "subtitle": "Carga uno o varios GIFs, elige los fotogramas y genera los kinegramas + la rejilla compartida."
   },
+  "home": {
+    "start": "Comenzar"
+  },
   "steps": {
     "s1": "Selección de GIFs",
     "s2": "Selección de fotogramas",
@@ -23,6 +26,12 @@
     "title": "Cargar GIFs",
     "aboutTitle": "¿Qué es un kinegrama?",
     "aboutBody": "Un kinegrama (animación de barrera o scanimation) es una ilusión óptica: los fotogramas de una animación se entrelazan en franjas verticales dentro de una sola imagen impresa. Al deslizar encima una rejilla transparente con líneas negras, las ranuras revelan un fotograma a la vez y la imagen cobra movimiento. Esta herramienta genera ambas partes listas para imprimir: los kinegramas y su rejilla.",
+    "demoCaption": "Así funciona: al deslizar la rejilla, las ranuras revelan un fotograma a la vez.",
+    "demoKinegram": "Kinegrama",
+    "demoGrid": "Rejilla",
+    "demoMagic": "¡La magia aparece con el movimiento!",
+    "demoDragTip": "Mantén presionado y arrastra la rejilla",
+    "demoAlt": "Demostración de un kinegrama: la rejilla de barrera se desliza sobre la imagen entrelazada y la anima",
     "dropTitle": "Haz clic o arrastra uno o varios GIFs aquí",
     "dropHint": "Puedes agregar más en cualquier momento.",
     "decoding": "Decodificando…",

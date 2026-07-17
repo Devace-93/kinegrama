@@ -3,6 +3,9 @@
     "title": "Kinegramgenerator",
     "subtitle": "Ladda en eller flera GIF:ar, välj bildrutor och generera kinegrammen + det delade gallret."
   },
+  "home": {
+    "start": "Börja"
+  },
   "steps": {
     "s1": "Val av GIF",
     "s2": "Val av bildrutor",
@@ -23,6 +26,12 @@
     "title": "Ladda GIF:ar",
     "aboutTitle": "Vad är ett kinegram?",
     "aboutBody": "Ett kinegram (barriärgaller-animation eller scanimation) är en optisk illusion: bildrutorna i en animation flätas samman som vertikala remsor i en enda utskriven bild. När ett genomskinligt galler med svarta linjer glider över den visar springorna en bildruta i taget och bilden får liv. Det här verktyget genererar båda utskriftsklara delarna: kinegrammen och deras galler.",
+    "demoCaption": "Så funkar det: när gallret glider visar springorna en bildruta i taget.",
+    "demoKinegram": "Kinegram",
+    "demoGrid": "Galler",
+    "demoMagic": "Magin uppstår med rörelsen!",
+    "demoDragTip": "Håll intryckt och dra gallret",
+    "demoAlt": "Kinegram-demo: gallret glider över bilden och väcker den till liv",
     "dropTitle": "Klicka eller dra en eller flera GIF:ar hit",
     "dropHint": "Du kan lägga till fler när som helst.",
     "decoding": "Avkodar…",

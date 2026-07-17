@@ -3,6 +3,9 @@
     "title": "Générateur de kinégrammes",
     "subtitle": "Chargez un ou plusieurs GIF, choisissez les images et générez les kinégrammes + la grille partagée."
   },
+  "home": {
+    "start": "Commencer"
+  },
   "steps": {
     "s1": "Sélection des GIF",
     "s2": "Sélection des images",
@@ -23,6 +26,12 @@
     "title": "Charger des GIF",
     "aboutTitle": "Qu'est-ce qu'un kinégramme ?",
     "aboutBody": "Un kinégramme (animation à grille, ou scanimation) est une illusion d'optique : les images d'une animation sont entrelacées en bandes verticales dans une seule image imprimée. Lorsqu'une grille transparente rayée de lignes noires glisse dessus, les fentes révèlent une image à la fois et l'image s'anime. Cet outil génère les deux éléments prêts à imprimer : les kinégrammes et leur grille.",
+    "demoCaption": "Le principe : quand la grille glisse, les fentes révèlent une image à la fois.",
+    "demoKinegram": "Kinégramme",
+    "demoGrid": "Grille",
+    "demoMagic": "La magie opère avec le mouvement !",
+    "demoDragTip": "Maintenez le clic et faites glisser la grille",
+    "demoAlt": "Démo de kinégramme : la grille glisse sur l'image entrelacée et l'anime",
     "dropTitle": "Cliquez ou glissez un ou plusieurs GIF ici",
     "dropHint": "Vous pouvez en ajouter à tout moment.",
     "decoding": "Décodage…",

@@ -3,6 +3,9 @@
     "title": "Generator de kinegrame",
     "subtitle": "Încarcă unul sau mai multe GIF-uri, alege cadrele și generează kinegramele + grila comună."
   },
+  "home": {
+    "start": "Începe"
+  },
   "steps": {
     "s1": "Selectare GIF-uri",
     "s2": "Selectare cadre",
@@ -23,6 +26,12 @@
     "title": "Încarcă GIF-uri",
     "aboutTitle": "Ce este o kinegramă?",
     "aboutBody": "O kinegramă (animație cu grilă de bariere sau scanimation) este o iluzie optică: cadrele unei animații sunt împletite în benzi verticale într-o singură imagine tipărită. Când o grilă transparentă cu linii negre alunecă deasupra, fantele dezvăluie câte un cadru pe rând și imaginea prinde viață. Acest instrument generează ambele părți gata de tipărit: kinegramele și grila lor.",
+    "demoCaption": "Cum funcționează: când grila alunecă, fantele dezvăluie câte un cadru pe rând.",
+    "demoKinegram": "Kinegramă",
+    "demoGrid": "Grilă",
+    "demoMagic": "Magia apare odată cu mișcarea!",
+    "demoDragTip": "Țineți apăsat și trageți grila",
+    "demoAlt": "Demonstrație kinegramă: grila alunecă peste imagine și o animă",
     "dropTitle": "Dă clic sau trage aici unul sau mai multe GIF-uri",
     "dropHint": "Poți adăuga mai multe oricând.",
     "decoding": "Se decodează…",

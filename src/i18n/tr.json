@@ -3,6 +3,9 @@
     "title": "Kinegram Oluşturucu",
     "subtitle": "Bir veya daha fazla GIF yükleyin, kareleri seçin ve kinegramları + ortak ızgarayı oluşturun."
   },
+  "home": {
+    "start": "Başla"
+  },
   "steps": {
     "s1": "GIF seçimi",
     "s2": "Kare seçimi",
@@ -23,6 +26,12 @@
     "title": "GIF yükle",
     "aboutTitle": "Kinegram nedir?",
     "aboutBody": "Kinegram (bariyer ızgara animasyonu veya scanimation) bir optik yanılsamadır: bir animasyonun kareleri, tek bir basılı görüntünün içine dikey şeritler halinde örülür. Üzerinde siyah çizgili şeffaf bir ızgara kaydırıldığında, yarıklar her seferinde tek bir kareyi gösterir ve görüntü canlanır. Bu araç, baskıya hazır iki parçayı üretir: kinegramlar ve ızgaraları.",
+    "demoCaption": "Nasıl çalışır: Izgara kayarken yarıklar her seferinde tek bir kareyi gösterir.",
+    "demoKinegram": "Kinegram",
+    "demoGrid": "Izgara",
+    "demoMagic": "Sihir hareketle başlar!",
+    "demoDragTip": "Basılı tutup ızgarayı sürükleyin",
+    "demoAlt": "Kinegram demosu: ızgara görüntünün üzerinde kayar ve onu canlandırır",
     "dropTitle": "Tıklayın veya bir ya da daha fazla GIF'i buraya sürükleyin",
     "dropHint": "İstediğiniz zaman daha fazlasını ekleyebilirsiniz.",
     "decoding": "Çözümleniyor…",

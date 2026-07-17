@@ -3,6 +3,9 @@
     "title": "Trình tạo kinegram",
     "subtitle": "Tải lên một hoặc nhiều ảnh GIF, chọn khung hình và tạo kinegram + lưới chung."
   },
+  "home": {
+    "start": "Bắt đầu"
+  },
   "steps": {
     "s1": "Chọn GIF",
     "s2": "Chọn khung hình",
@@ -23,6 +26,12 @@
     "title": "Tải GIF",
     "aboutTitle": "Kinegram là gì?",
     "aboutBody": "Kinegram (hoạt hình lưới chắn, hay scanimation) là một ảo ảnh thị giác: các khung hình của một hoạt hình được đan xen thành các dải dọc trong một hình ảnh in duy nhất. Khi trượt một tấm lưới trong suốt có các đường kẻ đen lên trên, các khe hở lần lượt hiện ra từng khung hình và bức ảnh trở nên chuyển động. Công cụ này tạo ra cả hai phần sẵn sàng để in: các kinegram và tấm lưới của chúng.",
+    "demoCaption": "Cách hoạt động: khi lưới trượt, các khe hở lần lượt hiện ra từng khung hình.",
+    "demoKinegram": "Kinegram",
+    "demoGrid": "Lưới",
+    "demoMagic": "Phép màu xuất hiện khi chuyển động!",
+    "demoDragTip": "Nhấn giữ và kéo lưới",
+    "demoAlt": "Minh họa kinegram: tấm lưới trượt qua hình ảnh và làm nó chuyển động",
     "dropTitle": "Nhấp hoặc kéo một hoặc nhiều GIF vào đây",
     "dropHint": "Bạn có thể thêm bất cứ lúc nào.",
     "decoding": "Đang giải mã…",

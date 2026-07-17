@@ -3,6 +3,9 @@
     "title": "Kinegram Generator",
     "subtitle": "Load one or more GIFs, pick the frames and generate the kinegrams + the shared barrier grid."
   },
+  "home": {
+    "start": "Start"
+  },
   "steps": {
     "s1": "GIF selection",
     "s2": "Frame selection",
@@ -23,6 +26,12 @@
     "title": "Load GIFs",
     "aboutTitle": "What is a kinegram?",
     "aboutBody": "A kinegram (barrier-grid animation or scanimation) is an optical illusion: the frames of an animation are interlaced as vertical strips inside a single printed image. When a transparent grid with black lines slides over it, the slits reveal one frame at a time and the image comes to life. This tool generates both printable parts: the kinegrams and their barrier grid.",
+    "demoCaption": "How it works: as the grid slides, the slits reveal one frame at a time.",
+    "demoKinegram": "Kinegram",
+    "demoGrid": "Barrier grid",
+    "demoMagic": "The magic appears with motion!",
+    "demoDragTip": "Press and hold to drag the grid",
+    "demoAlt": "Kinegram demo: the barrier grid slides across the interlaced image, animating it",
     "dropTitle": "Click or drag one or more GIFs here",
     "dropHint": "You can add more at any time.",
     "decoding": "Decoding…",

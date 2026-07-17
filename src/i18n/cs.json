@@ -3,6 +3,9 @@
     "title": "Generátor kinegramů",
     "subtitle": "Nahrajte jeden nebo více GIFů, vyberte snímky a vygenerujte kinegramy + společnou mřížku."
   },
+  "home": {
+    "start": "Začít"
+  },
   "steps": {
     "s1": "Výběr GIFů",
     "s2": "Výběr snímků",
@@ -23,6 +26,12 @@
     "title": "Nahrát GIFy",
     "aboutTitle": "Co je kinegram?",
     "aboutBody": "Kinegram (mřížková animace, scanimation) je optická iluze: snímky animace se proplétají do svislých pruhů v jednom vytištěném obrázku. Když po něm klouže průhledná mřížka s černými linkami, štěrbiny odhalují vždy jeden snímek a obraz ožívá. Tento nástroj vytvoří obě části připravené k tisku: kinegramy a jejich mřížku.",
+    "demoCaption": "Jak to funguje: když mřížka klouže, štěrbiny odhalují vždy jeden snímek.",
+    "demoKinegram": "Kinegram",
+    "demoGrid": "Mřížka",
+    "demoMagic": "Kouzlo začíná s pohybem!",
+    "demoDragTip": "Podržte a přetáhněte mřížku",
+    "demoAlt": "Ukázka kinegramu: mřížka klouže po obrázku a oživuje ho",
     "dropTitle": "Klikněte nebo sem přetáhněte jeden či více GIFů",
     "dropHint": "Kdykoli můžete přidat další.",
     "decoding": "Dekódování…",

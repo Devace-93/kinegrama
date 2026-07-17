@@ -109,7 +109,8 @@
   </main>
 
   <footer class="mt-8 pt-4 border-t border-base-300 text-sm opacity-80 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-    <span>{t('footer.madeBy')}</span>
+    <a class="link link-hover" href="https://www.linkedin.com/in/enrique-magallon/"
+       target="_blank" rel="noopener">{t('footer.madeBy')}</a>
     <span class="opacity-40" aria-hidden="true">·</span>
     <a class="link link-hover" href="https://github.com/Devace-93/kinegrama"
        target="_blank" rel="noopener">{t('footer.source')}</a>

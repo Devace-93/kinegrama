@@ -16,6 +16,15 @@
     localStorage.setItem('theme', theme);
   });
 
+  /* Recolor instantly on theme switch: without this, color transitions (like
+     the stepper's staggered ones) animate between the two palettes. */
+  function setTheme(next) {
+    const root = document.documentElement;
+    root.classList.add('theme-switching');
+    theme = next;
+    setTimeout(() => root.classList.remove('theme-switching'), 120);
+  }
+
   /* Work in progress = loaded GIFs. The K link asks for confirmation first
      (same restart modal), and leaving/reloading the page warns natively. */
   let goHomeAfterRestart = $state(false);
@@ -70,7 +79,7 @@
       <input
         type="checkbox"
         checked={theme === 'light'}
-        onchange={e => (theme = e.target.checked ? 'light' : 'dark')}
+        onchange={e => setTheme(e.target.checked ? 'light' : 'dark')}
       />
       <span class="swap-on">☀️</span>
       <span class="swap-off">🌙</span>
@@ -106,12 +115,13 @@
     <div class="modal-box">
       <h3 id="restart-title" class="font-bold text-lg">{t('restart.title')}</h3>
       <p class="py-3 text-sm opacity-80">{t('restart.body')}</p>
+      <!-- No tooltips here: their hidden :before boxes overflow the modal-box
+           and trigger a horizontal scrollbar; the labels speak for themselves. -->
       <div class="modal-action">
-        <button class="btn btn-sm tooltip" data-tip={t('tip.cancel')}
-                onclick={cancelRestart}>
+        <button class="btn btn-sm" onclick={cancelRestart}>
           {t('restart.cancel')}
         </button>
-        <button class="btn btn-sm btn-error tooltip" data-tip={t('tip.restart')} onclick={confirmRestartAction}>
+        <button class="btn btn-sm btn-error" onclick={confirmRestartAction}>
           {t('common.restart')}
         </button>
       </div>

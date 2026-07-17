@@ -34,7 +34,8 @@
     onclick={() => { open = !open; query = ''; }}
   >
     <span>{current?.flag}</span>
-    <span class="max-w-40 truncate">{current?.name}</span>
+    <!-- On narrow screens only the flag fits; the full name would crush the title -->
+    <span class="max-w-40 truncate hidden sm:inline">{current?.name}</span>
     <span class="opacity-60 text-xs">▾</span>
   </button>
 

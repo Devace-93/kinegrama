@@ -6,6 +6,11 @@
   "home": {
     "start": "はじめる"
   },
+  "footer": {
+    "madeBy": "作成者：Enrique",
+    "source": "ソースコード（GitHub）",
+    "share": "Facebookでシェア"
+  },
   "steps": {
     "s1": "GIF の選択",
     "s2": "フレームの選択",

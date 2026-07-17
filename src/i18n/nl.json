@@ -6,6 +6,11 @@
   "home": {
     "start": "Beginnen"
   },
+  "footer": {
+    "madeBy": "Gemaakt door Enrique",
+    "source": "Broncode op GitHub",
+    "share": "Delen op Facebook"
+  },
   "steps": {
     "s1": "GIF-selectie",
     "s2": "Frameselectie",

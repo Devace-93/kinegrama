@@ -6,6 +6,11 @@
   "home": {
     "start": "Comenzar"
   },
+  "footer": {
+    "madeBy": "Hecho por Enrique",
+    "source": "Código en GitHub",
+    "share": "Compartir en Facebook"
+  },
   "steps": {
     "s1": "Selección de GIFs",
     "s2": "Selección de fotogramas",

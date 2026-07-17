@@ -68,7 +68,6 @@
     </a>
     <div class="flex-1 min-w-0">
       <h1 class="text-2xl font-bold">{t('app.title')}</h1>
-      <p class="text-sm opacity-70">{t('app.subtitle')}</p>
     </div>
     <LanguagePicker />
     <label
@@ -108,6 +107,16 @@
       {/key}
     {/if}
   </main>
+
+  <footer class="mt-8 pt-4 border-t border-base-300 text-sm opacity-80 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+    <span>{t('footer.madeBy')}</span>
+    <span class="opacity-40" aria-hidden="true">·</span>
+    <a class="link link-hover" href="https://github.com/Devace-93/kinegrama"
+       target="_blank" rel="noopener">{t('footer.source')}</a>
+    <span class="opacity-40" aria-hidden="true">·</span>
+    <a class="link link-hover" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkinegram.3m4.net%2F"
+       target="_blank" rel="noopener">{t('footer.share')}</a>
+  </footer>
 </div>
 
 {#if app.confirmRestart}

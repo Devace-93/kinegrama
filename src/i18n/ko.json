@@ -6,6 +6,11 @@
   "home": {
     "start": "시작하기"
   },
+  "footer": {
+    "madeBy": "제작: Enrique",
+    "source": "GitHub 소스 코드",
+    "share": "Facebook에 공유"
+  },
   "steps": {
     "s1": "GIF 선택",
     "s2": "프레임 선택",

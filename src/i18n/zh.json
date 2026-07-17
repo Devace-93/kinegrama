@@ -6,6 +6,11 @@
   "home": {
     "start": "开始"
   },
+  "footer": {
+    "madeBy": "由 Enrique 制作",
+    "source": "GitHub 源代码",
+    "share": "分享到 Facebook"
+  },
   "steps": {
     "s1": "选择 GIF",
     "s2": "选择帧",

@@ -6,6 +6,11 @@
   "home": {
     "start": "Începe"
   },
+  "footer": {
+    "madeBy": "Creat de Enrique",
+    "source": "Cod sursă pe GitHub",
+    "share": "Distribuie pe Facebook"
+  },
   "steps": {
     "s1": "Selectare GIF-uri",
     "s2": "Selectare cadre",

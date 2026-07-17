@@ -6,6 +6,11 @@
   "home": {
     "start": "Začít"
   },
+  "footer": {
+    "madeBy": "Vytvořil Enrique",
+    "source": "Zdrojový kód na GitHubu",
+    "share": "Sdílet na Facebooku"
+  },
   "steps": {
     "s1": "Výběr GIFů",
     "s2": "Výběr snímků",

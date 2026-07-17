@@ -6,6 +6,11 @@
   "home": {
     "start": "Mulai"
   },
+  "footer": {
+    "madeBy": "Dibuat oleh Enrique",
+    "source": "Kode sumber di GitHub",
+    "share": "Bagikan ke Facebook"
+  },
   "steps": {
     "s1": "Pilih GIF",
     "s2": "Pilih bingkai",

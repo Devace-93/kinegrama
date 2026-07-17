@@ -6,6 +6,11 @@
   "home": {
     "start": "Başla"
   },
+  "footer": {
+    "madeBy": "Enrique tarafından yapıldı",
+    "source": "Kaynak kodu GitHub'da",
+    "share": "Facebook'ta paylaş"
+  },
   "steps": {
     "s1": "GIF seçimi",
     "s2": "Kare seçimi",

@@ -6,6 +6,11 @@
   "home": {
     "start": "Börja"
   },
+  "footer": {
+    "madeBy": "Skapad av Enrique",
+    "source": "Källkod på GitHub",
+    "share": "Dela på Facebook"
+  },
   "steps": {
     "s1": "Val av GIF",
     "s2": "Val av bildrutor",

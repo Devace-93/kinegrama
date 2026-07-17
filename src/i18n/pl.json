@@ -6,6 +6,11 @@
   "home": {
     "start": "Rozpocznij"
   },
+  "footer": {
+    "madeBy": "Stworzone przez Enrique",
+    "source": "Kod źródłowy na GitHubie",
+    "share": "Udostępnij na Facebooku"
+  },
   "steps": {
     "s1": "Wybór GIF-ów",
     "s2": "Wybór klatek",

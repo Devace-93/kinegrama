@@ -6,6 +6,8 @@ RUN npm install
 COPY . .
 ARG VITE_SITE_URL=https://kinegram.3m4.net
 ENV VITE_SITE_URL=$VITE_SITE_URL
+ARG VITE_INFO_URL=https://info.3m4.net
+ENV VITE_INFO_URL=$VITE_INFO_URL
 RUN npm run build
 
 FROM nginx:alpine

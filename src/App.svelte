@@ -122,6 +122,9 @@
     <span class="opacity-40" aria-hidden="true">·</span>
     <a class="link link-hover" href={shareUrl}
        target="_blank" rel="noopener">{t('footer.share')}</a>
+    <span class="opacity-40" aria-hidden="true">·</span>
+    <a class="link link-hover" href={import.meta.env.VITE_INFO_URL}
+       target="_blank" rel="noopener">info.3m4.net</a>
   </footer>
 </div>
 

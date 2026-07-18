@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 // Makes both %VITE_SITE_URL% (index.html) and import.meta.env.VITE_SITE_URL
 // always defined.
 process.env.VITE_SITE_URL ??= 'https://kinegram.3m4.net';
+// Index of all 3m4.net apps, linked from the footer.
+process.env.VITE_INFO_URL ??= 'https://info.3m4.net';
 
 export default defineConfig({
   // Served at the root of the custom domain kinegram.3m4.net

@@ -5,9 +5,17 @@ dist/
 # Artefactos de pruebas de navegador
 .playwright-mcp/
 
+# Entorno local (secretos); .env.example sí se versiona
+.env
+.env.*.local
+!.env.example
+
 # Archivos generados y fotos personales
 recon_*.png
 simulacion-*.png
 gifs-preview.png
 *.pdf
 rejilla-para-mi-kinegrama*.png
+
+# Local tooling
+.lavish/

@@ -27,6 +27,11 @@
 
   /* Work in progress = loaded GIFs. The K link asks for confirmation first
      (same restart modal), and leaving/reloading the page warns natively. */
+  /* Share link built from the configurable site URL (defaulted in vite.config.js). */
+  const shareUrl =
+    'https://www.facebook.com/sharer/sharer.php?u=' +
+    encodeURIComponent(import.meta.env.VITE_SITE_URL + '/');
+
   let goHomeAfterRestart = $state(false);
   function guardHomeLink(e) {
     if (getRoute() === 'create' && app.gifs.length) {
@@ -115,7 +120,7 @@
     <a class="link link-hover" href="https://github.com/Devace-93/kinegrama"
        target="_blank" rel="noopener">{t('footer.source')}</a>
     <span class="opacity-40" aria-hidden="true">·</span>
-    <a class="link link-hover" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkinegram.3m4.net%2F"
+    <a class="link link-hover" href={shareUrl}
        target="_blank" rel="noopener">{t('footer.share')}</a>
   </footer>
 </div>

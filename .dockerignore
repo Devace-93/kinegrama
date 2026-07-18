@@ -1,0 +1,16 @@
+# Root-anchored patterns: the repo root holds large personal PNG/PDF files
+# that must stay out of the image, but public/*.png (og-image, etc.) must
+# still be copied — so never use bare `*.png` / `*.pdf` here.
+.git
+node_modules
+dist
+.lavish
+.playwright-mcp
+.github
+Dockerfile
+.env
+.env.*.local
+/*.pdf
+/*.png
+/*.gif
+*.md

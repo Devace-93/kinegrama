@@ -74,6 +74,8 @@
     <div class="flex-1 min-w-0">
       <h1 class="text-2xl font-bold">{t('app.title')}</h1>
     </div>
+    <!-- accounts.3m4.net session widget mount (script in index.html) -->
+    <div id="session" class="shrink-0 mt-1"></div>
     <LanguagePicker />
     <label
       class="swap swap-rotate btn btn-sm btn-ghost text-lg tooltip tooltip-left"

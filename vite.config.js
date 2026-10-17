@@ -8,6 +8,8 @@ import tailwindcss from '@tailwindcss/vite';
 process.env.VITE_SITE_URL ??= 'https://kinegram.3m4.net';
 // Index of all 3m4.net apps, linked from the footer.
 process.env.VITE_INFO_URL ??= 'https://info.3m4.net';
+// Shared identity service: index.html loads its session.js widget (optional login).
+process.env.VITE_ACCOUNTS_URL ??= 'https://accounts.3m4.net';
 
 export default defineConfig({
   // Served at the root of the custom domain kinegram.3m4.net

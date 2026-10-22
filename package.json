@@ -20,6 +20,6 @@
   "dependencies": {
     "gifuct-js": "^2.1.2",
     "i18next": "^24.0.0",
-    "jspdf": "^2.5.2"
+    "jspdf": "^4.2.1"
   }
 }

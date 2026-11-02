@@ -11,6 +11,9 @@
     "source": "GitHub पर सोर्स कोड",
     "share": "Facebook पर साझा करें"
   },
+  "support": {
+    "donate": "मुझे एक कॉफ़ी पिलाइए ☕"
+  },
   "steps": {
     "s1": "GIF चयन",
     "s2": "फ़्रेम चयन",

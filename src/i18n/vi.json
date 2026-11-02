@@ -11,6 +11,9 @@
     "source": "Mã nguồn trên GitHub",
     "share": "Chia sẻ lên Facebook"
   },
+  "support": {
+    "donate": "Mời tôi một ly cà phê ☕"
+  },
   "steps": {
     "s1": "Chọn GIF",
     "s2": "Chọn khung hình",

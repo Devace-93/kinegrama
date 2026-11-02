@@ -11,6 +11,9 @@
     "source": "ソースコード（GitHub）",
     "share": "Facebookでシェア"
   },
+  "support": {
+    "donate": "コーヒーを一杯おごってください ☕"
+  },
   "steps": {
     "s1": "GIF の選択",
     "s2": "フレームの選択",

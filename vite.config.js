@@ -10,6 +10,8 @@ process.env.VITE_SITE_URL ??= 'https://kinegram.3m4.net';
 process.env.VITE_INFO_URL ??= 'https://info.3m4.net';
 // Shared identity service: index.html loads its session.js widget (optional login).
 process.env.VITE_ACCOUNTS_URL ??= 'https://accounts.3m4.net';
+// Payments portal: DonateButton.svelte loads its pay.js donate button (header + footer).
+process.env.VITE_PAYMENTS_URL ??= 'https://payments.3m4.net';
 
 export default defineConfig({
   // Served at the root of the custom domain kinegram.3m4.net

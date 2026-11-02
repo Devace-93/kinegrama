@@ -4,6 +4,7 @@
   import { getRoute, go } from './lib/router.svelte.js';
   import { t } from './i18n/index.svelte.js';
   import LanguagePicker from './components/LanguagePicker.svelte';
+  import DonateButton from './components/DonateButton.svelte';
   import StepsNav from './components/StepsNav.svelte';
   import Home from './components/Home.svelte';
   import Step1Gifs from './components/Step1Gifs.svelte';
@@ -74,6 +75,8 @@
     <div class="flex-1 min-w-0">
       <h1 class="text-2xl font-bold">{t('app.title')}</h1>
     </div>
+    <!-- pay.js donate button ("Buy me a coffee"); a second one sits in the footer -->
+    <DonateButton id="support-header" class="shrink-0 mt-1" />
     <!-- accounts.3m4.net session widget mount (script in index.html) -->
     <div id="session" class="shrink-0 mt-1"></div>
     <LanguagePicker />
@@ -115,7 +118,9 @@
     {/if}
   </main>
 
-  <footer class="mt-8 pt-4 border-t border-base-300 text-sm opacity-80 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+  <footer class="mt-8 pt-4 border-t border-base-300 text-sm flex flex-col items-center gap-3">
+    <DonateButton id="support-footer" />
+    <div class="opacity-80 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
     <a class="link link-hover" href="https://www.linkedin.com/in/enrique-magallon/"
        target="_blank" rel="noopener">{t('footer.madeBy')}</a>
     <span class="opacity-40" aria-hidden="true">·</span>
@@ -127,6 +132,7 @@
     <span class="opacity-40" aria-hidden="true">·</span>
     <a class="link link-hover" href={import.meta.env.VITE_INFO_URL}
        target="_blank" rel="noopener">info.3m4.net</a>
+    </div>
   </footer>
 </div>
 

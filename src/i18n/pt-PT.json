@@ -1,4 +1,5 @@
 {
+  "support": { "donate": "Pague-me um café ☕" },
   "app": { "subtitle": "Carregue um ou mais GIFs, escolha os fotogramas e gere os kinegramas + a grelha partilhada." },
   "steps": { "s2": "Seleção de fotogramas", "s3": "Papel + pré-visualização" },
   "common": { "next": "Seguinte" },

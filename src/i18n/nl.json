@@ -11,6 +11,9 @@
     "source": "Broncode op GitHub",
     "share": "Delen op Facebook"
   },
+  "support": {
+    "donate": "Trakteer me op een koffie ☕"
+  },
   "steps": {
     "s1": "GIF-selectie",
     "s2": "Frameselectie",

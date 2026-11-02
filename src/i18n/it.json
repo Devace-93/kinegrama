@@ -11,6 +11,9 @@
     "source": "Codice su GitHub",
     "share": "Condividi su Facebook"
   },
+  "support": {
+    "donate": "Offrimi un caffè ☕"
+  },
   "steps": {
     "s1": "Selezione GIF",
     "s2": "Selezione fotogrammi",

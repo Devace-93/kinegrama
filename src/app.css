@@ -57,3 +57,12 @@
 /* WCAG AA: the light theme's error red is 2.7:1 on white for outline
    buttons; this darker red is ~5.6:1. */
 [data-theme="light"] .btn-outline.btn-error { --color-error: #c81e45; }
+
+/* payments.3m4.net pay.js button: follow the daisyUI theme instead of the
+   widget's amber fallback (it reads --accent / --m4p-fg). */
+:root {
+  --accent: var(--color-accent);
+}
+.m4p {
+  --m4p-fg: var(--color-accent-content);
+}

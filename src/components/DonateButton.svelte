@@ -24,7 +24,7 @@
     s.src = `${import.meta.env.VITE_PAYMENTS_URL}/pay.js`;
     s.async = true;
     Object.assign(s.dataset, {
-      app: 'info',
+      app: 'kinegram',
       kind: 'donate',
       currency: 'usd',
       amount: '500',

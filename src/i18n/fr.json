@@ -11,6 +11,9 @@
     "source": "Code source sur GitHub",
     "share": "Partager sur Facebook"
   },
+  "support": {
+    "donate": "Offrez-moi un café ☕"
+  },
   "steps": {
     "s1": "Sélection des GIF",
     "s2": "Sélection des images",

@@ -11,6 +11,9 @@
     "source": "GitHub 源代码",
     "share": "分享到 Facebook"
   },
+  "support": {
+    "donate": "请我喝杯咖啡 ☕"
+  },
   "steps": {
     "s1": "选择 GIF",
     "s2": "选择帧",

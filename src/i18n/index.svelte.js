@@ -98,6 +98,14 @@ function setMeta(selector, content) {
 
 function apply(lng) {
   state.lang = lng;
+  // Embedded widgets that read their label from a `data-label` attribute
+  // (payments.3m4.net/pay.js, see DonateButton.svelte): set it before touching
+  // <html lang>. pay.js re-reads the attribute on every render and re-renders
+  // when <html lang> changes (MutationObserver), so every tag on the page
+  // follows the language switch without being re-inserted.
+  for (const el of document.querySelectorAll('script[data-i18n-label]')) {
+    el.dataset.label = i18next.t(el.dataset.i18nLabel);
+  }
   document.documentElement.lang = lng;
   document.documentElement.dir = RTL.includes(lng.slice(0, 2)) ? 'rtl' : 'ltr';
   const title = i18next.t('app.title');

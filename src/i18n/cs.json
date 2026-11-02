@@ -11,6 +11,9 @@
     "source": "Zdrojový kód na GitHubu",
     "share": "Sdílet na Facebooku"
   },
+  "support": {
+    "donate": "Kupte mi kávu ☕"
+  },
   "steps": {
     "s1": "Výběr GIFů",
     "s2": "Výběr snímků",

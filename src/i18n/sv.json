@@ -11,6 +11,9 @@
     "source": "Källkod på GitHub",
     "share": "Dela på Facebook"
   },
+  "support": {
+    "donate": "Bjud mig på en kaffe ☕"
+  },
   "steps": {
     "s1": "Val av GIF",
     "s2": "Val av bildrutor",

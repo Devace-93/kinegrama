@@ -11,6 +11,9 @@
     "source": "GitHub 소스 코드",
     "share": "Facebook에 공유"
   },
+  "support": {
+    "donate": "커피 한 잔 사주세요 ☕"
+  },
   "steps": {
     "s1": "GIF 선택",
     "s2": "프레임 선택",

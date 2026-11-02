@@ -5,6 +5,7 @@
   import { t } from './i18n/index.svelte.js';
   import LanguagePicker from './components/LanguagePicker.svelte';
   import DonateButton from './components/DonateButton.svelte';
+  import SupportersList from './components/SupportersList.svelte';
   import StepsNav from './components/StepsNav.svelte';
   import Home from './components/Home.svelte';
   import Step1Gifs from './components/Step1Gifs.svelte';
@@ -119,6 +120,8 @@
   </main>
 
   <footer class="mt-8 pt-4 border-t border-base-300 text-sm flex flex-col items-center gap-3">
+    <!-- pay.js supporters list (donors + GitHub sponsors); empty-hidden until the portal returns someone -->
+    <SupportersList id="supporters" />
     <DonateButton id="support-footer" />
     <div class="opacity-80 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
     <a class="link link-hover" href="https://www.linkedin.com/in/enrique-magallon/"

@@ -12,7 +12,8 @@
     "share": "Facebook에 공유"
   },
   "support": {
-    "donate": "커피 한 잔 사주세요 ☕"
+    "donate": "커피 한 잔 사주세요 ☕",
+    "supporters": "후원자 여러분께 감사드립니다"
   },
   "steps": {
     "s1": "GIF 선택",
